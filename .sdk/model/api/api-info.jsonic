@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt"
+      }
+      description: "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN. Users can retrieve articles by making GET requests to specific endpoints for each publication, including filtering by query parameters for specific articles."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api2news.com"
+        }
+      ]
+      title: "API2NEWS Endpoint"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

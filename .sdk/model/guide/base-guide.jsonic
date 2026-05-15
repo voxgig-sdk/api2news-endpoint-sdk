@@ -1,0 +1,32 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 4
+  metrics: count: path: 4
+  metrics: count: method: 4
+
+  entity: bbc: {
+    path: "/api/news/bbc": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: cnn: {
+    path: "/api/news/cnn": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: new: {
+    path: "/api/news": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: techcrunch: {
+    path: "/api/news/techcrunch": {
+      op: list: method: *GET
+    }
+  }
+
+}

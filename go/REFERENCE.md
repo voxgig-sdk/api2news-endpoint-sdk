@@ -1,0 +1,327 @@
+# Api2newsEndpoint Golang SDK Reference
+
+Complete API reference for the Api2newsEndpoint Golang SDK.
+
+
+## Api2newsEndpointSDK
+
+### Constructor
+
+```go
+func NewApi2newsEndpointSDK(options map[string]any) *Api2newsEndpointSDK
+```
+
+Create a new SDK client instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `options` | `map[string]any` | SDK configuration options. |
+| `options["apikey"]` | `string` | API key for authentication. |
+| `options["base"]` | `string` | Base URL for API requests. |
+| `options["prefix"]` | `string` | URL prefix appended after base. |
+| `options["suffix"]` | `string` | URL suffix appended after path. |
+| `options["headers"]` | `map[string]any` | Custom headers for all requests. |
+| `options["feature"]` | `map[string]any` | Feature configuration. |
+| `options["system"]` | `map[string]any` | System overrides (e.g. custom fetch). |
+
+
+### Static Methods
+
+#### `TestSDK(testopts, sdkopts map[string]any) *Api2newsEndpointSDK`
+
+Create a test client with mock features active. Both arguments may be `nil`.
+
+```go
+client := sdk.TestSDK(nil, nil)
+```
+
+
+### Instance Methods
+
+#### `Bbc(data map[string]any) Api2newsEndpointEntity`
+
+Create a new `Bbc` entity instance. Pass `nil` for no initial data.
+
+#### `Cnn(data map[string]any) Api2newsEndpointEntity`
+
+Create a new `Cnn` entity instance. Pass `nil` for no initial data.
+
+#### `New(data map[string]any) Api2newsEndpointEntity`
+
+Create a new `New` entity instance. Pass `nil` for no initial data.
+
+#### `Techcrunch(data map[string]any) Api2newsEndpointEntity`
+
+Create a new `Techcrunch` entity instance. Pass `nil` for no initial data.
+
+#### `OptionsMap() map[string]any`
+
+Return a deep copy of the current SDK options.
+
+#### `GetUtility() *Utility`
+
+Return a copy of the SDK utility object.
+
+#### `Direct(fetchargs map[string]any) (map[string]any, error)`
+
+Make a direct HTTP request to any API endpoint.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `fetchargs["path"]` | `string` | URL path with optional `{param}` placeholders. |
+| `fetchargs["method"]` | `string` | HTTP method (default: `"GET"`). |
+| `fetchargs["params"]` | `map[string]any` | Path parameter values for `{param}` substitution. |
+| `fetchargs["query"]` | `map[string]any` | Query string parameters. |
+| `fetchargs["headers"]` | `map[string]any` | Request headers (merged with defaults). |
+| `fetchargs["body"]` | `any` | Request body (maps are JSON-serialized). |
+| `fetchargs["ctrl"]` | `map[string]any` | Control options (e.g. `map[string]any{"explain": true}`). |
+
+**Returns:** `(map[string]any, error)`
+
+#### `Prepare(fetchargs map[string]any) (map[string]any, error)`
+
+Prepare a fetch definition without sending the request. Accepts the
+same parameters as `Direct()`.
+
+**Returns:** `(map[string]any, error)`
+
+
+---
+
+## BbcEntity
+
+```go
+bbc := client.Bbc(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `author` | ``$STRING`` | No |  |
+| `content` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `image_url` | ``$STRING`` | No |  |
+| `published_at` | ``$STRING`` | No |  |
+| `source` | ``$STRING`` | No |  |
+| `title` | ``$STRING`` | No |  |
+| `url` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.Bbc(nil).List(nil, nil)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `BbcEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## CnnEntity
+
+```go
+cnn := client.Cnn(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `author` | ``$STRING`` | No |  |
+| `content` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `image_url` | ``$STRING`` | No |  |
+| `published_at` | ``$STRING`` | No |  |
+| `source` | ``$STRING`` | No |  |
+| `title` | ``$STRING`` | No |  |
+| `url` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.Cnn(nil).List(nil, nil)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `CnnEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## NewEntity
+
+```go
+new := client.New(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `author` | ``$STRING`` | No |  |
+| `content` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `image_url` | ``$STRING`` | No |  |
+| `published_at` | ``$STRING`` | No |  |
+| `source` | ``$STRING`` | No |  |
+| `title` | ``$STRING`` | No |  |
+| `url` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.New(nil).List(nil, nil)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `NewEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## TechcrunchEntity
+
+```go
+techcrunch := client.Techcrunch(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `author` | ``$STRING`` | No |  |
+| `content` | ``$STRING`` | No |  |
+| `description` | ``$STRING`` | No |  |
+| `id` | ``$STRING`` | No |  |
+| `image_url` | ``$STRING`` | No |  |
+| `published_at` | ``$STRING`` | No |  |
+| `source` | ``$STRING`` | No |  |
+| `title` | ``$STRING`` | No |  |
+| `url` | ``$STRING`` | No |  |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.Techcrunch(nil).List(nil, nil)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `TechcrunchEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## Features
+
+| Feature | Version | Description |
+| --- | --- | --- |
+| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
+
+
+Features are activated via the `feature` option:
+
+```go
+client := sdk.NewApi2newsEndpointSDK(map[string]any{
+    "feature": map[string]any{
+        "test": map[string]any{"active": true},
+    },
+})
+```
+

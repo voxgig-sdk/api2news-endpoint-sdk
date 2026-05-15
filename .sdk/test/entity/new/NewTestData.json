@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "new": {
+      "NEW00": {
+        "author": "s5a",
+        "content": "s5b",
+        "description": "s5c",
+        "id": "NEW00",
+        "image_url": "s5e",
+        "published_at": "s5f",
+        "source": "s60",
+        "title": "s61",
+        "url": "s62"
+      },
+      "NEW01": {
+        "author": "sb4",
+        "content": "sb5",
+        "description": "sb6",
+        "id": "NEW01",
+        "image_url": "sb8",
+        "published_at": "sb9",
+        "source": "sba",
+        "title": "sbb",
+        "url": "sbc"
+      },
+      "NEW02": {
+        "author": "s10e",
+        "content": "s10f",
+        "description": "s110",
+        "id": "NEW02",
+        "image_url": "s112",
+        "published_at": "s113",
+        "source": "s114",
+        "title": "s115",
+        "url": "s116"
+      }
+    }
+  },
+  "new": {
+    "new": {
+      "new_ref01": {
+        "author": "s168",
+        "content": "s169",
+        "description": "s16a",
+        "image_url": "s16c",
+        "published_at": "s16d",
+        "source": "s16e",
+        "title": "s16f",
+        "url": "s170"
+      }
+    }
+  }
+}

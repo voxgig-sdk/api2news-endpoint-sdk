@@ -1,0 +1,391 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API2NEWS Endpoint",
+    "description": "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN. Users can retrieve articles by making GET requests to specific endpoints for each publication, including filtering by query parameters for specific articles.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api2news.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/news": {
+      "get": {
+        "summary": "Get latest news articles",
+        "description": "Retrieves the latest news stories from various sources including BBC, TechCrunch, and CNN",
+        "operationId": "getNews",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "description": "Filter news by source (e.g., bbc, techcrunch, cnn)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "bbc",
+                "techcrunch",
+                "cnn"
+              ]
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search query to filter articles by keywords",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of articles to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with news articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "totalResults": {
+                      "type": "integer",
+                      "example": 50
+                    },
+                    "articles": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Article"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/news/bbc": {
+      "get": {
+        "summary": "Get BBC news articles",
+        "description": "Retrieves the latest news stories specifically from BBC",
+        "operationId": "getBBCNews",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search query to filter BBC articles",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of articles to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with BBC news articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "source": {
+                      "type": "string",
+                      "example": "bbc"
+                    },
+                    "totalResults": {
+                      "type": "integer"
+                    },
+                    "articles": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Article"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/news/techcrunch": {
+      "get": {
+        "summary": "Get TechCrunch news articles",
+        "description": "Retrieves the latest news stories specifically from TechCrunch",
+        "operationId": "getTechCrunchNews",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search query to filter TechCrunch articles",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of articles to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with TechCrunch news articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "source": {
+                      "type": "string",
+                      "example": "techcrunch"
+                    },
+                    "totalResults": {
+                      "type": "integer"
+                    },
+                    "articles": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Article"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/news/cnn": {
+      "get": {
+        "summary": "Get CNN news articles",
+        "description": "Retrieves the latest news stories specifically from CNN",
+        "operationId": "getCNNNews",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search query to filter CNN articles",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of articles to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with CNN news articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "success"
+                    },
+                    "source": {
+                      "type": "string",
+                      "example": "cnn"
+                    },
+                    "totalResults": {
+                      "type": "integer"
+                    },
+                    "articles": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Article"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Article": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the article"
+          },
+          "source": {
+            "type": "string",
+            "description": "News source (BBC, TechCrunch, CNN)",
+            "example": "bbc"
+          },
+          "title": {
+            "type": "string",
+            "description": "Article headline",
+            "example": "Breaking News: Major Technology Breakthrough"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief summary of the article"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the full article"
+          },
+          "imageUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the article's featured image"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Publication date and time"
+          },
+          "author": {
+            "type": "string",
+            "description": "Article author name"
+          },
+          "content": {
+            "type": "string",
+            "description": "Article content excerpt"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "error"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message describing what went wrong"
+          },
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          }
+        }
+      }
+    }
+  }
+}

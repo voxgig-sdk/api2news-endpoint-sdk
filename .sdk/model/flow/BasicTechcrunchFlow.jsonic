@@ -1,0 +1,22 @@
+# BasicTechcrunchFlow
+
+main: kit: flow: BasicTechcrunchFlow:
+{
+  entity: "techcrunch",
+  kind: "basic",
+  name: "BasicTechcrunchFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "techcrunch_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTechcrunchFlow"
+}

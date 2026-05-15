@@ -1,0 +1,22 @@
+# BasicBbcFlow
+
+main: kit: flow: BasicBbcFlow:
+{
+  entity: "bbc",
+  kind: "basic",
+  name: "BasicBbcFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "bbc_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBbcFlow"
+}
