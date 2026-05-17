@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/api2news-endpoint-sdk"
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/core"
+	sdk "github.com/voxgig-sdk/api2news-endpoint-sdk/go"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/api2news-endpoint-sdk/go/utility/struct"
 )
 
 func TestBbcEntity(t *testing.T) {

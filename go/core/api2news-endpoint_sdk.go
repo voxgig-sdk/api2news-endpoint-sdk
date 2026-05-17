@@ -3,7 +3,7 @@ package core
 import (
 	"fmt"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/api2news-endpoint-sdk/go/utility/struct"
 )
 
 type Api2newsEndpointSDK struct {

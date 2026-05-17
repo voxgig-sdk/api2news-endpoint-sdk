@@ -1,10 +1,10 @@
 package voxgigapi2newsendpointsdk
 
 import (
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/core"
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/entity"
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/feature"
-	_ "github.com/voxgig-sdk/api2news-endpoint-sdk/utility"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/core"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/entity"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/feature"
+	_ "github.com/voxgig-sdk/api2news-endpoint-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

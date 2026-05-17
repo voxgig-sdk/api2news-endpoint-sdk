@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/api2news-endpoint-sdk"
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/core"
+	sdk "github.com/voxgig-sdk/api2news-endpoint-sdk/go"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/core"
 )
 
 func TestBbcDirect(t *testing.T) {

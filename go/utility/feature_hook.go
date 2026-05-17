@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/api2news-endpoint-sdk/core"
+	"github.com/voxgig-sdk/api2news-endpoint-sdk/go/core"
 )
 
 func featureHookUtil(ctx *core.Context, name string) {
