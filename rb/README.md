@@ -31,9 +31,7 @@ loading a specific record.
 ```ruby
 require_relative "Api2newsEndpoint_sdk"
 
-client = Api2newsEndpointSDK.new({
-  "apikey" => ENV["API2NEWS-ENDPOINT_APIKEY"],
-})
+client = Api2newsEndpointSDK.new({})
 ```
 
 ### 2. List bbcs
@@ -127,7 +125,6 @@ Create a `.env.local` file at the project root:
 
 ```
 API2NEWS-ENDPOINT_TEST_LIVE=TRUE
-API2NEWS-ENDPOINT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -150,7 +147,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

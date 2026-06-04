@@ -83,7 +83,6 @@ def bbc_basic_setup(extra)
     "API_NEWSENDPOINT_TEST_BBC_ENTID" => idmap,
     "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
     "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-    "API_NEWSENDPOINT_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def bbc_basic_setup(extra)
   if env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["API_NEWSENDPOINT_APIKEY"],
       },
       extra || {},
     ])

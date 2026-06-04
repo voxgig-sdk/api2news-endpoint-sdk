@@ -68,14 +68,12 @@ function new_direct_setup($mockres)
     $env = Runner::env_override([
         "API_NEWSENDPOINT_TEST_NEW_ENTID" => [],
         "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
-        "API_NEWSENDPOINT_APIKEY" => "NONE",
     ]);
 
     $live = $env["API_NEWSENDPOINT_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["API_NEWSENDPOINT_APIKEY"],
         ];
         $client = new Api2newsEndpointSDK($merged_opts);
         return [

@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'API_NEWS_ENDPOINT_TEST_BBC_ENTID': idmap,
     'API_NEWS_ENDPOINT_TEST_LIVE': 'FALSE',
     'API_NEWS_ENDPOINT_TEST_EXPLAIN': 'FALSE',
-    'API_NEWS_ENDPOINT_APIKEY': 'NONE',
   })
 
   idmap = env['API_NEWS_ENDPOINT_TEST_BBC_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new Api2newsEndpointSDK(merge([
       {
-        apikey: env.API_NEWS_ENDPOINT_APIKEY,
       },
       extra
     ]))
