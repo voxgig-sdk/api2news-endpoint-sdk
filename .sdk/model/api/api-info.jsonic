@@ -16,29 +16,7 @@ main: {
       ]
       title: "API2NEWS Endpoint"
       version: "1.0.0"
-      tagline: "Fetch latest news articles from major publications like BBC, CNN, and TechCrunch via simple GET requests"
-      homepage: "https://api2news.com"
-      docs_url: "https://freepublicapis.com/api2news-endpoint"
-      license_short: "License not disclosed by the provider"
-      license_md: `- The API2NEWS provider does not publish explicit licence terms for the aggregated content.
-- News articles remain the property of their original publishers (BBC, CNN, TechCrunch, etc.); check each source's terms before redistributing.
-- Verify attribution requirements with the upstream publication if you reuse article text, headlines, or images.`
-      about_md: `API2NEWS is a small news-aggregation API that exposes the latest stories from a handful of well-known publications through a single HTTP endpoint at \`https://endpoint.api2.news/\`. It is listed on the freepublicapis.com community catalogue as a free, no-frills source for headline data.
-
-What you get from the API:
-
-- Recent articles from supported publications (BBC, CNN, TechCrunch, and similar)
-- Per-publication GET endpoints so you can request stories from one source at a time
-- Query-parameter filtering for narrowing the result set to specific articles
-
-Operational notes: the endpoint does not advertise authentication or documented rate limits, and CORS is reportedly disabled, so browser-side calls will need a proxy. Community monitoring on freepublicapis.com has flagged the service as unreliable in recent checks, so treat availability as best-effort and build in retry/fallback logic if you depend on it.`
-      entity_desc: {
-        bbc: "BBC news articles exposed via a dedicated GET path for retrieving the publication's latest stories."
-        cnn: "CNN news articles exposed via a dedicated GET path for retrieving the publication's latest stories."
-        new: "Grouping for the generic 'latest / new' article endpoints that surface freshly published items across the supported sources."
-        techcrunch: "TechCrunch articles exposed via a dedicated GET path for retrieving the publication's latest technology stories."
-      }
-      auth: false
     }
   }
 }
+

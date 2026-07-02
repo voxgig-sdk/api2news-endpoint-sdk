@@ -1,6 +1,11 @@
 # Api2newsEndpoint Python SDK
 
-The Python SDK for the Api2newsEndpoint API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the Api2newsEndpoint API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from api2newsendpoint_sdk import Api2newsEndpointSDK
 
-client = Api2newsEndpointSDK({})
+client = Api2newsEndpointSDK({
+    "apikey": os.environ.get("API2NEWS-ENDPOINT_APIKEY"),
+})
 ```
 
 ### 2. List bbcs
 
 ```python
-result, err = client.Bbc(None).list(None, None)
+result, err = client.Bbc().list()
 if err:
     raise Exception(err)
 
@@ -83,11 +91,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = Api2newsEndpointSDK.test(None, None)
+client = Api2newsEndpointSDK.test()
 
-result, err = client.Api2newsEndpoint(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.Api2newsEndpoint().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -118,6 +124,7 @@ Create a `.env.local` file at the project root:
 
 ```
 API2NEWS-ENDPOINT_TEST_LIVE=TRUE
+API2NEWS-ENDPOINT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -141,6 +148,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

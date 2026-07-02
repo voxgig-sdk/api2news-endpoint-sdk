@@ -30,12 +30,12 @@ Create a new SDK client instance.
 
 ### Static Methods
 
-#### `sdk.test(testopts, sdkopts)`
+#### `sdk.test(testopts?, sdkopts?)`
 
-Create a test client with mock features active. Both arguments may be `nil`.
+Create a test client with mock features active. Both arguments are optional.
 
 ```lua
-local client = sdk.test(nil, nil)
+local client = sdk.test()
 ```
 
 
@@ -120,7 +120,7 @@ local bbc = client:Bbc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Bbc(nil):list(nil, nil)
+local results, err = client:Bbc():list()
 ```
 
 ### Common Methods
@@ -180,7 +180,7 @@ local cnn = client:Cnn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Cnn(nil):list(nil, nil)
+local results, err = client:Cnn():list()
 ```
 
 ### Common Methods
@@ -240,7 +240,7 @@ local new = client:New(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:New(nil):list(nil, nil)
+local results, err = client:New():list()
 ```
 
 ### Common Methods
@@ -300,7 +300,7 @@ local techcrunch = client:Techcrunch(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Techcrunch(nil):list(nil, nil)
+local results, err = client:Techcrunch():list()
 ```
 
 ### Common Methods

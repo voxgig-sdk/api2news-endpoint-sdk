@@ -1,6 +1,11 @@
 # Api2newsEndpoint PHP SDK
 
-The PHP SDK for the Api2newsEndpoint API. Provides an entity-oriented interface using PHP conventions.
+
+
+The PHP SDK for the Api2newsEndpoint API — an entity-oriented client using PHP conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -20,13 +25,15 @@ loading a specific record.
 <?php
 require_once 'api2newsendpoint_sdk.php';
 
-$client = new Api2newsEndpointSDK([]);
+$client = new Api2newsEndpointSDK([
+    "apikey" => getenv("API2NEWS-ENDPOINT_APIKEY"),
+]);
 ```
 
 ### 2. List bbcs
 
 ```php
-[$result, $err] = $client->Bbc(null)->list(null, null);
+[$result, $err] = $client->Bbc()->list();
 if ($err) { throw new \Exception($err); }
 
 if (is_array($result)) {
@@ -78,11 +85,9 @@ print_r($fetchdef["headers"]);
 Create a mock client for unit testing — no server required:
 
 ```php
-$client = Api2newsEndpointSDK::test(null, null);
+$client = Api2newsEndpointSDK::test();
 
-[$result, $err] = $client->Api2newsEndpoint(null)->load(
-    ["id" => "test01"], null
-);
+[$result, $err] = $client->Api2newsEndpoint()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -117,6 +122,7 @@ Create a `.env.local` file at the project root:
 
 ```
 API2NEWS-ENDPOINT_TEST_LIVE=TRUE
+API2NEWS-ENDPOINT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -139,6 +145,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

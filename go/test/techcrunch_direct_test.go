@@ -93,12 +93,14 @@ func techcrunchDirectSetup(mockres any) *techcrunchDirectSetupResult {
 	env := envOverride(map[string]any{
 		"API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID": map[string]any{},
 		"API_NEWSENDPOINT_TEST_LIVE":    "FALSE",
+		"API_NEWSENDPOINT_APIKEY":       "NONE",
 	})
 
 	live := env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["API_NEWSENDPOINT_APIKEY"],
 		}
 		client := sdk.NewApi2newsEndpointSDK(mergedOpts)
 

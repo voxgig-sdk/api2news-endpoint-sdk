@@ -61,12 +61,14 @@ def _bbc_direct_setup(mockres):
     env = runner.env_override({
         "API_NEWSENDPOINT_TEST_BBC_ENTID": {},
         "API_NEWSENDPOINT_TEST_LIVE": "FALSE",
+        "API_NEWSENDPOINT_APIKEY": "NONE",
     })
 
     live = env.get("API_NEWSENDPOINT_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("API_NEWSENDPOINT_APIKEY"),
         }
         client = Api2newsEndpointSDK(merged_opts)
         return {

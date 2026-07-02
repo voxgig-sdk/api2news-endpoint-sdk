@@ -1,20 +1,8 @@
 # Api2newsEndpoint SDK
 
-Fetch latest news articles from major publications like BBC, CNN, and TechCrunch via simple GET requests
+API2NEWS Endpoint client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About API2NEWS Endpoint
-
-API2NEWS is a small news-aggregation API that exposes the latest stories from a handful of well-known publications through a single HTTP endpoint at `https://endpoint.api2.news/`. It is listed on the freepublicapis.com community catalogue as a free, no-frills source for headline data.
-
-What you get from the API:
-
-- Recent articles from supported publications (BBC, CNN, TechCrunch, and similar)
-- Per-publication GET endpoints so you can request stories from one source at a time
-- Query-parameter filtering for narrowing the result set to specific articles
-
-Operational notes: the endpoint does not advertise authentication or documented rate limits, and CORS is reportedly disabled, so browser-side calls will need a proxy. Community monitoring on freepublicapis.com has flagged the service as unreliable in recent checks, so treat availability as best-effort and build in retry/fallback logic if you depend on it.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install api2news-endpoint-sdk
 luarocks install api2news-endpoint-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { Api2newsEndpointSDK } from 'api2news-endpoint'
 
-const client = new Api2newsEndpointSDK({})
+const client = new Api2newsEndpointSDK({
+  apikey: process.env.API2NEWS-ENDPOINT_APIKEY,
+})
 
 // List all bbcs
 const bbcs = await client.Bbc().list()
+console.log(bbcs.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,10 +90,10 @@ The API exposes 4 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Bbc** | BBC news articles exposed via a dedicated GET path for retrieving the publication's latest stories. | `/api/news/bbc` |
-| **Cnn** | CNN news articles exposed via a dedicated GET path for retrieving the publication's latest stories. | `/api/news/cnn` |
-| **New** | Grouping for the generic 'latest / new' article endpoints that surface freshly published items across the supported sources. | `/api/news` |
-| **Techcrunch** | TechCrunch articles exposed via a dedicated GET path for retrieving the publication's latest technology stories. | `/api/news/techcrunch` |
+| **Bbc** |  | `/api/news/bbc` |
+| **Cnn** |  | `/api/news/cnn` |
+| **New** |  | `/api/news` |
+| **Techcrunch** |  | `/api/news/techcrunch` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -113,12 +103,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from api2newsendpoint_sdk import Api2newsEndpointSDK
 
-client = Api2newsEndpointSDK({})
+client = Api2newsEndpointSDK({
+    "apikey": os.environ.get("API2NEWS-ENDPOINT_APIKEY"),
+})
 
 # List all bbcs
-bbcs, err = client.Bbc(None).list(None, None)
+bbcs, err = client.Bbc().list()
+print(bbcs)
 ```
 
 ### PHP
@@ -127,10 +121,13 @@ bbcs, err = client.Bbc(None).list(None, None)
 <?php
 require_once 'api2newsendpoint_sdk.php';
 
-$client = new Api2newsEndpointSDK([]);
+$client = new Api2newsEndpointSDK([
+    "apikey" => getenv("API2NEWS-ENDPOINT_APIKEY"),
+]);
 
 // List all bbcs
-[$bbcs, $err] = $client->Bbc(null)->list(null, null);
+[$bbcs, $err] = $client->Bbc()->list();
+print_r($bbcs);
 ```
 
 ### Golang
@@ -138,10 +135,13 @@ $client = new Api2newsEndpointSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/api2news-endpoint-sdk/go"
 
-client := sdk.NewApi2newsEndpointSDK(map[string]any{})
+client := sdk.NewApi2newsEndpointSDK(map[string]any{
+    "apikey": os.Getenv("API2NEWS-ENDPOINT_APIKEY"),
+})
 
 // List all bbcs
 bbcs, err := client.Bbc(nil).List(nil, nil)
+fmt.Println(bbcs)
 ```
 
 ### Ruby
@@ -149,10 +149,13 @@ bbcs, err := client.Bbc(nil).List(nil, nil)
 ```ruby
 require_relative "Api2newsEndpoint_sdk"
 
-client = Api2newsEndpointSDK.new({})
+client = Api2newsEndpointSDK.new({
+  "apikey" => ENV["API2NEWS-ENDPOINT_APIKEY"],
+})
 
 # List all bbcs
-bbcs, err = client.Bbc(nil).list(nil, nil)
+bbcs, err = client.Bbc().list
+puts bbcs
 ```
 
 ### Lua
@@ -160,10 +163,13 @@ bbcs, err = client.Bbc(nil).list(nil, nil)
 ```lua
 local sdk = require("api2news-endpoint_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("API2NEWS-ENDPOINT_APIKEY"),
+})
 
 -- List all bbcs
-local bbcs, err = client:Bbc(nil):list(nil, nil)
+local bbcs, err = client:Bbc():list()
+print(bbcs)
 ```
 
 ## Unit testing in offline mode
@@ -182,25 +188,21 @@ const result = await client.Bbc().load({ id: 'test01' })
 ### Python
 
 ```python
-client = Api2newsEndpointSDK.test(None, None)
-result, err = client.Bbc(None).load(
-    {"id": "test01"}, None
-)
+client = Api2newsEndpointSDK.test()
+result, err = client.Bbc().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = Api2newsEndpointSDK::test(null, null);
-[$result, $err] = $client->Bbc(null)->load(
-    ["id" => "test01"], null
-);
+$client = Api2newsEndpointSDK::test();
+[$result, $err] = $client->Bbc()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Bbc(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -209,19 +211,15 @@ result, err := client.Bbc(nil).Load(
 ### Ruby
 
 ```ruby
-client = Api2newsEndpointSDK.test(nil, nil)
-result, err = client.Bbc(nil).load(
-  { "id" => "test01" }, nil
-)
+client = Api2newsEndpointSDK.test
+result, err = client.Bbc().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Bbc(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Bbc():load({ id = "test01" })
 ```
 
 ## How it works
@@ -325,15 +323,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the API2NEWS Endpoint
-
-- Upstream: [https://api2news.com](https://api2news.com)
-- API docs: [https://freepublicapis.com/api2news-endpoint](https://freepublicapis.com/api2news-endpoint)
-
-- The API2NEWS provider does not publish explicit licence terms for the aggregated content.
-- News articles remain the property of their original publishers (BBC, CNN, TechCrunch, etc.); check each source's terms before redistributing.
-- Verify attribution requirements with the upstream publication if you reuse article text, headlines, or images.
 
 ---
 
