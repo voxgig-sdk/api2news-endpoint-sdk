@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/api2news-endpoint",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the API2NEWS Endpoint public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "api2news-endpoint"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/api2news-endpoint-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/api2news-endpoint-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/api2news-endpoint-sdk/issues"
+  },
   "main": "dist/Api2newsEndpointSDK.js",
   "type": "commonjs",
   "types": "dist/Api2newsEndpointSDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "Api2newsEndpoint",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},

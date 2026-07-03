@@ -8,12 +8,14 @@ source = {
   dir = "api2news-endpoint-sdk/lua"
 }
 description = {
-  summary = "Api2newsEndpoint SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the API2NEWS Endpoint public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/api2news-endpoint-sdk",
+  issues_url = "https://github.com/voxgig-sdk/api2news-endpoint-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "api2news-endpoint" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

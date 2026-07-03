@@ -10,7 +10,7 @@ The Lua SDK for the Api2newsEndpoint API — an entity-oriented client using Lua
 
 ## Install
 ```bash
-luarocks install api2news-endpoint-sdk
+luarocks install voxgig-sdk-api2news-endpoint
 ```
 
 If the module is not yet published, add the source directory to

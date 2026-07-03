@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/api2news-endpoint",
-  "description": "Api2newsEndpoint SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the API2NEWS Endpoint public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "api2news-endpoint"],
+  "homepage": "https://github.com/voxgig-sdk/api2news-endpoint-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/api2news-endpoint-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/api2news-endpoint-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"

@@ -10,13 +10,13 @@ The Ruby SDK for the Api2newsEndpoint API — an entity-oriented client using id
 
 ## Install
 ```bash
-gem install api2news-endpoint-sdk
+gem install voxgig-sdk-api2news-endpoint
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "api2news-endpoint-sdk"
+gem "voxgig-sdk-api2news-endpoint"
 ```
 
 Then run:

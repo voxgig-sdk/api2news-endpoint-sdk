@@ -10,7 +10,7 @@ The Python SDK for the Api2newsEndpoint API — an entity-oriented client follow
 
 ## Install
 ```bash
-pip install api2news-endpoint-sdk
+pip install voxgig-sdk-api2news-endpoint
 ```
 
 Or install from source:

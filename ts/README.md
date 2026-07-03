@@ -10,7 +10,7 @@ The TypeScript SDK for the Api2newsEndpoint API — a type-safe, entity-oriented
 
 ## Install
 ```bash
-npm install api2news-endpoint
+npm install @voxgig-sdk/api2news-endpoint
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The PHP SDK for the Api2newsEndpoint API — an entity-oriented client using PHP
 
 ## Install
 ```bash
-composer require voxgig/api2news-endpoint-sdk
+composer require voxgig-sdk/api2news-endpoint
 ```
 
 
