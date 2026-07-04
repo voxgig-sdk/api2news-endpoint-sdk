@@ -20,9 +20,6 @@ class Api2newsEndpointConfig
             ],
             "options" => [
                 "base" => "https://api2news.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

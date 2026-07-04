@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'API_NEWSENDPOINT_TEST_BBC_ENTID': {},
     'API_NEWSENDPOINT_TEST_LIVE': 'FALSE',
-    'API_NEWSENDPOINT_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.API_NEWSENDPOINT_TEST_LIVE
 
   if (live) {
     const client = new Api2newsEndpointSDK({
-      apikey: env.API_NEWSENDPOINT_APIKEY,
     })
 
     let idmap: any = env['API_NEWSENDPOINT_TEST_BBC_ENTID']

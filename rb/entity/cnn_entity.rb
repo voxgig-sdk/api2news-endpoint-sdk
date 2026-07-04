@@ -45,6 +45,7 @@ class CnnEntity
     end
   end
 
+  # @return [Cnn, Hash] the current Cnn data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class CnnEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Cnn fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class CnnEntity
   
 
   
+  # List Cnn items matching the given filter.
+  #
+  # @param reqmatch [CnnListMatch, Hash, nil] match filter (any subset of Cnn fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Cnn>, Array] the matching Cnn items; raises Api2newsEndpointError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

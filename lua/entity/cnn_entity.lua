@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch CnnListMatch
+---@param ctrl? table
+---@return Cnn[]
+---@return string? err
 function CnnEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

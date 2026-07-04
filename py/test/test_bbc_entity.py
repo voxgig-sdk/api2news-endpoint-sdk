@@ -50,8 +50,7 @@ class TestBbcEntity:
         bbc_ref01_ent = client.Bbc(None)
         bbc_ref01_match = {}
 
-        bbc_ref01_list_result, err = bbc_ref01_ent.list(bbc_ref01_match, None)
-        assert err is None
+        bbc_ref01_list_result = bbc_ref01_ent.list(bbc_ref01_match, None)
         assert isinstance(bbc_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _bbc_basic_setup(extra):
         "API_NEWSENDPOINT_TEST_BBC_ENTID": idmap,
         "API_NEWSENDPOINT_TEST_LIVE": "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN": "FALSE",
-        "API_NEWSENDPOINT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _bbc_basic_setup(extra):
     if env.get("API_NEWSENDPOINT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("API_NEWSENDPOINT_APIKEY"),
             },
             extra or {},
         ])

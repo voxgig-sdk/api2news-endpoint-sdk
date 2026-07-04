@@ -55,6 +55,9 @@ class BbcEntity
         return new BbcEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Bbc|array $args Bbc data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class BbcEntity
         }
     }
 
+    /**
+     * @return Bbc|array The current Bbc data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Bbc fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class BbcEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Bbc fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -86,7 +98,16 @@ class BbcEntity
     
 
     
-    public function list($reqmatch, $ctrl = null): array
+    /**
+     * List Bbc items matching the given filter.
+     *
+     * @param BbcListMatch|array|null $reqmatch Match filter (any subset
+     *   of Bbc fields) as an assoc-array; BbcListMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Bbc[]|array A list of Bbc items as assoc-arrays at
+     *   the SDK boundary; throws Api2newsEndpointError on failure (item-5 convention).
+     */
+    public function list(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -114,7 +135,7 @@ class BbcEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

@@ -43,8 +43,7 @@ class BbcEntityTest < Minitest::Test
     bbc_ref01_ent = client.Bbc(nil)
     bbc_ref01_match = {}
 
-    bbc_ref01_list_result, err = bbc_ref01_ent.list(bbc_ref01_match, nil)
-    assert_nil err
+    bbc_ref01_list_result = bbc_ref01_ent.list(bbc_ref01_match, nil)
     assert bbc_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def bbc_basic_setup(extra)
     "API_NEWSENDPOINT_TEST_BBC_ENTID" => idmap,
     "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
     "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-    "API_NEWSENDPOINT_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def bbc_basic_setup(extra)
   if env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["API_NEWSENDPOINT_APIKEY"],
       },
       extra || {},
     ])

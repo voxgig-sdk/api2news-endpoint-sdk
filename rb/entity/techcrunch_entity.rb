@@ -45,6 +45,7 @@ class TechcrunchEntity
     end
   end
 
+  # @return [Techcrunch, Hash] the current Techcrunch data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class TechcrunchEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Techcrunch fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class TechcrunchEntity
   
 
   
+  # List Techcrunch items matching the given filter.
+  #
+  # @param reqmatch [TechcrunchListMatch, Hash, nil] match filter (any subset of Techcrunch fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Techcrunch>, Array] the matching Techcrunch items; raises Api2newsEndpointError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

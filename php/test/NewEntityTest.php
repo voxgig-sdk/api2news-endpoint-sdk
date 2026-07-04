@@ -50,8 +50,7 @@ class NewEntityTest extends TestCase
         $new_ref01_ent = $client->New(null);
         $new_ref01_match = [];
 
-        [$new_ref01_list_result, $err] = $new_ref01_ent->list($new_ref01_match, null);
-        $this->assertNull($err);
+        $new_ref01_list_result = $new_ref01_ent->list($new_ref01_match, null);
         $this->assertIsArray($new_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function new_basic_setup($extra)
         "API_NEWSENDPOINT_TEST_NEW_ENTID" => $idmap,
         "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-        "API_NEWSENDPOINT_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function new_basic_setup($extra)
     if ($env["API_NEWSENDPOINT_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["API_NEWSENDPOINT_APIKEY"],
             ],
             $extra ?? [],
         ]);

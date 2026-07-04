@@ -1,0 +1,161 @@
+// Typed models for the Api2newsEndpoint SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+package entity
+
+import "encoding/json"
+
+// Bbc is the typed data model for the bbc entity.
+type Bbc struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// BbcListMatch mirrors the bbc fields as an all-optional match
+// filter (Go analog of Partial<Bbc>).
+type BbcListMatch struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// Cnn is the typed data model for the cnn entity.
+type Cnn struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// CnnListMatch mirrors the cnn fields as an all-optional match
+// filter (Go analog of Partial<Cnn>).
+type CnnListMatch struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// New is the typed data model for the new entity.
+type New struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// NewListMatch mirrors the new fields as an all-optional match
+// filter (Go analog of Partial<New>).
+type NewListMatch struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// Techcrunch is the typed data model for the techcrunch entity.
+type Techcrunch struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// TechcrunchListMatch mirrors the techcrunch fields as an all-optional match
+// filter (Go analog of Partial<Techcrunch>).
+type TechcrunchListMatch struct {
+	Author *string `json:"author,omitempty"`
+	Content *string `json:"content,omitempty"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	PublishedAt *string `json:"published_at,omitempty"`
+	Source *string `json:"source,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+}
+
+// asMap turns a typed request/data struct into the map[string]any the
+// runtime op pipeline consumes, honouring the json tags above.
+func asMap(v any) map[string]any {
+	out := map[string]any{}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}
+
+// typedFrom decodes a runtime value (a map[string]any produced by the op
+// pipeline) into a typed model T via a JSON round-trip. On any error it
+// returns the zero value of T; the op's own (value, error) tuple carries the
+// real error.
+func typedFrom[T any](v any) T {
+	var out T
+	if v == nil {
+		return out
+	}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}
+
+// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
+// slice []T via a JSON round-trip, for list ops.
+func typedSliceFrom[T any](v any) []T {
+	var out []T
+	if v == nil {
+		return out
+	}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}

@@ -20,7 +20,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `Hash` | SDK configuration options. |
-| `options["apikey"]` | `String` | API key for authentication. |
 | `options["base"]` | `String` | Base URL for API requests. |
 | `options["prefix"]` | `String` | URL prefix appended after base. |
 | `options["suffix"]` | `String` | URL suffix appended after path. |
@@ -66,9 +65,11 @@ Return a deep copy of the current SDK options.
 
 Return a copy of the SDK utility object.
 
-#### `direct(fetchargs = {}) -> Hash, err`
+#### `direct(fetchargs = {}) -> Hash`
 
-Make a direct HTTP request to any API endpoint.
+Make a direct HTTP request to any API endpoint. Returns a result hash
+(`{ "ok" => ..., "status" => ..., "data" => ..., "err" => ... }`); it
+does not raise — inspect `result["ok"]`.
 
 **Parameters:**
 
@@ -82,14 +83,14 @@ Make a direct HTTP request to any API endpoint.
 | `fetchargs["body"]` | `any` | Request body (hashes are JSON-serialized). |
 | `fetchargs["ctrl"]` | `Hash` | Control options (e.g. `{ "explain" => true }`). |
 
-**Returns:** `Hash, err`
+**Returns:** `Hash`
 
-#### `prepare(fetchargs = {}) -> Hash, err`
+#### `prepare(fetchargs = {}) -> Hash`
 
 Prepare a fetch definition without sending the request. Accepts the
-same parameters as `direct()`.
+same parameters as `direct()`. Raises on error.
 
-**Returns:** `Hash, err`
+**Returns:** `Hash` (the fetch definition; raises on error)
 
 
 ---
@@ -97,7 +98,7 @@ same parameters as `direct()`.
 ## BbcEntity
 
 ```ruby
-bbc = client.Bbc
+bbc = client.bbc
 ```
 
 ### Fields
@@ -116,12 +117,12 @@ bbc = client.Bbc
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Bbc.list(nil)
+results = client.bbc.list(nil)
 ```
 
 ### Common Methods
@@ -157,7 +158,7 @@ Return the entity name.
 ## CnnEntity
 
 ```ruby
-cnn = client.Cnn
+cnn = client.cnn
 ```
 
 ### Fields
@@ -176,12 +177,12 @@ cnn = client.Cnn
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Cnn.list(nil)
+results = client.cnn.list(nil)
 ```
 
 ### Common Methods
@@ -217,7 +218,7 @@ Return the entity name.
 ## NewEntity
 
 ```ruby
-new = client.New
+new = client.new
 ```
 
 ### Fields
@@ -236,12 +237,12 @@ new = client.New
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.New.list(nil)
+results = client.new.list(nil)
 ```
 
 ### Common Methods
@@ -277,7 +278,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```ruby
-techcrunch = client.Techcrunch
+techcrunch = client.techcrunch
 ```
 
 ### Fields
@@ -296,12 +297,12 @@ techcrunch = client.Techcrunch
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> result, err`
+#### `list(reqmatch, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array.
+List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results, err = client.Techcrunch.list(nil)
+results = client.techcrunch.list(nil)
 ```
 
 ### Common Methods

@@ -50,8 +50,7 @@ class TestTechcrunchEntity:
         techcrunch_ref01_ent = client.Techcrunch(None)
         techcrunch_ref01_match = {}
 
-        techcrunch_ref01_list_result, err = techcrunch_ref01_ent.list(techcrunch_ref01_match, None)
-        assert err is None
+        techcrunch_ref01_list_result = techcrunch_ref01_ent.list(techcrunch_ref01_match, None)
         assert isinstance(techcrunch_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _techcrunch_basic_setup(extra):
         "API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID": idmap,
         "API_NEWSENDPOINT_TEST_LIVE": "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN": "FALSE",
-        "API_NEWSENDPOINT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _techcrunch_basic_setup(extra):
     if env.get("API_NEWSENDPOINT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("API_NEWSENDPOINT_APIKEY"),
             },
             extra or {},
         ])

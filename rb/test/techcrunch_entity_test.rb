@@ -43,8 +43,7 @@ class TechcrunchEntityTest < Minitest::Test
     techcrunch_ref01_ent = client.Techcrunch(nil)
     techcrunch_ref01_match = {}
 
-    techcrunch_ref01_list_result, err = techcrunch_ref01_ent.list(techcrunch_ref01_match, nil)
-    assert_nil err
+    techcrunch_ref01_list_result = techcrunch_ref01_ent.list(techcrunch_ref01_match, nil)
     assert techcrunch_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def techcrunch_basic_setup(extra)
     "API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID" => idmap,
     "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
     "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-    "API_NEWSENDPOINT_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def techcrunch_basic_setup(extra)
   if env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["API_NEWSENDPOINT_APIKEY"],
       },
       extra || {},
     ])

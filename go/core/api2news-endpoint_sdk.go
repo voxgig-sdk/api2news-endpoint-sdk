@@ -245,21 +245,33 @@ func (sdk *Api2newsEndpointSDK) Direct(fetchargs map[string]any) (map[string]any
 }
 
 
+// Bbc returns a Bbc entity bound to this client.
+// Idiomatic usage: client.Bbc(nil).List(nil, nil) or
+// client.Bbc(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *Api2newsEndpointSDK) Bbc(data map[string]any) Api2newsEndpointEntity {
 	return NewBbcEntityFunc(sdk, data)
 }
 
 
+// Cnn returns a Cnn entity bound to this client.
+// Idiomatic usage: client.Cnn(nil).List(nil, nil) or
+// client.Cnn(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *Api2newsEndpointSDK) Cnn(data map[string]any) Api2newsEndpointEntity {
 	return NewCnnEntityFunc(sdk, data)
 }
 
 
+// New returns a New entity bound to this client.
+// Idiomatic usage: client.New(nil).List(nil, nil) or
+// client.New(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *Api2newsEndpointSDK) New(data map[string]any) Api2newsEndpointEntity {
 	return NewNewEntityFunc(sdk, data)
 }
 
 
+// Techcrunch returns a Techcrunch entity bound to this client.
+// Idiomatic usage: client.Techcrunch(nil).List(nil, nil) or
+// client.Techcrunch(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *Api2newsEndpointSDK) Techcrunch(data map[string]any) Api2newsEndpointEntity {
 	return NewTechcrunchEntityFunc(sdk, data)
 }

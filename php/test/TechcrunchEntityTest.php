@@ -50,8 +50,7 @@ class TechcrunchEntityTest extends TestCase
         $techcrunch_ref01_ent = $client->Techcrunch(null);
         $techcrunch_ref01_match = [];
 
-        [$techcrunch_ref01_list_result, $err] = $techcrunch_ref01_ent->list($techcrunch_ref01_match, null);
-        $this->assertNull($err);
+        $techcrunch_ref01_list_result = $techcrunch_ref01_ent->list($techcrunch_ref01_match, null);
         $this->assertIsArray($techcrunch_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function techcrunch_basic_setup($extra)
         "API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID" => $idmap,
         "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-        "API_NEWSENDPOINT_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function techcrunch_basic_setup($extra)
     if ($env["API_NEWSENDPOINT_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["API_NEWSENDPOINT_APIKEY"],
             ],
             $extra ?? [],
         ]);

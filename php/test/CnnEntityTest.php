@@ -50,8 +50,7 @@ class CnnEntityTest extends TestCase
         $cnn_ref01_ent = $client->Cnn(null);
         $cnn_ref01_match = [];
 
-        [$cnn_ref01_list_result, $err] = $cnn_ref01_ent->list($cnn_ref01_match, null);
-        $this->assertNull($err);
+        $cnn_ref01_list_result = $cnn_ref01_ent->list($cnn_ref01_match, null);
         $this->assertIsArray($cnn_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function cnn_basic_setup($extra)
         "API_NEWSENDPOINT_TEST_CNN_ENTID" => $idmap,
         "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN" => "FALSE",
-        "API_NEWSENDPOINT_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function cnn_basic_setup($extra)
     if ($env["API_NEWSENDPOINT_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["API_NEWSENDPOINT_APIKEY"],
             ],
             $extra ?? [],
         ]);

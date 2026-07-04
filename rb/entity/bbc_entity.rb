@@ -45,6 +45,7 @@ class BbcEntity
     end
   end
 
+  # @return [Bbc, Hash] the current Bbc data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class BbcEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Bbc fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class BbcEntity
   
 
   
+  # List Bbc items matching the given filter.
+  #
+  # @param reqmatch [BbcListMatch, Hash, nil] match filter (any subset of Bbc fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Bbc>, Array] the matching Bbc items; raises Api2newsEndpointError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

@@ -9,12 +9,9 @@ The Lua SDK for the Api2newsEndpoint API — an entity-oriented client using Lua
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-api2news-endpoint
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("api2news-endpoint_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("API2NEWS-ENDPOINT_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List bbcs
 
 ```lua
-local result, err = client:Bbc():list()
+local result, err = client:bbc():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -93,7 +88,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Api2newsEndpoint():load({ id = "test01" })
+local result, err = client:bbc():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -126,8 +121,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-API2NEWS-ENDPOINT_TEST_LIVE=TRUE
-API2NEWS-ENDPOINT_APIKEY=<your-key>
+API2NEWS_ENDPOINT_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -150,7 +144,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -292,7 +285,7 @@ API path: `/api/news/techcrunch`
 
 ### Bbc
 
-Create an instance: `const bbc = client.Bbc()`
+Create an instance: `const bbc = client.bbc`
 
 #### Operations
 
@@ -317,13 +310,13 @@ Create an instance: `const bbc = client.Bbc()`
 #### Example: List
 
 ```ts
-const bbcs = await client.Bbc().list()
+const bbcs = await client.bbc.list()
 ```
 
 
 ### Cnn
 
-Create an instance: `const cnn = client.Cnn()`
+Create an instance: `const cnn = client.cnn`
 
 #### Operations
 
@@ -348,13 +341,13 @@ Create an instance: `const cnn = client.Cnn()`
 #### Example: List
 
 ```ts
-const cnns = await client.Cnn().list()
+const cnns = await client.cnn.list()
 ```
 
 
 ### New
 
-Create an instance: `const new = client.New()`
+Create an instance: `const new = client.new`
 
 #### Operations
 
@@ -379,13 +372,13 @@ Create an instance: `const new = client.New()`
 #### Example: List
 
 ```ts
-const news = await client.New().list()
+const news = await client.new.list()
 ```
 
 
 ### Techcrunch
 
-Create an instance: `const techcrunch = client.Techcrunch()`
+Create an instance: `const techcrunch = client.techcrunch`
 
 #### Operations
 
@@ -410,7 +403,7 @@ Create an instance: `const techcrunch = client.Techcrunch()`
 #### Example: List
 
 ```ts
-const techcrunchs = await client.Techcrunch().list()
+const techcrunchs = await client.techcrunch.list()
 ```
 
 
@@ -485,11 +478,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local bbc = client:bbc()
+bbc:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- bbc:data_get() now returns the loaded bbc data
+-- bbc:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

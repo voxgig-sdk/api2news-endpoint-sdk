@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -96,7 +95,7 @@ same parameters as `direct()`.
 ## BbcEntity
 
 ```lua
-local bbc = client:Bbc(nil)
+local bbc = client:bbc(nil)
 ```
 
 ### Fields
@@ -120,7 +119,7 @@ local bbc = client:Bbc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Bbc():list()
+local results, err = client:bbc():list()
 ```
 
 ### Common Methods
@@ -156,7 +155,7 @@ Return the entity name.
 ## CnnEntity
 
 ```lua
-local cnn = client:Cnn(nil)
+local cnn = client:cnn(nil)
 ```
 
 ### Fields
@@ -180,7 +179,7 @@ local cnn = client:Cnn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Cnn():list()
+local results, err = client:cnn():list()
 ```
 
 ### Common Methods
@@ -216,7 +215,7 @@ Return the entity name.
 ## NewEntity
 
 ```lua
-local new = client:New(nil)
+local new = client:new(nil)
 ```
 
 ### Fields
@@ -240,7 +239,7 @@ local new = client:New(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:New():list()
+local results, err = client:new():list()
 ```
 
 ### Common Methods
@@ -276,7 +275,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```lua
-local techcrunch = client:Techcrunch(nil)
+local techcrunch = client:techcrunch(nil)
 ```
 
 ### Fields
@@ -300,7 +299,7 @@ local techcrunch = client:Techcrunch(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Techcrunch():list()
+local results, err = client:techcrunch():list()
 ```
 
 ### Common Methods

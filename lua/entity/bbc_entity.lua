@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch BbcListMatch
+---@param ctrl? table
+---@return Bbc[]
+---@return string? err
 function BbcEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

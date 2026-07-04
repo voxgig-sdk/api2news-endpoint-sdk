@@ -144,16 +144,23 @@ class Api2newsEndpointSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class Api2newsEndpointSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,30 +212,74 @@ class Api2newsEndpointSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def bbc(self):
+        """Idiomatic facade: client.bbc.list() / client.bbc.load({"id": ...})."""
+        from entity.bbc_entity import BbcEntity
+        cached = getattr(self, "_bbc", None)
+        if cached is None:
+            cached = BbcEntity(self, None)
+            self._bbc = cached
+        return cached
 
     def Bbc(self, data=None):
+        # Deprecated: use client.bbc instead.
         from entity.bbc_entity import BbcEntity
         return BbcEntity(self, data)
 
 
+    @property
+    def cnn(self):
+        """Idiomatic facade: client.cnn.list() / client.cnn.load({"id": ...})."""
+        from entity.cnn_entity import CnnEntity
+        cached = getattr(self, "_cnn", None)
+        if cached is None:
+            cached = CnnEntity(self, None)
+            self._cnn = cached
+        return cached
+
     def Cnn(self, data=None):
+        # Deprecated: use client.cnn instead.
         from entity.cnn_entity import CnnEntity
         return CnnEntity(self, data)
 
 
+    @property
+    def new(self):
+        """Idiomatic facade: client.new.list() / client.new.load({"id": ...})."""
+        from entity.new_entity import NewEntity
+        cached = getattr(self, "_new", None)
+        if cached is None:
+            cached = NewEntity(self, None)
+            self._new = cached
+        return cached
+
     def New(self, data=None):
+        # Deprecated: use client.new instead.
         from entity.new_entity import NewEntity
         return NewEntity(self, data)
 
 
+    @property
+    def techcrunch(self):
+        """Idiomatic facade: client.techcrunch.list() / client.techcrunch.load({"id": ...})."""
+        from entity.techcrunch_entity import TechcrunchEntity
+        cached = getattr(self, "_techcrunch", None)
+        if cached is None:
+            cached = TechcrunchEntity(self, None)
+            self._techcrunch = cached
+        return cached
+
     def Techcrunch(self, data=None):
+        # Deprecated: use client.techcrunch instead.
         from entity.techcrunch_entity import TechcrunchEntity
         return TechcrunchEntity(self, data)
 

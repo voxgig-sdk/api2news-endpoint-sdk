@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'Api2newsEndpoint_types'
+
 
 class Api2newsEndpointSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class Api2newsEndpointSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class Api2newsEndpointSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue Api2newsEndpointError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = Api2newsEndpointHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class Api2newsEndpointSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,34 +198,62 @@ class Api2newsEndpointSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.bbc.list / client.bbc.load({ "id" => ... })
+  def bbc
+    require_relative 'entity/bbc_entity'
+    @bbc ||= BbcEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.bbc instead.
   def Bbc(data = nil)
     require_relative 'entity/bbc_entity'
     BbcEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.cnn.list / client.cnn.load({ "id" => ... })
+  def cnn
+    require_relative 'entity/cnn_entity'
+    @cnn ||= CnnEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.cnn instead.
   def Cnn(data = nil)
     require_relative 'entity/cnn_entity'
     CnnEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.new.list / client.new.load({ "id" => ... })
+  def new
+    require_relative 'entity/new_entity'
+    @new ||= NewEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.new instead.
   def New(data = nil)
     require_relative 'entity/new_entity'
     NewEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.techcrunch.list / client.techcrunch.load({ "id" => ... })
+  def techcrunch
+    require_relative 'entity/techcrunch_entity'
+    @techcrunch ||= TechcrunchEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.techcrunch instead.
   def Techcrunch(data = nil)
     require_relative 'entity/techcrunch_entity'
     TechcrunchEntity.new(self, data)

@@ -5,6 +5,8 @@ import { CnnEntity } from './entity/CnnEntity'
 import { NewEntity } from './entity/NewEntity'
 import { TechcrunchEntity } from './entity/TechcrunchEntity'
 
+export type * from './Api2newsEndpointTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -205,24 +207,56 @@ class Api2newsEndpointSDK {
 
 
 
+  _bbc?: BbcEntity
+
+  // Idiomatic facade: `client.bbc.list()` / `client.bbc.load({ id })`.
+  get bbc(): BbcEntity {
+    return (this._bbc ??= new BbcEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.bbc` instead. */
   Bbc(data?: any) {
     const self = this
     return new BbcEntity(self,data)
   }
 
 
+  _cnn?: CnnEntity
+
+  // Idiomatic facade: `client.cnn.list()` / `client.cnn.load({ id })`.
+  get cnn(): CnnEntity {
+    return (this._cnn ??= new CnnEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.cnn` instead. */
   Cnn(data?: any) {
     const self = this
     return new CnnEntity(self,data)
   }
 
 
+  _new?: NewEntity
+
+  // Idiomatic facade: `client.new.list()` / `client.new.load({ id })`.
+  get new(): NewEntity {
+    return (this._new ??= new NewEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.new` instead. */
   New(data?: any) {
     const self = this
     return new NewEntity(self,data)
   }
 
 
+  _techcrunch?: TechcrunchEntity
+
+  // Idiomatic facade: `client.techcrunch.list()` / `client.techcrunch.load({ id })`.
+  get techcrunch(): TechcrunchEntity {
+    return (this._techcrunch ??= new TechcrunchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.techcrunch` instead. */
   Techcrunch(data?: any) {
     const self = this
     return new TechcrunchEntity(self,data)

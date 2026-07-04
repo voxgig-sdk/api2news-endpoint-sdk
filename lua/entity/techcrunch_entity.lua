@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch TechcrunchListMatch
+---@param ctrl? table
+---@return Techcrunch[]
+---@return string? err
 function TechcrunchEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Techcrunch,
+  TechcrunchListMatch,
+} from '../Api2newsEndpointTypes'
 
 // TODO: needs Entity superclass
-class TechcrunchEntity extends Api2newsEndpointEntityBase {
+class TechcrunchEntity extends Api2newsEndpointEntityBase<Techcrunch> {
 
   constructor(client: Api2newsEndpointSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class TechcrunchEntity extends Api2newsEndpointEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: TechcrunchListMatch, ctrl?: Control): Promise<Techcrunch[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class TechcrunchEntity extends Api2newsEndpointEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Techcrunch[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

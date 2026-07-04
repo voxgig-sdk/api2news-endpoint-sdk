@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         url: "https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt"
       }

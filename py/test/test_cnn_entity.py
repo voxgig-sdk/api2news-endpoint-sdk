@@ -50,8 +50,7 @@ class TestCnnEntity:
         cnn_ref01_ent = client.Cnn(None)
         cnn_ref01_match = {}
 
-        cnn_ref01_list_result, err = cnn_ref01_ent.list(cnn_ref01_match, None)
-        assert err is None
+        cnn_ref01_list_result = cnn_ref01_ent.list(cnn_ref01_match, None)
         assert isinstance(cnn_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _cnn_basic_setup(extra):
         "API_NEWSENDPOINT_TEST_CNN_ENTID": idmap,
         "API_NEWSENDPOINT_TEST_LIVE": "FALSE",
         "API_NEWSENDPOINT_TEST_EXPLAIN": "FALSE",
-        "API_NEWSENDPOINT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _cnn_basic_setup(extra):
     if env.get("API_NEWSENDPOINT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("API_NEWSENDPOINT_APIKEY"),
             },
             extra or {},
         ])

@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -146,7 +145,7 @@ Alias for `Api2newsEndpointSDK.test()`.
 ## BbcEntity
 
 ```ts
-const bbc = client.Bbc()
+const bbc = client.bbc
 ```
 
 ### Fields
@@ -170,7 +169,7 @@ const bbc = client.Bbc()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Bbc().list()
+const results = await client.bbc.list()
 ```
 
 ### Common Methods
@@ -204,7 +203,7 @@ Return a copy of the entity options.
 ## CnnEntity
 
 ```ts
-const cnn = client.Cnn()
+const cnn = client.cnn
 ```
 
 ### Fields
@@ -228,7 +227,7 @@ const cnn = client.Cnn()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Cnn().list()
+const results = await client.cnn.list()
 ```
 
 ### Common Methods
@@ -262,7 +261,7 @@ Return a copy of the entity options.
 ## NewEntity
 
 ```ts
-const new = client.New()
+const new = client.new
 ```
 
 ### Fields
@@ -286,7 +285,7 @@ const new = client.New()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.New().list()
+const results = await client.new.list()
 ```
 
 ### Common Methods
@@ -320,7 +319,7 @@ Return a copy of the entity options.
 ## TechcrunchEntity
 
 ```ts
-const techcrunch = client.Techcrunch()
+const techcrunch = client.techcrunch
 ```
 
 ### Fields
@@ -344,7 +343,7 @@ const techcrunch = client.Techcrunch()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Techcrunch().list()
+const results = await client.techcrunch.list()
 ```
 
 ### Common Methods
