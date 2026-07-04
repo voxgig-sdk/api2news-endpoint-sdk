@@ -31,17 +31,17 @@ local sdk = require("api2news-endpoint_sdk")
 local client = sdk.new()
 ```
 
-### 2. List bbcs
+### 2. List bbc records
+
+Entity operations return `(value, err)`. For `list`, `value` is the
+array of records itself — iterate it directly (there is no wrapper).
 
 ```lua
-local result, err = client:bbc():list()
+local bbcs, err = client:Bbc():list()
 if err then error(err) end
 
-if type(result) == "table" then
-  for _, item in ipairs(result) do
-    local d = item:data_get()
-    print(d["id"], d["name"])
-  end
+for _, item in ipairs(bbcs) do
+  print(item["id"], item["name"])
 end
 ```
 
@@ -88,8 +88,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:bbc():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Bbc():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -192,17 +192,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local bbc, err = client:Bbc():load({ id = "example_id" })
+    if err then error(err) end
+    -- bbc is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -285,7 +290,7 @@ API path: `/api/news/techcrunch`
 
 ### Bbc
 
-Create an instance: `const bbc = client.bbc`
+Create an instance: `local bbc = client:Bbc(nil)`
 
 #### Operations
 
@@ -309,14 +314,14 @@ Create an instance: `const bbc = client.bbc`
 
 #### Example: List
 
-```ts
-const bbcs = await client.bbc.list()
+```lua
+local bbcs, err = client:Bbc():list()
 ```
 
 
 ### Cnn
 
-Create an instance: `const cnn = client.cnn`
+Create an instance: `local cnn = client:Cnn(nil)`
 
 #### Operations
 
@@ -340,14 +345,14 @@ Create an instance: `const cnn = client.cnn`
 
 #### Example: List
 
-```ts
-const cnns = await client.cnn.list()
+```lua
+local cnns, err = client:Cnn():list()
 ```
 
 
 ### New
 
-Create an instance: `const new = client.new`
+Create an instance: `local new = client:New(nil)`
 
 #### Operations
 
@@ -371,14 +376,14 @@ Create an instance: `const new = client.new`
 
 #### Example: List
 
-```ts
-const news = await client.new.list()
+```lua
+local news, err = client:New():list()
 ```
 
 
 ### Techcrunch
 
-Create an instance: `const techcrunch = client.techcrunch`
+Create an instance: `local techcrunch = client:Techcrunch(nil)`
 
 #### Operations
 
@@ -402,8 +407,8 @@ Create an instance: `const techcrunch = client.techcrunch`
 
 #### Example: List
 
-```ts
-const techcrunchs = await client.techcrunch.list()
+```lua
+local techcrunchs, err = client:Techcrunch():list()
 ```
 
 
@@ -478,7 +483,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local bbc = client:bbc()
+local bbc = client:Bbc()
 bbc:load({ id = "example_id" })
 
 -- bbc:data_get() now returns the loaded bbc data

@@ -97,7 +97,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## BbcEntity
 
 ```php
-$bbc = $client->bbc();
+$bbc = $client->Bbc();
 ```
 
 ### Fields
@@ -121,7 +121,7 @@ $bbc = $client->bbc();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->bbc()->list([]);
+$results = $client->Bbc()->list([]);
 ```
 
 ### Common Methods
@@ -157,7 +157,7 @@ Return the entity name.
 ## CnnEntity
 
 ```php
-$cnn = $client->cnn();
+$cnn = $client->Cnn();
 ```
 
 ### Fields
@@ -181,7 +181,7 @@ $cnn = $client->cnn();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->cnn()->list([]);
+$results = $client->Cnn()->list([]);
 ```
 
 ### Common Methods
@@ -217,7 +217,7 @@ Return the entity name.
 ## NewEntity
 
 ```php
-$new = $client->new();
+$new = $client->New();
 ```
 
 ### Fields
@@ -241,7 +241,7 @@ $new = $client->new();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->new()->list([]);
+$results = $client->New()->list([]);
 ```
 
 ### Common Methods
@@ -277,7 +277,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```php
-$techcrunch = $client->techcrunch();
+$techcrunch = $client->Techcrunch();
 ```
 
 ### Fields
@@ -301,7 +301,7 @@ $techcrunch = $client->techcrunch();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->techcrunch()->list([]);
+$results = $client->Techcrunch()->list([]);
 ```
 
 ### Common Methods

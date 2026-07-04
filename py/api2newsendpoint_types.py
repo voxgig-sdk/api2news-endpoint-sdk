@@ -4,113 +4,109 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Bbc:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class Bbc(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class BbcListMatch:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class BbcListMatch(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class Cnn:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class Cnn(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class CnnListMatch:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class CnnListMatch(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class New:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class New(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class NewListMatch:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class NewListMatch(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class Techcrunch:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
+class Techcrunch(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str
 
 
-@dataclass
-class TechcrunchListMatch:
-    author: Optional[str] = None
-    content: Optional[str] = None
-    description: Optional[str] = None
-    id: Optional[str] = None
-    image_url: Optional[str] = None
-    published_at: Optional[str] = None
-    source: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
-
+class TechcrunchListMatch(TypedDict, total=False):
+    author: str
+    content: str
+    description: str
+    id: str
+    image_url: str
+    published_at: str
+    source: str
+    title: str
+    url: str

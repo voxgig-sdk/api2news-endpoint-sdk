@@ -26,9 +26,11 @@ import { Api2newsEndpointSDK } from '@voxgig-sdk/api2news-endpoint'
 
 const client = new Api2newsEndpointSDK()
 
-// List all bbcs
-const bbcs = await client.bbc.list()
-console.log(bbcs.data)
+// List all bbcs (returns Bbc[])
+const bbcs = await client.Bbc().list()
+for (const bbc of bbcs) {
+  console.log(bbc)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -86,9 +88,10 @@ from api2newsendpoint_sdk import Api2newsEndpointSDK
 
 client = Api2newsEndpointSDK()
 
-# List all bbcs
-bbcs = client.bbc.list()
-print(bbcs)
+# List all bbcs (returns a list, raises on error)
+bbcs = client.Bbc().list({})
+for bbc in bbcs:
+    print(bbc)
 ```
 
 ### PHP
@@ -99,8 +102,8 @@ require_once 'api2newsendpoint_sdk.php';
 
 $client = new Api2newsEndpointSDK();
 
-// List all bbcs (throws on error)
-$bbcs = $client->bbc()->list();
+// List all bbcs (returns an array; throws on error)
+$bbcs = $client->Bbc()->list();
 print_r($bbcs);
 ```
 
@@ -123,8 +126,8 @@ require_relative "Api2newsEndpoint_sdk"
 
 client = Api2newsEndpointSDK.new
 
-# List all bbcs
-bbcs = client.bbc.list
+# List all bbcs (returns an Array; raises on error)
+bbcs = client.Bbc.list
 puts bbcs
 ```
 
@@ -136,7 +139,7 @@ local sdk = require("api2news-endpoint_sdk")
 local client = sdk.new()
 
 -- List all bbcs
-local bbcs, err = client:bbc():list()
+local bbcs, err = client:Bbc():list()
 print(bbcs)
 ```
 
@@ -149,22 +152,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = Api2newsEndpointSDK.test()
-const result = await client.bbc.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const bbc = await client.Bbc().load({ id: 'test01' })
+// bbc is a bare Bbc populated with mock data
+console.log(bbc)
 ```
 
 ### Python
 
 ```python
 client = Api2newsEndpointSDK.test()
-result = client.bbc.load({"id": "test01"})
+bbc = client.Bbc().load({"id": "test01"})
+print(bbc)
 ```
 
 ### PHP
 
 ```php
-$client = Api2newsEndpointSDK::test();
-$result = $client->bbc()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = Api2newsEndpointSDK::test([
+    "entity" => ["bbc" => ["test01" => ["id" => "test01"]]],
+]);
+$bbc = $client->Bbc()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -179,15 +187,18 @@ result, err := client.Bbc(nil).Load(
 ### Ruby
 
 ```ruby
-client = Api2newsEndpointSDK.test
-result = client.bbc.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = Api2newsEndpointSDK.test({
+  "entity" => { "bbc" => { "test01" => { "id" => "test01" } } },
+})
+bbc = client.Bbc.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:bbc():load({ id = "test01" })
+local result, err = client:Bbc():load({ id = "test01" })
 ```
 
 ## How it works
@@ -235,6 +246,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

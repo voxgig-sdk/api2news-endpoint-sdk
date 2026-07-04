@@ -98,7 +98,7 @@ same parameters as `direct()`. Raises on error.
 ## BbcEntity
 
 ```ruby
-bbc = client.bbc
+bbc = client.Bbc
 ```
 
 ### Fields
@@ -122,7 +122,7 @@ bbc = client.bbc
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.bbc.list(nil)
+results = client.Bbc.list(nil)
 ```
 
 ### Common Methods
@@ -158,7 +158,7 @@ Return the entity name.
 ## CnnEntity
 
 ```ruby
-cnn = client.cnn
+cnn = client.Cnn
 ```
 
 ### Fields
@@ -182,7 +182,7 @@ cnn = client.cnn
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.cnn.list(nil)
+results = client.Cnn.list(nil)
 ```
 
 ### Common Methods
@@ -218,7 +218,7 @@ Return the entity name.
 ## NewEntity
 
 ```ruby
-new = client.new
+new = client.New
 ```
 
 ### Fields
@@ -242,7 +242,7 @@ new = client.new
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.new.list(nil)
+results = client.New.list(nil)
 ```
 
 ### Common Methods
@@ -278,7 +278,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```ruby
-techcrunch = client.techcrunch
+techcrunch = client.Techcrunch
 ```
 
 ### Fields
@@ -302,7 +302,7 @@ techcrunch = client.techcrunch
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.techcrunch.list(nil)
+results = client.Techcrunch.list(nil)
 ```
 
 ### Common Methods

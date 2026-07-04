@@ -207,56 +207,28 @@ class Api2newsEndpointSDK {
 
 
 
-  _bbc?: BbcEntity
-
-  // Idiomatic facade: `client.bbc.list()` / `client.bbc.load({ id })`.
-  get bbc(): BbcEntity {
-    return (this._bbc ??= new BbcEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.bbc` instead. */
+  // Entity access: `client.Bbc().list()` / `client.Bbc().load({ id })`.
   Bbc(data?: any) {
     const self = this
     return new BbcEntity(self,data)
   }
 
 
-  _cnn?: CnnEntity
-
-  // Idiomatic facade: `client.cnn.list()` / `client.cnn.load({ id })`.
-  get cnn(): CnnEntity {
-    return (this._cnn ??= new CnnEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.cnn` instead. */
+  // Entity access: `client.Cnn().list()` / `client.Cnn().load({ id })`.
   Cnn(data?: any) {
     const self = this
     return new CnnEntity(self,data)
   }
 
 
-  _new?: NewEntity
-
-  // Idiomatic facade: `client.new.list()` / `client.new.load({ id })`.
-  get new(): NewEntity {
-    return (this._new ??= new NewEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.new` instead. */
+  // Entity access: `client.New().list()` / `client.New().load({ id })`.
   New(data?: any) {
     const self = this
     return new NewEntity(self,data)
   }
 
 
-  _techcrunch?: TechcrunchEntity
-
-  // Idiomatic facade: `client.techcrunch.list()` / `client.techcrunch.load({ id })`.
-  get techcrunch(): TechcrunchEntity {
-    return (this._techcrunch ??= new TechcrunchEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.techcrunch` instead. */
+  // Entity access: `client.Techcrunch().list()` / `client.Techcrunch().load({ id })`.
   Techcrunch(data?: any) {
     const self = this
     return new TechcrunchEntity(self,data)

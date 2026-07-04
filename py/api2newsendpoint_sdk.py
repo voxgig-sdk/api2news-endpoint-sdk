@@ -220,73 +220,33 @@ class Api2newsEndpointSDK:
         }
 
 
-    @property
-    def bbc(self):
-        """Idiomatic facade: client.bbc.list() / client.bbc.load({"id": ...})."""
-        from entity.bbc_entity import BbcEntity
-        cached = getattr(self, "_bbc", None)
-        if cached is None:
-            cached = BbcEntity(self, None)
-            self._bbc = cached
-        return cached
-
-    def Bbc(self, data=None):
-        # Deprecated: use client.bbc instead.
+    def Bbc(self, data=None) -> "BbcEntity":
+        """Entity factory: client.Bbc().list({}) / client.Bbc().load({"id": ...})."""
         from entity.bbc_entity import BbcEntity
         return BbcEntity(self, data)
 
 
-    @property
-    def cnn(self):
-        """Idiomatic facade: client.cnn.list() / client.cnn.load({"id": ...})."""
-        from entity.cnn_entity import CnnEntity
-        cached = getattr(self, "_cnn", None)
-        if cached is None:
-            cached = CnnEntity(self, None)
-            self._cnn = cached
-        return cached
-
-    def Cnn(self, data=None):
-        # Deprecated: use client.cnn instead.
+    def Cnn(self, data=None) -> "CnnEntity":
+        """Entity factory: client.Cnn().list({}) / client.Cnn().load({"id": ...})."""
         from entity.cnn_entity import CnnEntity
         return CnnEntity(self, data)
 
 
-    @property
-    def new(self):
-        """Idiomatic facade: client.new.list() / client.new.load({"id": ...})."""
-        from entity.new_entity import NewEntity
-        cached = getattr(self, "_new", None)
-        if cached is None:
-            cached = NewEntity(self, None)
-            self._new = cached
-        return cached
-
-    def New(self, data=None):
-        # Deprecated: use client.new instead.
+    def New(self, data=None) -> "NewEntity":
+        """Entity factory: client.New().list({}) / client.New().load({"id": ...})."""
         from entity.new_entity import NewEntity
         return NewEntity(self, data)
 
 
-    @property
-    def techcrunch(self):
-        """Idiomatic facade: client.techcrunch.list() / client.techcrunch.load({"id": ...})."""
-        from entity.techcrunch_entity import TechcrunchEntity
-        cached = getattr(self, "_techcrunch", None)
-        if cached is None:
-            cached = TechcrunchEntity(self, None)
-            self._techcrunch = cached
-        return cached
-
-    def Techcrunch(self, data=None):
-        # Deprecated: use client.techcrunch instead.
+    def Techcrunch(self, data=None) -> "TechcrunchEntity":
+        """Entity factory: client.Techcrunch().list({}) / client.Techcrunch().load({"id": ...})."""
         from entity.techcrunch_entity import TechcrunchEntity
         return TechcrunchEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "Api2newsEndpointSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -306,3 +266,12 @@ class Api2newsEndpointSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.bbc_entity import BbcEntity
+    from entity.cnn_entity import CnnEntity
+    from entity.new_entity import NewEntity
+    from entity.techcrunch_entity import TechcrunchEntity

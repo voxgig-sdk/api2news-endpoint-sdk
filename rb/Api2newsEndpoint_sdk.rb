@@ -208,52 +208,28 @@ class Api2newsEndpointSDK
   end
 
 
-  # Idiomatic facade: client.bbc.list / client.bbc.load({ "id" => ... })
-  def bbc
-    require_relative 'entity/bbc_entity'
-    @bbc ||= BbcEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.bbc instead.
+  # Canonical facade: client.Bbc.list / client.Bbc.load({ "id" => ... })
   def Bbc(data = nil)
     require_relative 'entity/bbc_entity'
     BbcEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.cnn.list / client.cnn.load({ "id" => ... })
-  def cnn
-    require_relative 'entity/cnn_entity'
-    @cnn ||= CnnEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.cnn instead.
+  # Canonical facade: client.Cnn.list / client.Cnn.load({ "id" => ... })
   def Cnn(data = nil)
     require_relative 'entity/cnn_entity'
     CnnEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.new.list / client.new.load({ "id" => ... })
-  def new
-    require_relative 'entity/new_entity'
-    @new ||= NewEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.new instead.
+  # Canonical facade: client.New.list / client.New.load({ "id" => ... })
   def New(data = nil)
     require_relative 'entity/new_entity'
     NewEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.techcrunch.list / client.techcrunch.load({ "id" => ... })
-  def techcrunch
-    require_relative 'entity/techcrunch_entity'
-    @techcrunch ||= TechcrunchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.techcrunch instead.
+  # Canonical facade: client.Techcrunch.list / client.Techcrunch.load({ "id" => ... })
   def Techcrunch(data = nil)
     require_relative 'entity/techcrunch_entity'
     TechcrunchEntity.new(self, data)

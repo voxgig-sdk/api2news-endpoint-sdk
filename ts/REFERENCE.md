@@ -145,7 +145,7 @@ Alias for `Api2newsEndpointSDK.test()`.
 ## BbcEntity
 
 ```ts
-const bbc = client.bbc
+const bbc = client.Bbc()
 ```
 
 ### Fields
@@ -169,7 +169,7 @@ const bbc = client.bbc
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.bbc.list()
+const results = await client.Bbc().list()
 ```
 
 ### Common Methods
@@ -203,7 +203,7 @@ Return a copy of the entity options.
 ## CnnEntity
 
 ```ts
-const cnn = client.cnn
+const cnn = client.Cnn()
 ```
 
 ### Fields
@@ -227,7 +227,7 @@ const cnn = client.cnn
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.cnn.list()
+const results = await client.Cnn().list()
 ```
 
 ### Common Methods
@@ -261,7 +261,7 @@ Return a copy of the entity options.
 ## NewEntity
 
 ```ts
-const new = client.new
+const new = client.New()
 ```
 
 ### Fields
@@ -285,7 +285,7 @@ const new = client.new
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.new.list()
+const results = await client.New().list()
 ```
 
 ### Common Methods
@@ -319,7 +319,7 @@ Return a copy of the entity options.
 ## TechcrunchEntity
 
 ```ts
-const techcrunch = client.techcrunch
+const techcrunch = client.Techcrunch()
 ```
 
 ### Fields
@@ -343,7 +343,7 @@ const techcrunch = client.techcrunch
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.techcrunch.list()
+const results = await client.Techcrunch().list()
 ```
 
 ### Common Methods

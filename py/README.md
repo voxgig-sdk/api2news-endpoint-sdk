@@ -31,14 +31,16 @@ from api2newsendpoint_sdk import Api2newsEndpointSDK
 client = Api2newsEndpointSDK()
 ```
 
-### 2. List bbcs
+### 2. List bbc records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.bbc.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    bbcs = client.Bbc().list({})
+    for bbc in bbcs:
+        print(bbc)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = Api2newsEndpointSDK.test()
 
-result = client.bbc.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+bbc = client.Bbc().load({"id": "test01"})
+# bbc contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -285,7 +288,7 @@ API path: `/api/news/techcrunch`
 
 ### Bbc
 
-Create an instance: `const bbc = client.bbc`
+Create an instance: `bbc = client.Bbc()`
 
 #### Operations
 
@@ -309,14 +312,14 @@ Create an instance: `const bbc = client.bbc`
 
 #### Example: List
 
-```ts
-const bbcs = await client.bbc.list()
+```python
+bbcs = client.Bbc().list({})
 ```
 
 
 ### Cnn
 
-Create an instance: `const cnn = client.cnn`
+Create an instance: `cnn = client.Cnn()`
 
 #### Operations
 
@@ -340,14 +343,14 @@ Create an instance: `const cnn = client.cnn`
 
 #### Example: List
 
-```ts
-const cnns = await client.cnn.list()
+```python
+cnns = client.Cnn().list({})
 ```
 
 
 ### New
 
-Create an instance: `const new = client.new`
+Create an instance: `new = client.New()`
 
 #### Operations
 
@@ -371,14 +374,14 @@ Create an instance: `const new = client.new`
 
 #### Example: List
 
-```ts
-const news = await client.new.list()
+```python
+news = client.New().list({})
 ```
 
 
 ### Techcrunch
 
-Create an instance: `const techcrunch = client.techcrunch`
+Create an instance: `techcrunch = client.Techcrunch()`
 
 #### Operations
 
@@ -402,8 +405,8 @@ Create an instance: `const techcrunch = client.techcrunch`
 
 #### Example: List
 
-```ts
-const techcrunchs = await client.techcrunch.list()
+```python
+techcrunchs = client.Techcrunch().list({})
 ```
 
 
@@ -477,7 +480,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-bbc = client.bbc
+bbc = client.Bbc()
 bbc.load({"id": "example_id"})
 
 # bbc.data_get() now returns the loaded bbc data

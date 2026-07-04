@@ -28,16 +28,14 @@ require_relative "Api2newsEndpoint_sdk"
 client = Api2newsEndpointSDK.new
 ```
 
-### 2. List bbcs
+### 2. List bbc records
 
 ```ruby
 begin
-  result = client.bbc.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Bbc records — iterate directly.
+  bbcs = client.Bbc.list
+  bbcs.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = Api2newsEndpointSDK.test
+client = Api2newsEndpointSDK.test({
+  "entity" => { "bbc" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.bbc.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+bbc = client.Bbc.load({ "id" => "test01" })
+puts bbc
 ```
 
 ### Use a custom fetch function
@@ -288,7 +290,7 @@ API path: `/api/news/techcrunch`
 
 ### Bbc
 
-Create an instance: `const bbc = client.bbc`
+Create an instance: `bbc = client.Bbc`
 
 #### Operations
 
@@ -312,14 +314,15 @@ Create an instance: `const bbc = client.bbc`
 
 #### Example: List
 
-```ts
-const bbcs = await client.bbc.list()
+```ruby
+# list returns an Array of Bbc records (raises on error).
+bbcs = client.Bbc.list
 ```
 
 
 ### Cnn
 
-Create an instance: `const cnn = client.cnn`
+Create an instance: `cnn = client.Cnn`
 
 #### Operations
 
@@ -343,14 +346,15 @@ Create an instance: `const cnn = client.cnn`
 
 #### Example: List
 
-```ts
-const cnns = await client.cnn.list()
+```ruby
+# list returns an Array of Cnn records (raises on error).
+cnns = client.Cnn.list
 ```
 
 
 ### New
 
-Create an instance: `const new = client.new`
+Create an instance: `new = client.New`
 
 #### Operations
 
@@ -374,14 +378,15 @@ Create an instance: `const new = client.new`
 
 #### Example: List
 
-```ts
-const news = await client.new.list()
+```ruby
+# list returns an Array of New records (raises on error).
+news = client.New.list
 ```
 
 
 ### Techcrunch
 
-Create an instance: `const techcrunch = client.techcrunch`
+Create an instance: `techcrunch = client.Techcrunch`
 
 #### Operations
 
@@ -405,8 +410,9 @@ Create an instance: `const techcrunch = client.techcrunch`
 
 #### Example: List
 
-```ts
-const techcrunchs = await client.techcrunch.list()
+```ruby
+# list returns an Array of Techcrunch records (raises on error).
+techcrunchs = client.Techcrunch.list
 ```
 
 
@@ -481,7 +487,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-bbc = client.bbc
+bbc = client.Bbc
 bbc.load({ "id" => "example_id" })
 
 # bbc.data_get now returns the loaded bbc data

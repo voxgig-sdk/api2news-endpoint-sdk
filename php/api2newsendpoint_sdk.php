@@ -233,10 +233,10 @@ class Api2newsEndpointSDK
 
     private $_bbc = null;
 
-    // Idiomatic facade: $client->bbc()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Bbc() (PHP method
-    // names are case-insensitive).
-    public function bbc($data = null)
+    // Canonical facade: $client->Bbc()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->bbc()
+    // resolves here too.
+    public function Bbc($data = null)
     {
         require_once __DIR__ . '/entity/bbc_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class Api2newsEndpointSDK
 
     private $_cnn = null;
 
-    // Idiomatic facade: $client->cnn()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Cnn() (PHP method
-    // names are case-insensitive).
-    public function cnn($data = null)
+    // Canonical facade: $client->Cnn()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->cnn()
+    // resolves here too.
+    public function Cnn($data = null)
     {
         require_once __DIR__ . '/entity/cnn_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class Api2newsEndpointSDK
 
     private $_new = null;
 
-    // Idiomatic facade: $client->new()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias New() (PHP method
-    // names are case-insensitive).
-    public function new($data = null)
+    // Canonical facade: $client->New()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->new()
+    // resolves here too.
+    public function New($data = null)
     {
         require_once __DIR__ . '/entity/new_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class Api2newsEndpointSDK
 
     private $_techcrunch = null;
 
-    // Idiomatic facade: $client->techcrunch()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Techcrunch() (PHP method
-    // names are case-insensitive).
-    public function techcrunch($data = null)
+    // Canonical facade: $client->Techcrunch()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->techcrunch()
+    // resolves here too.
+    public function Techcrunch($data = null)
     {
         require_once __DIR__ . '/entity/techcrunch_entity.php';
         if ($data === null) {

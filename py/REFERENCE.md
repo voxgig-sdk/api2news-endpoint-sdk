@@ -92,7 +92,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## BbcEntity
 
 ```python
-bbc = client.bbc
+bbc = client.Bbc()
 ```
 
 ### Fields
@@ -116,7 +116,9 @@ bbc = client.bbc
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.bbc.list({})
+results = client.Bbc().list({})
+for bbc in results:
+    print(bbc)
 ```
 
 ### Common Methods
@@ -151,7 +153,7 @@ Return the entity name.
 ## CnnEntity
 
 ```python
-cnn = client.cnn
+cnn = client.Cnn()
 ```
 
 ### Fields
@@ -175,7 +177,9 @@ cnn = client.cnn
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.cnn.list({})
+results = client.Cnn().list({})
+for cnn in results:
+    print(cnn)
 ```
 
 ### Common Methods
@@ -210,7 +214,7 @@ Return the entity name.
 ## NewEntity
 
 ```python
-new = client.new
+new = client.New()
 ```
 
 ### Fields
@@ -234,7 +238,9 @@ new = client.new
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.new.list({})
+results = client.New().list({})
+for new in results:
+    print(new)
 ```
 
 ### Common Methods
@@ -269,7 +275,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```python
-techcrunch = client.techcrunch
+techcrunch = client.Techcrunch()
 ```
 
 ### Fields
@@ -293,7 +299,9 @@ techcrunch = client.techcrunch
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.techcrunch.list({})
+results = client.Techcrunch().list({})
+for techcrunch in results:
+    print(techcrunch)
 ```
 
 ### Common Methods

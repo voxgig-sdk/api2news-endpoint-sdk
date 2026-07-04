@@ -95,7 +95,7 @@ same parameters as `direct()`.
 ## BbcEntity
 
 ```lua
-local bbc = client:bbc(nil)
+local bbc = client:Bbc(nil)
 ```
 
 ### Fields
@@ -119,7 +119,7 @@ local bbc = client:bbc(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:bbc():list()
+local results, err = client:Bbc():list()
 ```
 
 ### Common Methods
@@ -155,7 +155,7 @@ Return the entity name.
 ## CnnEntity
 
 ```lua
-local cnn = client:cnn(nil)
+local cnn = client:Cnn(nil)
 ```
 
 ### Fields
@@ -179,7 +179,7 @@ local cnn = client:cnn(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:cnn():list()
+local results, err = client:Cnn():list()
 ```
 
 ### Common Methods
@@ -215,7 +215,7 @@ Return the entity name.
 ## NewEntity
 
 ```lua
-local new = client:new(nil)
+local new = client:New(nil)
 ```
 
 ### Fields
@@ -239,7 +239,7 @@ local new = client:new(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:new():list()
+local results, err = client:New():list()
 ```
 
 ### Common Methods
@@ -275,7 +275,7 @@ Return the entity name.
 ## TechcrunchEntity
 
 ```lua
-local techcrunch = client:techcrunch(nil)
+local techcrunch = client:Techcrunch(nil)
 ```
 
 ### Fields
@@ -299,7 +299,7 @@ local techcrunch = client:techcrunch(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:techcrunch():list()
+local results, err = client:Techcrunch():list()
 ```
 
 ### Common Methods

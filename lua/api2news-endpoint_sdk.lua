@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:bbc():list() / client:bbc():load({ id = ... })
-function Api2newsEndpointSDK:bbc(data)
+-- Idiomatic facade: client:Bbc():list() / client:Bbc():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function Api2newsEndpointSDK:Bbc(data)
   local EntityMod = require("entity.bbc_entity")
   if data == nil then
     if self._bbc == nil then
@@ -256,15 +257,10 @@ function Api2newsEndpointSDK:bbc(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:bbc() instead.
-function Api2newsEndpointSDK:Bbc(data)
-  local EntityMod = require("entity.bbc_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:cnn():list() / client:cnn():load({ id = ... })
-function Api2newsEndpointSDK:cnn(data)
+-- Idiomatic facade: client:Cnn():list() / client:Cnn():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function Api2newsEndpointSDK:Cnn(data)
   local EntityMod = require("entity.cnn_entity")
   if data == nil then
     if self._cnn == nil then
@@ -275,15 +271,10 @@ function Api2newsEndpointSDK:cnn(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:cnn() instead.
-function Api2newsEndpointSDK:Cnn(data)
-  local EntityMod = require("entity.cnn_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:new():list() / client:new():load({ id = ... })
-function Api2newsEndpointSDK:new(data)
+-- Idiomatic facade: client:New():list() / client:New():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function Api2newsEndpointSDK:New(data)
   local EntityMod = require("entity.new_entity")
   if data == nil then
     if self._new == nil then
@@ -294,15 +285,10 @@ function Api2newsEndpointSDK:new(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:new() instead.
-function Api2newsEndpointSDK:New(data)
-  local EntityMod = require("entity.new_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:techcrunch():list() / client:techcrunch():load({ id = ... })
-function Api2newsEndpointSDK:techcrunch(data)
+-- Idiomatic facade: client:Techcrunch():list() / client:Techcrunch():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function Api2newsEndpointSDK:Techcrunch(data)
   local EntityMod = require("entity.techcrunch_entity")
   if data == nil then
     if self._techcrunch == nil then
@@ -310,12 +296,6 @@ function Api2newsEndpointSDK:techcrunch(data)
     end
     return self._techcrunch
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:techcrunch() instead.
-function Api2newsEndpointSDK:Techcrunch(data)
-  local EntityMod = require("entity.techcrunch_entity")
   return EntityMod.new(self, data)
 end
 

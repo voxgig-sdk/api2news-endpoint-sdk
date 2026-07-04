@@ -29,18 +29,16 @@ require_once 'api2newsendpoint_sdk.php';
 $client = new Api2newsEndpointSDK();
 ```
 
-### 2. List bbcs
+### 2. List bbc records
 
 ```php
 try {
-    $result = $client->bbc()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Bbc records — iterate directly.
+    $bbcs = $client->Bbc()->list();
+    foreach ($bbcs as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = Api2newsEndpointSDK::test();
+$client = Api2newsEndpointSDK::test([
+    "entity" => ["bbc" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->bbc()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$bbc = $client->Bbc()->load(["id" => "test01"]);
+print_r($bbc);
 ```
 
 ### Use a custom fetch function
@@ -293,7 +295,7 @@ API path: `/api/news/techcrunch`
 
 ### Bbc
 
-Create an instance: `const bbc = client.bbc`
+Create an instance: `$bbc = $client->Bbc();`
 
 #### Operations
 
@@ -317,14 +319,15 @@ Create an instance: `const bbc = client.bbc`
 
 #### Example: List
 
-```ts
-const bbcs = await client.bbc.list()
+```php
+// list() returns an array of Bbc records (throws on error).
+$bbcs = $client->Bbc()->list();
 ```
 
 
 ### Cnn
 
-Create an instance: `const cnn = client.cnn`
+Create an instance: `$cnn = $client->Cnn();`
 
 #### Operations
 
@@ -348,14 +351,15 @@ Create an instance: `const cnn = client.cnn`
 
 #### Example: List
 
-```ts
-const cnns = await client.cnn.list()
+```php
+// list() returns an array of Cnn records (throws on error).
+$cnns = $client->Cnn()->list();
 ```
 
 
 ### New
 
-Create an instance: `const new = client.new`
+Create an instance: `$new = $client->New();`
 
 #### Operations
 
@@ -379,14 +383,15 @@ Create an instance: `const new = client.new`
 
 #### Example: List
 
-```ts
-const news = await client.new.list()
+```php
+// list() returns an array of New records (throws on error).
+$news = $client->New()->list();
 ```
 
 
 ### Techcrunch
 
-Create an instance: `const techcrunch = client.techcrunch`
+Create an instance: `$techcrunch = $client->Techcrunch();`
 
 #### Operations
 
@@ -410,8 +415,9 @@ Create an instance: `const techcrunch = client.techcrunch`
 
 #### Example: List
 
-```ts
-const techcrunchs = await client.techcrunch.list()
+```php
+// list() returns an array of Techcrunch records (throws on error).
+$techcrunchs = $client->Techcrunch()->list();
 ```
 
 
@@ -486,7 +492,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$bbc = $client->bbc();
+$bbc = $client->Bbc();
 $bbc->load(["id" => "example_id"]);
 
 // $bbc->dataGet() now returns the loaded bbc data
