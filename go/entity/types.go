@@ -21,8 +21,7 @@ type Bbc struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// BbcListMatch mirrors the bbc fields as an all-optional match
-// filter (Go analog of Partial<Bbc>).
+// BbcListMatch is the typed request payload for Bbc.ListTyped.
 type BbcListMatch struct {
 	Author *string `json:"author,omitempty"`
 	Content *string `json:"content,omitempty"`
@@ -48,8 +47,7 @@ type Cnn struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// CnnListMatch mirrors the cnn fields as an all-optional match
-// filter (Go analog of Partial<Cnn>).
+// CnnListMatch is the typed request payload for Cnn.ListTyped.
 type CnnListMatch struct {
 	Author *string `json:"author,omitempty"`
 	Content *string `json:"content,omitempty"`
@@ -75,8 +73,7 @@ type New struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// NewListMatch mirrors the new fields as an all-optional match
-// filter (Go analog of Partial<New>).
+// NewListMatch is the typed request payload for New.ListTyped.
 type NewListMatch struct {
 	Author *string `json:"author,omitempty"`
 	Content *string `json:"content,omitempty"`
@@ -102,8 +99,7 @@ type Techcrunch struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// TechcrunchListMatch mirrors the techcrunch fields as an all-optional match
-// filter (Go analog of Partial<Techcrunch>).
+// TechcrunchListMatch is the typed request payload for Techcrunch.ListTyped.
 type TechcrunchListMatch struct {
 	Author *string `json:"author,omitempty"`
 	Content *string `json:"content,omitempty"`

@@ -17,7 +17,17 @@ export interface Bbc {
   url?: string
 }
 
-export type BbcListMatch = Partial<Bbc>
+export interface BbcListMatch {
+  author?: string
+  content?: string
+  description?: string
+  id?: string
+  image_url?: string
+  published_at?: string
+  source?: string
+  title?: string
+  url?: string
+}
 
 export interface Cnn {
   author?: string
@@ -31,7 +41,17 @@ export interface Cnn {
   url?: string
 }
 
-export type CnnListMatch = Partial<Cnn>
+export interface CnnListMatch {
+  author?: string
+  content?: string
+  description?: string
+  id?: string
+  image_url?: string
+  published_at?: string
+  source?: string
+  title?: string
+  url?: string
+}
 
 export interface New {
   author?: string
@@ -45,7 +65,17 @@ export interface New {
   url?: string
 }
 
-export type NewListMatch = Partial<New>
+export interface NewListMatch {
+  author?: string
+  content?: string
+  description?: string
+  id?: string
+  image_url?: string
+  published_at?: string
+  source?: string
+  title?: string
+  url?: string
+}
 
 export interface Techcrunch {
   author?: string
@@ -59,5 +89,15 @@ export interface Techcrunch {
   url?: string
 }
 
-export type TechcrunchListMatch = Partial<Techcrunch>
+export interface TechcrunchListMatch {
+  author?: string
+  content?: string
+  description?: string
+  id?: string
+  image_url?: string
+  published_at?: string
+  source?: string
+  title?: string
+  url?: string
+}
 

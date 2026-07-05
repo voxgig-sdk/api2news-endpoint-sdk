@@ -26,7 +26,7 @@ class Bbc
     public ?string $url = null;
 }
 
-/** Match filter for Bbc#list (any subset of Bbc fields). */
+/** Request payload for Bbc#list. */
 class BbcListMatch
 {
     public ?string $author = null;
@@ -54,7 +54,7 @@ class Cnn
     public ?string $url = null;
 }
 
-/** Match filter for Cnn#list (any subset of Cnn fields). */
+/** Request payload for Cnn#list. */
 class CnnListMatch
 {
     public ?string $author = null;
@@ -82,7 +82,7 @@ class New
     public ?string $url = null;
 }
 
-/** Match filter for New#list (any subset of New fields). */
+/** Request payload for New#list. */
 class NewListMatch
 {
     public ?string $author = null;
@@ -110,7 +110,7 @@ class Techcrunch
     public ?string $url = null;
 }
 
-/** Match filter for Techcrunch#list (any subset of Techcrunch fields). */
+/** Request payload for Techcrunch#list. */
 class TechcrunchListMatch
 {
     public ?string $author = null;

@@ -221,25 +221,25 @@ class Api2newsEndpointSDK:
 
 
     def Bbc(self, data=None) -> "BbcEntity":
-        """Entity factory: client.Bbc().list({}) / client.Bbc().load({"id": ...})."""
+        """Entity factory: client.Bbc().list() / client.Bbc().load({"id": ...})."""
         from entity.bbc_entity import BbcEntity
         return BbcEntity(self, data)
 
 
     def Cnn(self, data=None) -> "CnnEntity":
-        """Entity factory: client.Cnn().list({}) / client.Cnn().load({"id": ...})."""
+        """Entity factory: client.Cnn().list() / client.Cnn().load({"id": ...})."""
         from entity.cnn_entity import CnnEntity
         return CnnEntity(self, data)
 
 
     def New(self, data=None) -> "NewEntity":
-        """Entity factory: client.New().list({}) / client.New().load({"id": ...})."""
+        """Entity factory: client.New().list() / client.New().load({"id": ...})."""
         from entity.new_entity import NewEntity
         return NewEntity(self, data)
 
 
     def Techcrunch(self, data=None) -> "TechcrunchEntity":
-        """Entity factory: client.Techcrunch().list({}) / client.Techcrunch().load({"id": ...})."""
+        """Entity factory: client.Techcrunch().list() / client.Techcrunch().load({"id": ...})."""
         from entity.techcrunch_entity import TechcrunchEntity
         return TechcrunchEntity(self, data)
 

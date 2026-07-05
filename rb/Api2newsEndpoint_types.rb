@@ -49,7 +49,7 @@ Bbc = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Bbc#list (any subset of Bbc fields).
+# Request payload for Bbc#list.
 #
 # @!attribute [rw] author
 #   @return [String, nil]
@@ -131,7 +131,7 @@ Cnn = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Cnn#list (any subset of Cnn fields).
+# Request payload for Cnn#list.
 #
 # @!attribute [rw] author
 #   @return [String, nil]
@@ -213,7 +213,7 @@ New = Struct.new(
   keyword_init: true
 )
 
-# Match filter for New#list (any subset of New fields).
+# Request payload for New#list.
 #
 # @!attribute [rw] author
 #   @return [String, nil]
@@ -295,7 +295,7 @@ Techcrunch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Techcrunch#list (any subset of Techcrunch fields).
+# Request payload for Techcrunch#list.
 #
 # @!attribute [rw] author
 #   @return [String, nil]

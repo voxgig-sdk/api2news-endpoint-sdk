@@ -8,7 +8,7 @@ Complete API reference for the Api2newsEndpoint Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'api2news-endpoint_sdk'
+require_relative 'Api2newsEndpoint_sdk'
 
 client = Api2newsEndpointSDK.new(options)
 ```
@@ -105,24 +105,24 @@ bbc = client.Bbc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `String` | No |  |
+| `content` | `String` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `published_at` | `String` | No |  |
+| `source` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Bbc.list(nil)
+results = client.Bbc.list
 ```
 
 ### Common Methods
@@ -165,24 +165,24 @@ cnn = client.Cnn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `String` | No |  |
+| `content` | `String` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `published_at` | `String` | No |  |
+| `source` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Cnn.list(nil)
+results = client.Cnn.list
 ```
 
 ### Common Methods
@@ -225,24 +225,24 @@ new = client.New
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `String` | No |  |
+| `content` | `String` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `published_at` | `String` | No |  |
+| `source` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.New.list(nil)
+results = client.New.list
 ```
 
 ### Common Methods
@@ -285,24 +285,24 @@ techcrunch = client.Techcrunch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `String` | No |  |
+| `content` | `String` | No |  |
+| `description` | `String` | No |  |
+| `id` | `String` | No |  |
+| `image_url` | `String` | No |  |
+| `published_at` | `String` | No |  |
+| `source` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Techcrunch.list(nil)
+results = client.Techcrunch.list
 ```
 
 ### Common Methods

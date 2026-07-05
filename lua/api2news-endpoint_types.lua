@@ -18,6 +18,15 @@
 ---@field url? string
 
 ---@class BbcListMatch
+---@field author? string
+---@field content? string
+---@field description? string
+---@field id? string
+---@field image_url? string
+---@field published_at? string
+---@field source? string
+---@field title? string
+---@field url? string
 
 ---@class Cnn
 ---@field author? string
@@ -31,6 +40,15 @@
 ---@field url? string
 
 ---@class CnnListMatch
+---@field author? string
+---@field content? string
+---@field description? string
+---@field id? string
+---@field image_url? string
+---@field published_at? string
+---@field source? string
+---@field title? string
+---@field url? string
 
 ---@class New
 ---@field author? string
@@ -44,6 +62,15 @@
 ---@field url? string
 
 ---@class NewListMatch
+---@field author? string
+---@field content? string
+---@field description? string
+---@field id? string
+---@field image_url? string
+---@field published_at? string
+---@field source? string
+---@field title? string
+---@field url? string
 
 ---@class Techcrunch
 ---@field author? string
@@ -57,6 +84,15 @@
 ---@field url? string
 
 ---@class TechcrunchListMatch
+---@field author? string
+---@field content? string
+---@field description? string
+---@field id? string
+---@field image_url? string
+---@field published_at? string
+---@field source? string
+---@field title? string
+---@field url? string
 
 local M = {}
 

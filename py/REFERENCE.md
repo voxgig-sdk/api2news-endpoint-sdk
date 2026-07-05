@@ -8,7 +8,7 @@ Complete API reference for the Api2newsEndpoint Python SDK.
 ### Constructor
 
 ```python
-from api2news-endpoint_sdk import Api2newsEndpointSDK
+from api2newsendpoint_sdk import Api2newsEndpointSDK
 
 client = Api2newsEndpointSDK(options)
 ```
@@ -99,24 +99,24 @@ bbc = client.Bbc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `str` | No |  |
+| `content` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `published_at` | `str` | No |  |
+| `source` | `str` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Bbc().list({})
+results = client.Bbc().list()
 for bbc in results:
     print(bbc)
 ```
@@ -160,24 +160,24 @@ cnn = client.Cnn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `str` | No |  |
+| `content` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `published_at` | `str` | No |  |
+| `source` | `str` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Cnn().list({})
+results = client.Cnn().list()
 for cnn in results:
     print(cnn)
 ```
@@ -221,24 +221,24 @@ new = client.New()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `str` | No |  |
+| `content` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `published_at` | `str` | No |  |
+| `source` | `str` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.New().list({})
+results = client.New().list()
 for new in results:
     print(new)
 ```
@@ -282,24 +282,24 @@ techcrunch = client.Techcrunch()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | No |  |
-| `content` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `id` | ``$STRING`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `published_at` | ``$STRING`` | No |  |
-| `source` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `author` | `str` | No |  |
+| `content` | `str` | No |  |
+| `description` | `str` | No |  |
+| `id` | `str` | No |  |
+| `image_url` | `str` | No |  |
+| `published_at` | `str` | No |  |
+| `source` | `str` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Techcrunch().list({})
+results = client.Techcrunch().list()
 for techcrunch in results:
     print(techcrunch)
 ```
