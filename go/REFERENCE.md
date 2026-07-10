@@ -103,6 +103,7 @@ same parameters as `Direct()`.
 
 ```go
 bbc := client.Bbc(nil)
+fmt.Println(bbc.GetName()) // "bbc"
 ```
 
 ### Fields
@@ -127,6 +128,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Bbc(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -157,6 +162,7 @@ Return the entity name.
 
 ```go
 cnn := client.Cnn(nil)
+fmt.Println(cnn.GetName()) // "cnn"
 ```
 
 ### Fields
@@ -181,6 +187,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Cnn(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -211,6 +221,7 @@ Return the entity name.
 
 ```go
 new := client.New(nil)
+fmt.Println(new.GetName()) // "new"
 ```
 
 ### Fields
@@ -235,6 +246,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.New(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -265,6 +280,7 @@ Return the entity name.
 
 ```go
 techcrunch := client.Techcrunch(nil)
+fmt.Println(techcrunch.GetName()) // "techcrunch"
 ```
 
 ### Fields
@@ -289,6 +305,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Techcrunch(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

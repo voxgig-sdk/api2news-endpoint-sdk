@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -712,14 +709,17 @@
           "url": "https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt"
         },
         "description": "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN. Users can retrieve articles by making GET requests to specific endpoints for each publication, including filtering by query parameters for specific articles.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://api2news.com"
           }
         ],
+        "summary": "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN.",
         "title": "API2NEWS Endpoint",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://api2news.com"
       },
       "option": {},
       "target": {
@@ -772,6 +772,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -822,6 +825,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

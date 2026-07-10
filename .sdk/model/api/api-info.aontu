@@ -15,9 +15,9 @@ main: {
           url: "https://api2news.com"
         }
       ]
+      summary: "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN."
       title: "API2NEWS Endpoint"
       version: "1.0.0"
+      website: "https://api2news.com"
     }
   }
-}
-
