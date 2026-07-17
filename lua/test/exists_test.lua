@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Api2newsEndpoint SDK exists test
 
 local sdk = require("api2news-endpoint_sdk")
 

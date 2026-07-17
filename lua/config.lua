@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- Api2newsEndpoint SDK configuration
 
 local function make_config()
   return {
