@@ -26,8 +26,8 @@ import {
 describe('TechcrunchEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when API2NEWSENDPOINT_TEST_LIVE=TRUE.
-  afterEach(liveDelay('API2NEWSENDPOINT_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when API2NEWS_ENDPOINT_TEST_LIVE=TRUE.
+  afterEach(liveDelay('API2NEWS_ENDPOINT_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = Api2newsEndpointSDK.test()
@@ -38,7 +38,7 @@ describe('TechcrunchEntity', async () => {
 
   test('basic', async (t) => {
 
-    const live = 'TRUE' === process.env.API_NEWS_ENDPOINT_TEST_LIVE
+    const live = 'TRUE' === process.env.API2NEWS_ENDPOINT_TEST_LIVE
     for (const op of ['list']) {
       if (maybeSkipControl(t, 'entityOp', 'techcrunch.' + op, live)) return
     }
@@ -48,7 +48,7 @@ describe('TechcrunchEntity', async () => {
     // fixture (entity TestData.json). Those don't exist on the live API.
     // Skip live runs unless the user provided a real ENTID env override.
     if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set API_NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID JSON to run live')
+      t.skip('live entity test uses synthetic IDs from fixture — set API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID JSON to run live')
       return
     }
     const client = setup.client
@@ -63,7 +63,7 @@ describe('TechcrunchEntity', async () => {
     const techcrunch_ref01_ent = client.Techcrunch()
     const techcrunch_ref01_match: any = {}
 
-    const techcrunch_ref01_list = await techcrunch_ref01_ent.list(techcrunch_ref01_match)
+    const techcrunch_ref01_list = (await techcrunch_ref01_ent.list(techcrunch_ref01_match)).map((e: any) => e.data())
 
 
   })
@@ -106,18 +106,18 @@ function basicSetup(extra?: any) {
   // basic flow consumes synthetic IDs from the fixture file; without an
   // override those synthetic IDs reach the live API and 4xx. Surface this
   // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['API_NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID']
+  const idmapEnvVal = process.env['API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID']
   const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
 
   const env = envOverride({
-    'API_NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID': idmap,
-    'API_NEWS_ENDPOINT_TEST_LIVE': 'FALSE',
-    'API_NEWS_ENDPOINT_TEST_EXPLAIN': 'FALSE',
+    'API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID': idmap,
+    'API2NEWS_ENDPOINT_TEST_LIVE': 'FALSE',
+    'API2NEWS_ENDPOINT_TEST_EXPLAIN': 'FALSE',
   })
 
-  idmap = env['API_NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID']
+  idmap = env['API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID']
 
-  const live = 'TRUE' === env.API_NEWS_ENDPOINT_TEST_LIVE
+  const live = 'TRUE' === env.API2NEWS_ENDPOINT_TEST_LIVE
 
   if (live) {
     client = new Api2newsEndpointSDK(merge([
@@ -134,7 +134,7 @@ function basicSetup(extra?: any) {
     client,
     struct,
     data: entityData,
-    explain: 'TRUE' === env.API_NEWS_ENDPOINT_TEST_EXPLAIN,
+    explain: 'TRUE' === env.API2NEWS_ENDPOINT_TEST_EXPLAIN,
     live,
     syntheticOnly: live && !idmapOverridden,
     now: Date.now(),

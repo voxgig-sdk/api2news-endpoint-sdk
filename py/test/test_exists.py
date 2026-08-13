@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Api2newsEndpoint SDK exists test
 
 import pytest
 from api2newsendpoint_sdk import Api2newsEndpointSDK

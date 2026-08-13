@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = Api2newsEndpointSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = Api2newsEndpointSDK.test({
+  entity: {
+    bbc: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const bbcs = await client.Bbc().list()
-// bbcs is an array of bare Bbc records populated with mock data
+// bbcs is an array of Bbc entities, populated with mock data
+// — call bbcs[0].data() for the record itself
 console.log(bbcs)
 ```
 
@@ -110,7 +119,7 @@ import { Api2newsEndpointSDK } from '@voxgig-sdk/api2news-endpoint'
 
 const client = new Api2newsEndpointSDK()
 
-// List all bbcs (returns Bbc[])
+// List all bbcs (returns BbcEntity[] — .data() for the record)
 const bbcs = await client.Bbc().list()
 for (const bbc of bbcs) {
   console.log(bbc)
@@ -346,6 +355,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt](https://documenter.getpostman.com/view/13902582/2sA3rxrZcC?ref=producthunt)
 

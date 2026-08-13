@@ -22,10 +22,10 @@
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -41,8 +41,8 @@ Bbc = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -63,10 +63,10 @@ Bbc = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -82,8 +82,8 @@ BbcListMatch = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -104,10 +104,10 @@ BbcListMatch = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -123,8 +123,8 @@ Cnn = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -145,10 +145,10 @@ Cnn = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -164,8 +164,8 @@ CnnListMatch = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -186,10 +186,10 @@ CnnListMatch = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -205,8 +205,8 @@ New = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -227,10 +227,10 @@ New = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -246,8 +246,8 @@ NewListMatch = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -268,10 +268,10 @@ NewListMatch = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -287,8 +287,8 @@ Techcrunch = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,
@@ -309,10 +309,10 @@ Techcrunch = Struct.new(
 # @!attribute [rw] id
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
+# @!attribute [rw] imageUrl
 #   @return [String, nil]
 #
-# @!attribute [rw] published_at
+# @!attribute [rw] publishedAt
 #   @return [String, nil]
 #
 # @!attribute [rw] source
@@ -328,8 +328,8 @@ TechcrunchListMatch = Struct.new(
   :content,
   :description,
   :id,
-  :image_url,
-  :published_at,
+  :imageUrl,
+  :publishedAt,
   :source,
   :title,
   :url,

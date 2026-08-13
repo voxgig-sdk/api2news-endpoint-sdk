@@ -63,14 +63,14 @@ class Api2newsEndpointConfig
             ],
             [
               'active' => true,
-              'name' => 'image_url',
+              'name' => 'imageUrl',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -126,6 +126,7 @@ class Api2newsEndpointConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/news/bbc',
                   'parts' => [
@@ -141,7 +142,7 @@ class Api2newsEndpointConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.articles`',
                   ],
                   'index$' => 0,
                 ],
@@ -185,14 +186,14 @@ class Api2newsEndpointConfig
             ],
             [
               'active' => true,
-              'name' => 'image_url',
+              'name' => 'imageUrl',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -248,6 +249,7 @@ class Api2newsEndpointConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/news/cnn',
                   'parts' => [
@@ -263,7 +265,7 @@ class Api2newsEndpointConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.articles`',
                   ],
                   'index$' => 0,
                 ],
@@ -307,14 +309,14 @@ class Api2newsEndpointConfig
             ],
             [
               'active' => true,
-              'name' => 'image_url',
+              'name' => 'imageUrl',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -378,6 +380,7 @@ class Api2newsEndpointConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/news',
                   'parts' => [
@@ -393,7 +396,7 @@ class Api2newsEndpointConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.articles`',
                   ],
                   'index$' => 0,
                 ],
@@ -437,14 +440,14 @@ class Api2newsEndpointConfig
             ],
             [
               'active' => true,
-              'name' => 'image_url',
+              'name' => 'imageUrl',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
             ],
             [
               'active' => true,
-              'name' => 'published_at',
+              'name' => 'publishedAt',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 5,
@@ -500,6 +503,7 @@ class Api2newsEndpointConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/news/techcrunch',
                   'parts' => [
@@ -515,7 +519,7 @@ class Api2newsEndpointConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.articles`',
                   ],
                   'index$' => 0,
                 ],

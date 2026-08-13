@@ -10,8 +10,8 @@ export interface Bbc {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -22,8 +22,8 @@ export interface BbcListMatch {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -34,8 +34,8 @@ export interface Cnn {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -46,8 +46,8 @@ export interface CnnListMatch {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -58,8 +58,8 @@ export interface New {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -70,8 +70,8 @@ export interface NewListMatch {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -82,8 +82,8 @@ export interface Techcrunch {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string
@@ -94,8 +94,8 @@ export interface TechcrunchListMatch {
   content?: string
   description?: string
   id?: string
-  image_url?: string
-  published_at?: string
+  imageUrl?: string
+  publishedAt?: string
   source?: string
   title?: string
   url?: string

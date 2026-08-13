@@ -267,8 +267,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"content"` |  |
 | `"description"` |  |
 | `"id"` |  |
-| `"image_url"` |  |
-| `"published_at"` |  |
+| `"imageUrl"` |  |
+| `"publishedAt"` |  |
 | `"source"` |  |
 | `"title"` |  |
 | `"url"` |  |
@@ -285,8 +285,8 @@ API path: `/api/news/bbc`
 | `"content"` |  |
 | `"description"` |  |
 | `"id"` |  |
-| `"image_url"` |  |
-| `"published_at"` |  |
+| `"imageUrl"` |  |
+| `"publishedAt"` |  |
 | `"source"` |  |
 | `"title"` |  |
 | `"url"` |  |
@@ -303,8 +303,8 @@ API path: `/api/news/cnn`
 | `"content"` |  |
 | `"description"` |  |
 | `"id"` |  |
-| `"image_url"` |  |
-| `"published_at"` |  |
+| `"imageUrl"` |  |
+| `"publishedAt"` |  |
 | `"source"` |  |
 | `"title"` |  |
 | `"url"` |  |
@@ -321,8 +321,8 @@ API path: `/api/news`
 | `"content"` |  |
 | `"description"` |  |
 | `"id"` |  |
-| `"image_url"` |  |
-| `"published_at"` |  |
+| `"imageUrl"` |  |
+| `"publishedAt"` |  |
 | `"source"` |  |
 | `"title"` |  |
 | `"url"` |  |
@@ -354,8 +354,8 @@ Create an instance: `bbc := client.Bbc(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -389,8 +389,8 @@ Create an instance: `cnn := client.Cnn(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -424,8 +424,8 @@ Create an instance: `new := client.New(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -459,8 +459,8 @@ Create an instance: `techcrunch := client.Techcrunch(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

@@ -221,9 +221,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local bbc, err = client:Bbc():load()
+    local bbc, err = client:Bbc():list()
     if err then error(err) end
-    -- bbc is the loaded record
+    -- bbc is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -238,8 +238,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -256,8 +256,8 @@ API path: `/api/news/bbc`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -274,8 +274,8 @@ API path: `/api/news/cnn`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -292,8 +292,8 @@ API path: `/api/news`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -325,8 +325,8 @@ Create an instance: `local bbc = client:Bbc(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -356,8 +356,8 @@ Create an instance: `local cnn = client:Cnn(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -387,8 +387,8 @@ Create an instance: `local new = client:New(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -418,8 +418,8 @@ Create an instance: `local techcrunch = client:Techcrunch(nil)`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

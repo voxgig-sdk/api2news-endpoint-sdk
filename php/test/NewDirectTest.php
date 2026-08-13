@@ -66,11 +66,11 @@ function new_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "API_NEWSENDPOINT_TEST_NEW_ENTID" => [],
-        "API_NEWSENDPOINT_TEST_LIVE" => "FALSE",
+        "API2NEWS_ENDPOINT_TEST_NEW_ENTID" => [],
+        "API2NEWS_ENDPOINT_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["API_NEWSENDPOINT_TEST_LIVE"] === "TRUE";
+    $live = $env["API2NEWS_ENDPOINT_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

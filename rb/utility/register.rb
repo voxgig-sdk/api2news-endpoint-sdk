@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ Api2newsEndpointUtility.registrar = ->(u) {
   u.prepare_params = Api2newsEndpointUtilities::PrepareParams
   u.prepare_path = Api2newsEndpointUtilities::PreparePath
   u.prepare_query = Api2newsEndpointUtilities::PrepareQuery
+  u.graphql_body = Api2newsEndpointUtilities::GraphqlBody
+  u.graphql_errors = Api2newsEndpointUtilities::GraphqlErrors
   u.result_basic = Api2newsEndpointUtilities::ResultBasic
   u.result_body = Api2newsEndpointUtilities::ResultBody
   u.result_headers = Api2newsEndpointUtilities::ResultHeaders

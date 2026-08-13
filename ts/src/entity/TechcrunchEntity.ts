@@ -37,7 +37,7 @@ class TechcrunchEntity extends Api2newsEndpointEntityBase<Techcrunch> {
 
 
 
-  async list(this: any, reqmatch?: TechcrunchListMatch, ctrl?: Control): Promise<Techcrunch[]> {
+  async list(this: any, reqmatch?: TechcrunchListMatch, ctrl?: Control): Promise<TechcrunchEntity[]> {
 
     const utility = this._utility
 

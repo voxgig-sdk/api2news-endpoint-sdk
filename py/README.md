@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = Api2newsEndpointSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 bbc = client.Bbc().list()
 # bbc contains the mock response record
 ```
@@ -223,7 +224,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -249,8 +250,8 @@ On error, `ok` is `False` and `err` contains the error value.
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -267,8 +268,8 @@ API path: `/api/news/bbc`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -285,8 +286,8 @@ API path: `/api/news/cnn`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -303,8 +304,8 @@ API path: `/api/news`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -336,8 +337,8 @@ Create an instance: `bbc = client.Bbc()`
 | `content` | `str` |  |
 | `description` | `str` |  |
 | `id` | `str` |  |
-| `image_url` | `str` |  |
-| `published_at` | `str` |  |
+| `imageUrl` | `str` |  |
+| `publishedAt` | `str` |  |
 | `source` | `str` |  |
 | `title` | `str` |  |
 | `url` | `str` |  |
@@ -367,8 +368,8 @@ Create an instance: `cnn = client.Cnn()`
 | `content` | `str` |  |
 | `description` | `str` |  |
 | `id` | `str` |  |
-| `image_url` | `str` |  |
-| `published_at` | `str` |  |
+| `imageUrl` | `str` |  |
+| `publishedAt` | `str` |  |
 | `source` | `str` |  |
 | `title` | `str` |  |
 | `url` | `str` |  |
@@ -398,8 +399,8 @@ Create an instance: `new = client.New()`
 | `content` | `str` |  |
 | `description` | `str` |  |
 | `id` | `str` |  |
-| `image_url` | `str` |  |
-| `published_at` | `str` |  |
+| `imageUrl` | `str` |  |
+| `publishedAt` | `str` |  |
 | `source` | `str` |  |
 | `title` | `str` |  |
 | `url` | `str` |  |
@@ -429,8 +430,8 @@ Create an instance: `techcrunch = client.Techcrunch()`
 | `content` | `str` |  |
 | `description` | `str` |  |
 | `id` | `str` |  |
-| `image_url` | `str` |  |
-| `published_at` | `str` |  |
+| `imageUrl` | `str` |  |
+| `publishedAt` | `str` |  |
 | `source` | `str` |  |
 | `title` | `str` |  |
 | `url` | `str` |  |

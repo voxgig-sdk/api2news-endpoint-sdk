@@ -37,7 +37,7 @@ class BbcEntity extends Api2newsEndpointEntityBase<Bbc> {
 
 
 
-  async list(this: any, reqmatch?: BbcListMatch, ctrl?: Control): Promise<Bbc[]> {
+  async list(this: any, reqmatch?: BbcListMatch, ctrl?: Control): Promise<BbcEntity[]> {
 
     const utility = this._utility
 

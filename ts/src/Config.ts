@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Api2newsEndpoint',
   }
 
 
@@ -93,14 +93,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_url",
+          "name": "imageUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "published_at",
+          "name": "publishedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -156,6 +156,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/news/bbc",
               "parts": [
@@ -171,7 +172,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.articles`"
               },
               "index$": 0
             }
@@ -215,14 +216,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_url",
+          "name": "imageUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "published_at",
+          "name": "publishedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -278,6 +279,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/news/cnn",
               "parts": [
@@ -293,7 +295,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.articles`"
               },
               "index$": 0
             }
@@ -337,14 +339,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_url",
+          "name": "imageUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "published_at",
+          "name": "publishedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -408,6 +410,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/news",
               "parts": [
@@ -423,7 +426,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.articles`"
               },
               "index$": 0
             }
@@ -467,14 +470,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "image_url",
+          "name": "imageUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "published_at",
+          "name": "publishedAt",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -530,6 +533,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/api/news/techcrunch",
               "parts": [
@@ -545,7 +549,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.articles`"
               },
               "index$": 0
             }

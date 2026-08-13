@@ -58,14 +58,14 @@ module Api2newsEndpointConfig
             },
             {
               "active" => true,
-              "name" => "image_url",
+              "name" => "imageUrl",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
             },
             {
               "active" => true,
-              "name" => "published_at",
+              "name" => "publishedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 5,
@@ -121,6 +121,7 @@ module Api2newsEndpointConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/bbc",
                   "parts" => [
@@ -136,7 +137,7 @@ module Api2newsEndpointConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.articles`",
                   },
                   "index$" => 0,
                 },
@@ -180,14 +181,14 @@ module Api2newsEndpointConfig
             },
             {
               "active" => true,
-              "name" => "image_url",
+              "name" => "imageUrl",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
             },
             {
               "active" => true,
-              "name" => "published_at",
+              "name" => "publishedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 5,
@@ -243,6 +244,7 @@ module Api2newsEndpointConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/cnn",
                   "parts" => [
@@ -258,7 +260,7 @@ module Api2newsEndpointConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.articles`",
                   },
                   "index$" => 0,
                 },
@@ -302,14 +304,14 @@ module Api2newsEndpointConfig
             },
             {
               "active" => true,
-              "name" => "image_url",
+              "name" => "imageUrl",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
             },
             {
               "active" => true,
-              "name" => "published_at",
+              "name" => "publishedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 5,
@@ -373,6 +375,7 @@ module Api2newsEndpointConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news",
                   "parts" => [
@@ -388,7 +391,7 @@ module Api2newsEndpointConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.articles`",
                   },
                   "index$" => 0,
                 },
@@ -432,14 +435,14 @@ module Api2newsEndpointConfig
             },
             {
               "active" => true,
-              "name" => "image_url",
+              "name" => "imageUrl",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
             },
             {
               "active" => true,
-              "name" => "published_at",
+              "name" => "publishedAt",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 5,
@@ -495,6 +498,7 @@ module Api2newsEndpointConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/techcrunch",
                   "parts" => [
@@ -510,7 +514,7 @@ module Api2newsEndpointConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.articles`",
                   },
                   "index$" => 0,
                 },

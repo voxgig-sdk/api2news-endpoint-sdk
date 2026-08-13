@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = Api2newsEndpointSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $bbc = $client->Bbc()->list();
 print_r($bbc);
 ```
@@ -227,7 +228,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -253,8 +254,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -271,8 +272,8 @@ API path: `/api/news/bbc`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -289,8 +290,8 @@ API path: `/api/news/cnn`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -307,8 +308,8 @@ API path: `/api/news`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -340,8 +341,8 @@ Create an instance: `$bbc = $client->Bbc();`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -372,8 +373,8 @@ Create an instance: `$cnn = $client->Cnn();`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -404,8 +405,8 @@ Create an instance: `$new = $client->New();`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -436,8 +437,8 @@ Create an instance: `$techcrunch = $client->Techcrunch();`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

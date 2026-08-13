@@ -108,8 +108,8 @@ $bbc = $client->Bbc();
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -168,8 +168,8 @@ $cnn = $client->Cnn();
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -228,8 +228,8 @@ $new = $client->New();
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -288,8 +288,8 @@ $techcrunch = $client->Techcrunch();
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |

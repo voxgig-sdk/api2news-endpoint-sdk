@@ -26,12 +26,12 @@ main: kit: entity: techcrunch: {
       type: "`$STRING`"
     }
     {
-      name: "image_url"
+      name: "imageUrl"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "published_at"
+      name: "publishedAt"
       req: false
       type: "`$STRING`"
     }
@@ -97,7 +97,7 @@ main: kit: entity: techcrunch: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.articles`"
           }
         }
       ]

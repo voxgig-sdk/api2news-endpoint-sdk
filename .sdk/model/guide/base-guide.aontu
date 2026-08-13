@@ -8,24 +8,28 @@ guide: {
   entity: bbc: {
     path: "/api/news/bbc": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.articles`")|top
     }
   }
 
   entity: cnn: {
     path: "/api/news/cnn": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.articles`")|top
     }
   }
 
   entity: new: {
     path: "/api/news": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.articles`")|top
     }
   }
 
   entity: techcrunch: {
     path: "/api/news/techcrunch": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.articles`")|top
     }
   }
 

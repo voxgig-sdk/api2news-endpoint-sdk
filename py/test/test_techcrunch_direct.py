@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from api2newsendpoint_sdk.utility.voxgig_struct import voxgig_struct as vs
 from api2newsendpoint_sdk import Api2newsEndpointSDK
-from core import helpers
+from api2newsendpoint_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _techcrunch_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID": {},
-        "API_NEWSENDPOINT_TEST_LIVE": "FALSE",
+        "API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID": {},
+        "API2NEWS_ENDPOINT_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("API_NEWSENDPOINT_TEST_LIVE") == "TRUE"
+    live = env.get("API2NEWS_ENDPOINT_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

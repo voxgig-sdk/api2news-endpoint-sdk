@@ -103,8 +103,8 @@ bbc = client.Bbc()
 | `content` | `str` | No |  |
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
-| `image_url` | `str` | No |  |
-| `published_at` | `str` | No |  |
+| `imageUrl` | `str` | No |  |
+| `publishedAt` | `str` | No |  |
 | `source` | `str` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
@@ -164,8 +164,8 @@ cnn = client.Cnn()
 | `content` | `str` | No |  |
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
-| `image_url` | `str` | No |  |
-| `published_at` | `str` | No |  |
+| `imageUrl` | `str` | No |  |
+| `publishedAt` | `str` | No |  |
 | `source` | `str` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
@@ -225,8 +225,8 @@ new = client.New()
 | `content` | `str` | No |  |
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
-| `image_url` | `str` | No |  |
-| `published_at` | `str` | No |  |
+| `imageUrl` | `str` | No |  |
+| `publishedAt` | `str` | No |  |
 | `source` | `str` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |
@@ -286,8 +286,8 @@ techcrunch = client.Techcrunch()
 | `content` | `str` | No |  |
 | `description` | `str` | No |  |
 | `id` | `str` | No |  |
-| `image_url` | `str` | No |  |
-| `published_at` | `str` | No |  |
+| `imageUrl` | `str` | No |  |
+| `publishedAt` | `str` | No |  |
 | `source` | `str` | No |  |
 | `title` | `str` | No |  |
 | `url` | `str` | No |  |

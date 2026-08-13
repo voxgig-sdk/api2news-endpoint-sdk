@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import Api2newsEndpointSDK
-from core.error import Api2newsEndpointError
-from core.result import Api2newsEndpointResult
-from core.response import Api2newsEndpointResponse
-from core.spec import Api2newsEndpointSpec
-from feature.base_feature import Api2newsEndpointBaseFeature
+from projectname_sdk.core.error import Api2newsEndpointError
+from projectname_sdk.core.result import Api2newsEndpointResult
+from projectname_sdk.core.response import Api2newsEndpointResponse
+from projectname_sdk.core.spec import Api2newsEndpointSpec
+from projectname_sdk.feature.base_feature import Api2newsEndpointBaseFeature
 
 
 def _client():

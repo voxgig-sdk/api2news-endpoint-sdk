@@ -92,7 +92,7 @@ func TestTechcrunchEntity(t *testing.T) {
 		// The basic flow consumes synthetic IDs from the fixture. In live mode
 		// without an *_ENTID env override, those IDs hit the live API and 4xx.
 		if setup.syntheticOnly {
-			t.Skip("live entity test uses synthetic IDs from fixture — set API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID JSON to run live")
+			t.Skip("live entity test uses synthetic IDs from fixture — set API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID JSON to run live")
 			return
 		}
 		client := setup.client
@@ -160,21 +160,21 @@ func techcrunchBasicSetup(extra map[string]any) *entityTestSetup {
 	// Detect ENTID env override before envOverride consumes it. When live
 	// mode is on without a real override, the basic test runs against synthetic
 	// IDs from the fixture and 4xx's. Surface this so the test can skip.
-	entidEnvRaw := os.Getenv("API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID")
+	entidEnvRaw := os.Getenv("API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID")
 	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
 
 	env := envOverride(map[string]any{
-		"API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID": idmap,
-		"API_NEWSENDPOINT_TEST_LIVE":      "FALSE",
-		"API_NEWSENDPOINT_TEST_EXPLAIN":   "FALSE",
+		"API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID": idmap,
+		"API2NEWS_ENDPOINT_TEST_LIVE":      "FALSE",
+		"API2NEWS_ENDPOINT_TEST_EXPLAIN":   "FALSE",
 	})
 
-	idmapResolved := core.ToMapAny(env["API_NEWSENDPOINT_TEST_TECHCRUNCH_ENTID"])
+	idmapResolved := core.ToMapAny(env["API2NEWS_ENDPOINT_TEST_TECHCRUNCH_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
 	}
 
-	if env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE" {
+	if env["API2NEWS_ENDPOINT_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
 			},
@@ -183,13 +183,13 @@ func techcrunchBasicSetup(extra map[string]any) *entityTestSetup {
 		client = sdk.NewApi2newsEndpointSDK(core.ToMapAny(mergedOpts))
 	}
 
-	live := env["API_NEWSENDPOINT_TEST_LIVE"] == "TRUE"
+	live := env["API2NEWS_ENDPOINT_TEST_LIVE"] == "TRUE"
 	return &entityTestSetup{
 		client:        client,
 		data:          entityData,
 		idmap:         idmapResolved,
 		env:           env,
-		explain:       env["API_NEWSENDPOINT_TEST_EXPLAIN"] == "TRUE",
+		explain:       env["API2NEWS_ENDPOINT_TEST_EXPLAIN"] == "TRUE",
 		live:          live,
 		syntheticOnly: live && !idmapOverridden,
 		now:           time.Now().UnixMilli(),

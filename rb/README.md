@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = Api2newsEndpointSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 bbc = client.Bbc.list()
 puts bbc
 ```
@@ -243,8 +244,8 @@ returns a result `Hash` with these keys:
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -261,8 +262,8 @@ API path: `/api/news/bbc`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -279,8 +280,8 @@ API path: `/api/news/cnn`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -297,8 +298,8 @@ API path: `/api/news`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -330,8 +331,8 @@ Create an instance: `bbc = client.Bbc`
 | `content` | `String` |  |
 | `description` | `String` |  |
 | `id` | `String` |  |
-| `image_url` | `String` |  |
-| `published_at` | `String` |  |
+| `imageUrl` | `String` |  |
+| `publishedAt` | `String` |  |
 | `source` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
@@ -362,8 +363,8 @@ Create an instance: `cnn = client.Cnn`
 | `content` | `String` |  |
 | `description` | `String` |  |
 | `id` | `String` |  |
-| `image_url` | `String` |  |
-| `published_at` | `String` |  |
+| `imageUrl` | `String` |  |
+| `publishedAt` | `String` |  |
 | `source` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
@@ -394,8 +395,8 @@ Create an instance: `new = client.New`
 | `content` | `String` |  |
 | `description` | `String` |  |
 | `id` | `String` |  |
-| `image_url` | `String` |  |
-| `published_at` | `String` |  |
+| `imageUrl` | `String` |  |
+| `publishedAt` | `String` |  |
 | `source` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |
@@ -426,8 +427,8 @@ Create an instance: `techcrunch = client.Techcrunch`
 | `content` | `String` |  |
 | `description` | `String` |  |
 | `id` | `String` |  |
-| `image_url` | `String` |  |
-| `published_at` | `String` |  |
+| `imageUrl` | `String` |  |
+| `publishedAt` | `String` |  |
 | `source` | `String` |  |
 | `title` | `String` |  |
 | `url` | `String` |  |

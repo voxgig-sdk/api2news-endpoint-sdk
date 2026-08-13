@@ -114,8 +114,8 @@ fmt.Println(bbc.GetName()) // "bbc"
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -173,8 +173,8 @@ fmt.Println(cnn.GetName()) // "cnn"
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -232,8 +232,8 @@ fmt.Println(new.GetName()) // "new"
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |
@@ -291,8 +291,8 @@ fmt.Println(techcrunch.GetName()) // "techcrunch"
 | `content` | `string` | No |  |
 | `description` | `string` | No |  |
 | `id` | `string` | No |  |
-| `image_url` | `string` | No |  |
-| `published_at` | `string` | No |  |
+| `imageUrl` | `string` | No |  |
+| `publishedAt` | `string` | No |  |
 | `source` | `string` | No |  |
 | `title` | `string` | No |  |
 | `url` | `string` | No |  |

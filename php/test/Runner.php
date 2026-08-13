@@ -43,8 +43,8 @@ class Api2newsEndpointTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('API2NEWSENDPOINT_TEST_LIVE');
-        $override = self::getenv('API2NEWSENDPOINT_TEST_OVERRIDE');
+        $live = self::getenv('API2NEWS_ENDPOINT_TEST_LIVE');
+        $override = self::getenv('API2NEWS_ENDPOINT_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class Api2newsEndpointTestRunner
             }
         }
 
-        $explain = self::getenv('API2NEWSENDPOINT_TEST_EXPLAIN');
+        $explain = self::getenv('API2NEWS_ENDPOINT_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['API2NEWSENDPOINT_TEST_EXPLAIN'] = $explain;
+            $m['API2NEWS_ENDPOINT_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

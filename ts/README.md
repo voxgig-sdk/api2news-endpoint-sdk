@@ -35,7 +35,9 @@ const client = new Api2newsEndpointSDK()
 
 ### 2. List bbc records
 
-`list()` resolves to an array of Bbc objects — iterate it directly:
+`list()` resolves to an array of Bbc ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const bbcs = await client.Bbc().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = Api2newsEndpointSDK.test()
 
 const bbc = await client.Bbc().list()
-// bbc is a bare entity populated with mock response data
+// bbc is the entity, populated with mock response data
+// — call bbc.data() for the record itself
 console.log(bbc)
 ```
 
@@ -291,8 +294,8 @@ The `prepare()` method returns:
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -309,8 +312,8 @@ API path: `/api/news/bbc`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -327,8 +330,8 @@ API path: `/api/news/cnn`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -345,8 +348,8 @@ API path: `/api/news`
 | `content` |  |
 | `description` |  |
 | `id` |  |
-| `image_url` |  |
-| `published_at` |  |
+| `imageUrl` |  |
+| `publishedAt` |  |
 | `source` |  |
 | `title` |  |
 | `url` |  |
@@ -378,8 +381,8 @@ Create an instance: `const bbc = client.Bbc()`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -409,8 +412,8 @@ Create an instance: `const cnn = client.Cnn()`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -440,8 +443,8 @@ Create an instance: `const new_ = client.New()`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |
@@ -471,8 +474,8 @@ Create an instance: `const techcrunch = client.Techcrunch()`
 | `content` | `string` |  |
 | `description` | `string` |  |
 | `id` | `string` |  |
-| `image_url` | `string` |  |
-| `published_at` | `string` |  |
+| `imageUrl` | `string` |  |
+| `publishedAt` | `string` |  |
 | `source` | `string` |  |
 | `title` | `string` |  |
 | `url` | `string` |  |

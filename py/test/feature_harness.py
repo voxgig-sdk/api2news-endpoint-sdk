@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import Api2newsEndpointControl
-from core.error import Api2newsEndpointError
-from core.result import Api2newsEndpointResult
-from core.spec import Api2newsEndpointSpec
+from api2newsendpoint_sdk.config import make_config
+from api2newsendpoint_sdk.features import _make_feature
+from api2newsendpoint_sdk.core.control import Api2newsEndpointControl
+from api2newsendpoint_sdk.core.error import Api2newsEndpointError
+from api2newsendpoint_sdk.core.result import Api2newsEndpointResult
+from api2newsendpoint_sdk.core.spec import Api2newsEndpointSpec
 
 
 # True when this SDK was generated with the named feature.

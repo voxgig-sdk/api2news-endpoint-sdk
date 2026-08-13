@@ -37,7 +37,7 @@ class CnnEntity extends Api2newsEndpointEntityBase<Cnn> {
 
 
 
-  async list(this: any, reqmatch?: CnnListMatch, ctrl?: Control): Promise<Cnn[]> {
+  async list(this: any, reqmatch?: CnnListMatch, ctrl?: Control): Promise<CnnEntity[]> {
 
     const utility = this._utility
 

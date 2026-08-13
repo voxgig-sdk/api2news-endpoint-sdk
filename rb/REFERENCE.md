@@ -109,8 +109,8 @@ bbc = client.Bbc
 | `content` | `String` | No |  |
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `imageUrl` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `source` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
@@ -169,8 +169,8 @@ cnn = client.Cnn
 | `content` | `String` | No |  |
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `imageUrl` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `source` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
@@ -229,8 +229,8 @@ new = client.New
 | `content` | `String` | No |  |
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `imageUrl` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `source` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |
@@ -289,8 +289,8 @@ techcrunch = client.Techcrunch
 | `content` | `String` | No |  |
 | `description` | `String` | No |  |
 | `id` | `String` | No |  |
-| `image_url` | `String` | No |  |
-| `published_at` | `String` | No |  |
+| `imageUrl` | `String` | No |  |
+| `publishedAt` | `String` | No |  |
 | `source` | `String` | No |  |
 | `title` | `String` | No |  |
 | `url` | `String` | No |  |

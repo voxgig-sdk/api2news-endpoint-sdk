@@ -19,8 +19,8 @@ class Bbc
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -33,8 +33,8 @@ class BbcListMatch
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -47,8 +47,8 @@ class Cnn
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -61,8 +61,8 @@ class CnnListMatch
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -75,8 +75,8 @@ class New
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -89,8 +89,8 @@ class NewListMatch
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -103,8 +103,8 @@ class Techcrunch
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;
@@ -117,8 +117,8 @@ class TechcrunchListMatch
     public ?string $content = null;
     public ?string $description = null;
     public ?string $id = null;
-    public ?string $image_url = null;
-    public ?string $published_at = null;
+    public ?string $imageUrl = null;
+    public ?string $publishedAt = null;
     public ?string $source = null;
     public ?string $title = null;
     public ?string $url = null;

@@ -23,8 +23,8 @@ module Api2newsEndpointTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("API2NEWSENDPOINT_TEST_LIVE")
-    override = getenv("API2NEWSENDPOINT_TEST_OVERRIDE")
+    live = getenv("API2NEWS_ENDPOINT_TEST_LIVE")
+    override = getenv("API2NEWS_ENDPOINT_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module Api2newsEndpointTestRunner
       end
     end
 
-    explain = getenv("API2NEWSENDPOINT_TEST_EXPLAIN")
-    m["API2NEWSENDPOINT_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("API2NEWS_ENDPOINT_TEST_EXPLAIN")
+    m["API2NEWS_ENDPOINT_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

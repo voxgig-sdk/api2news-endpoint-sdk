@@ -6,8 +6,8 @@
         "content": "s5b",
         "description": "s5c",
         "id": "CNN00",
-        "image_url": "s5e",
-        "published_at": "s5f",
+        "imageUrl": "s5e",
+        "publishedAt": "s5f",
         "source": "s60",
         "title": "s61",
         "url": "s62"
@@ -17,8 +17,8 @@
         "content": "sb5",
         "description": "sb6",
         "id": "CNN01",
-        "image_url": "sb8",
-        "published_at": "sb9",
+        "imageUrl": "sb8",
+        "publishedAt": "sb9",
         "source": "sba",
         "title": "sbb",
         "url": "sbc"
@@ -28,8 +28,8 @@
         "content": "s10f",
         "description": "s110",
         "id": "CNN02",
-        "image_url": "s112",
-        "published_at": "s113",
+        "imageUrl": "s112",
+        "publishedAt": "s113",
         "source": "s114",
         "title": "s115",
         "url": "s116"
@@ -42,8 +42,8 @@
         "author": "s168",
         "content": "s169",
         "description": "s16a",
-        "image_url": "s16c",
-        "published_at": "s16d",
+        "imageUrl": "s16c",
+        "publishedAt": "s16d",
         "source": "s16e",
         "title": "s16f",
         "url": "s170"
