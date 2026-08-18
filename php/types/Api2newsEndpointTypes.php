@@ -69,7 +69,7 @@ class CnnListMatch
 }
 
 /** New entity data model. */
-class New
+class NewType
 {
     public ?string $author = null;
     public ?string $content = null;

@@ -23,7 +23,7 @@ func NewApi2newsEndpointSDK(options map[string]any) *Api2newsEndpointSDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

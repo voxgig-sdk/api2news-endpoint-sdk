@@ -15,7 +15,7 @@ require_relative "../Api2newsEndpoint_sdk"
 module Api2newsEndpointFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = Api2newsEndpointConfig.make_config["feature"]
+    f = Api2newsEndpointConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

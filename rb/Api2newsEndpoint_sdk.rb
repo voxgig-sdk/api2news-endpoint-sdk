@@ -28,7 +28,7 @@ class Api2newsEndpointSDK
     utility = Api2newsEndpointUtility.new
     @_utility = utility
 
-    config = Api2newsEndpointConfig.make_config
+    config = Api2newsEndpointConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

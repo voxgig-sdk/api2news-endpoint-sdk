@@ -40,7 +40,7 @@ class Api2newsEndpointSDK
         $utility = new Api2newsEndpointUtility();
         $this->_utility = $utility;
 
-        $config = Api2newsEndpointConfig::make_config();
+        $config = Api2newsEndpointConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
