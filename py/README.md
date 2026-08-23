@@ -246,15 +246,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -264,15 +264,15 @@ API path: `/api/news/bbc`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -282,15 +282,15 @@ API path: `/api/news/cnn`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -300,15 +300,15 @@ API path: `/api/news`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -333,15 +333,15 @@ Create an instance: `bbc = client.Bbc()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `str` |  |
-| `content` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `imageUrl` | `str` |  |
-| `publishedAt` | `str` |  |
-| `source` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `author` | `str` | Article author name |
+| `content` | `str` | Article content excerpt |
+| `description` | `str` | Brief summary of the article |
+| `id` | `str` | Unique identifier for the article |
+| `imageUrl` | `str` | URL to the article's featured image |
+| `publishedAt` | `str` | Publication date and time |
+| `source` | `str` | News source (BBC, TechCrunch, CNN) |
+| `title` | `str` | Article headline |
+| `url` | `str` | URL to the full article |
 
 #### Example: List
 
@@ -364,15 +364,15 @@ Create an instance: `cnn = client.Cnn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `str` |  |
-| `content` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `imageUrl` | `str` |  |
-| `publishedAt` | `str` |  |
-| `source` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `author` | `str` | Article author name |
+| `content` | `str` | Article content excerpt |
+| `description` | `str` | Brief summary of the article |
+| `id` | `str` | Unique identifier for the article |
+| `imageUrl` | `str` | URL to the article's featured image |
+| `publishedAt` | `str` | Publication date and time |
+| `source` | `str` | News source (BBC, TechCrunch, CNN) |
+| `title` | `str` | Article headline |
+| `url` | `str` | URL to the full article |
 
 #### Example: List
 
@@ -395,15 +395,15 @@ Create an instance: `new = client.New()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `str` |  |
-| `content` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `imageUrl` | `str` |  |
-| `publishedAt` | `str` |  |
-| `source` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `author` | `str` | Article author name |
+| `content` | `str` | Article content excerpt |
+| `description` | `str` | Brief summary of the article |
+| `id` | `str` | Unique identifier for the article |
+| `imageUrl` | `str` | URL to the article's featured image |
+| `publishedAt` | `str` | Publication date and time |
+| `source` | `str` | News source (BBC, TechCrunch, CNN) |
+| `title` | `str` | Article headline |
+| `url` | `str` | URL to the full article |
 
 #### Example: List
 
@@ -426,15 +426,15 @@ Create an instance: `techcrunch = client.Techcrunch()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `str` |  |
-| `content` | `str` |  |
-| `description` | `str` |  |
-| `id` | `str` |  |
-| `imageUrl` | `str` |  |
-| `publishedAt` | `str` |  |
-| `source` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `author` | `str` | Article author name |
+| `content` | `str` | Article content excerpt |
+| `description` | `str` | Brief summary of the article |
+| `id` | `str` | Unique identifier for the article |
+| `imageUrl` | `str` | URL to the article's featured image |
+| `publishedAt` | `str` | Publication date and time |
+| `source` | `str` | News source (BBC, TechCrunch, CNN) |
+| `title` | `str` | Article headline |
+| `url` | `str` | URL to the full article |
 
 #### Example: List
 

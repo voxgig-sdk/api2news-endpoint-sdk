@@ -234,15 +234,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -252,15 +252,15 @@ API path: `/api/news/bbc`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -270,15 +270,15 @@ API path: `/api/news/cnn`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -288,15 +288,15 @@ API path: `/api/news`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -321,15 +321,15 @@ Create an instance: `local bbc = client:Bbc(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -352,15 +352,15 @@ Create an instance: `local cnn = client:Cnn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -383,15 +383,15 @@ Create an instance: `local new = client:New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -414,15 +414,15 @@ Create an instance: `local techcrunch = client:Techcrunch(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 

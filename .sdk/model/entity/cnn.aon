@@ -1,0 +1,118 @@
+# Entity: cnn
+
+main: kit: entity: cnn: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "author"
+      req: false
+      short: "Article author name"
+      type: "`$STRING`"
+    }
+    {
+      name: "content"
+      req: false
+      short: "Article content excerpt"
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: false
+      short: "Brief summary of the article"
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      short: "Unique identifier for the article"
+      type: "`$STRING`"
+    }
+    {
+      name: "imageUrl"
+      req: false
+      short: "URL to the article's featured image"
+      type: "`$STRING`"
+    }
+    {
+      name: "publishedAt"
+      req: false
+      short: "Publication date and time"
+      type: "`$STRING`"
+    }
+    {
+      name: "source"
+      req: false
+      short: "News source (BBC, TechCrunch, CNN)"
+      type: "`$STRING`"
+    }
+    {
+      name: "title"
+      req: false
+      short: "Article headline"
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      short: "URL to the full article"
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "cnn"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: 10
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "query"
+                orig: "query"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/news/cnn"
+          parts: [
+            "api"
+            "news"
+            "cnn"
+          ]
+          select: {
+            exist: [
+              "limit"
+              "query"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.articles`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

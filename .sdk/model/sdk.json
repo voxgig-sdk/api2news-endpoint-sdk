@@ -36,54 +36,63 @@
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Article author name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "content",
               "req": false,
+              "short": "Article content excerpt",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief summary of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageUrl",
               "req": false,
+              "short": "URL to the article's featured image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "publishedAt",
               "req": false,
+              "short": "Publication date and time",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "News source (BBC, TechCrunch, CNN)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Article headline",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the full article",
               "type": "`$STRING`"
             }
           ],
@@ -156,54 +165,63 @@
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Article author name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "content",
               "req": false,
+              "short": "Article content excerpt",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief summary of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageUrl",
               "req": false,
+              "short": "URL to the article's featured image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "publishedAt",
               "req": false,
+              "short": "Publication date and time",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "News source (BBC, TechCrunch, CNN)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Article headline",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the full article",
               "type": "`$STRING`"
             }
           ],
@@ -276,54 +294,63 @@
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Article author name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "content",
               "req": false,
+              "short": "Article content excerpt",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief summary of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageUrl",
               "req": false,
+              "short": "URL to the article's featured image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "publishedAt",
               "req": false,
+              "short": "Publication date and time",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "News source (BBC, TechCrunch, CNN)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Article headline",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the full article",
               "type": "`$STRING`"
             }
           ],
@@ -404,54 +431,63 @@
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Article author name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "content",
               "req": false,
+              "short": "Article content excerpt",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief summary of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "imageUrl",
               "req": false,
+              "short": "URL to the article's featured image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "publishedAt",
               "req": false,
+              "short": "Publication date and time",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "source",
               "req": false,
+              "short": "News source (BBC, TechCrunch, CNN)",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Article headline",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the full article",
               "type": "`$STRING`"
             }
           ],

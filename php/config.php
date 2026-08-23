@@ -33,6 +33,9 @@ class Api2newsEndpointConfig
         return [
             "main" => [
                 "name" => "Api2newsEndpoint",
+                "slug" => "api2news-endpoint",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -58,38 +61,47 @@ class Api2newsEndpointConfig
           'fields' => [
             [
               'name' => 'author',
+              'short' => 'Article author name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'content',
+              'short' => 'Article content excerpt',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'description',
+              'short' => 'Brief summary of the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageUrl',
+              'short' => 'URL to the article\'s featured image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'publishedAt',
+              'short' => 'Publication date and time',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'source',
+              'short' => 'News source (BBC, TechCrunch, CNN)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'title',
+              'short' => 'Article headline',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'short' => 'URL to the full article',
               'type' => '`$STRING`',
             ],
           ],
@@ -147,38 +159,47 @@ class Api2newsEndpointConfig
           'fields' => [
             [
               'name' => 'author',
+              'short' => 'Article author name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'content',
+              'short' => 'Article content excerpt',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'description',
+              'short' => 'Brief summary of the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageUrl',
+              'short' => 'URL to the article\'s featured image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'publishedAt',
+              'short' => 'Publication date and time',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'source',
+              'short' => 'News source (BBC, TechCrunch, CNN)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'title',
+              'short' => 'Article headline',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'short' => 'URL to the full article',
               'type' => '`$STRING`',
             ],
           ],
@@ -236,38 +257,47 @@ class Api2newsEndpointConfig
           'fields' => [
             [
               'name' => 'author',
+              'short' => 'Article author name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'content',
+              'short' => 'Article content excerpt',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'description',
+              'short' => 'Brief summary of the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageUrl',
+              'short' => 'URL to the article\'s featured image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'publishedAt',
+              'short' => 'Publication date and time',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'source',
+              'short' => 'News source (BBC, TechCrunch, CNN)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'title',
+              'short' => 'Article headline',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'short' => 'URL to the full article',
               'type' => '`$STRING`',
             ],
           ],
@@ -331,38 +361,47 @@ class Api2newsEndpointConfig
           'fields' => [
             [
               'name' => 'author',
+              'short' => 'Article author name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'content',
+              'short' => 'Article content excerpt',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'description',
+              'short' => 'Brief summary of the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'id',
+              'short' => 'Unique identifier for the article',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'imageUrl',
+              'short' => 'URL to the article\'s featured image',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'publishedAt',
+              'short' => 'Publication date and time',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'source',
+              'short' => 'News source (BBC, TechCrunch, CNN)',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'title',
+              'short' => 'Article headline',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'short' => 'URL to the full article',
               'type' => '`$STRING`',
             ],
           ],

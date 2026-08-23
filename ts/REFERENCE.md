@@ -152,15 +152,15 @@ const bbc = client.Bbc()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `content` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `imageUrl` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `source` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Article author name |
+| `content` | `string` | No | Article content excerpt |
+| `description` | `string` | No | Brief summary of the article |
+| `id` | `string` | No | Unique identifier for the article |
+| `imageUrl` | `string` | No | URL to the article's featured image |
+| `publishedAt` | `string` | No | Publication date and time |
+| `source` | `string` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | No | Article headline |
+| `url` | `string` | No | URL to the full article |
 
 ### Operations
 
@@ -210,15 +210,15 @@ const cnn = client.Cnn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `content` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `imageUrl` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `source` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Article author name |
+| `content` | `string` | No | Article content excerpt |
+| `description` | `string` | No | Brief summary of the article |
+| `id` | `string` | No | Unique identifier for the article |
+| `imageUrl` | `string` | No | URL to the article's featured image |
+| `publishedAt` | `string` | No | Publication date and time |
+| `source` | `string` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | No | Article headline |
+| `url` | `string` | No | URL to the full article |
 
 ### Operations
 
@@ -268,15 +268,15 @@ const new_ = client.New()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `content` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `imageUrl` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `source` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Article author name |
+| `content` | `string` | No | Article content excerpt |
+| `description` | `string` | No | Brief summary of the article |
+| `id` | `string` | No | Unique identifier for the article |
+| `imageUrl` | `string` | No | URL to the article's featured image |
+| `publishedAt` | `string` | No | Publication date and time |
+| `source` | `string` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | No | Article headline |
+| `url` | `string` | No | URL to the full article |
 
 ### Operations
 
@@ -326,15 +326,15 @@ const techcrunch = client.Techcrunch()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `content` | `string` | No |  |
-| `description` | `string` | No |  |
-| `id` | `string` | No |  |
-| `imageUrl` | `string` | No |  |
-| `publishedAt` | `string` | No |  |
-| `source` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Article author name |
+| `content` | `string` | No | Article content excerpt |
+| `description` | `string` | No | Brief summary of the article |
+| `id` | `string` | No | Unique identifier for the article |
+| `imageUrl` | `string` | No | URL to the article's featured image |
+| `publishedAt` | `string` | No | Publication date and time |
+| `source` | `string` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | No | Article headline |
+| `url` | `string` | No | URL to the full article |
 
 ### Operations
 

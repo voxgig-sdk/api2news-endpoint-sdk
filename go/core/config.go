@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Api2newsEndpoint",
+			"slug": "api2news-endpoint",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,38 +39,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"short": "Article author name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "content",
+						"short": "Article content excerpt",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief summary of the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageUrl",
+						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publishedAt",
+						"short": "Publication date and time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "News source (BBC, TechCrunch, CNN)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Article headline",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
 				},
@@ -125,38 +137,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"short": "Article author name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "content",
+						"short": "Article content excerpt",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief summary of the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageUrl",
+						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publishedAt",
+						"short": "Publication date and time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "News source (BBC, TechCrunch, CNN)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Article headline",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
 				},
@@ -214,38 +235,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"short": "Article author name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "content",
+						"short": "Article content excerpt",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief summary of the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageUrl",
+						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publishedAt",
+						"short": "Publication date and time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "News source (BBC, TechCrunch, CNN)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Article headline",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
 				},
@@ -309,38 +339,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"short": "Article author name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "content",
+						"short": "Article content excerpt",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief summary of the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the article",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "imageUrl",
+						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "publishedAt",
+						"short": "Publication date and time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "source",
+						"short": "News source (BBC, TechCrunch, CNN)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Article headline",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
 				},

@@ -105,15 +105,15 @@ bbc = client.Bbc
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | No |  |
-| `content` | `String` | No |  |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `imageUrl` | `String` | No |  |
-| `publishedAt` | `String` | No |  |
-| `source` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `author` | `String` | No | Article author name |
+| `content` | `String` | No | Article content excerpt |
+| `description` | `String` | No | Brief summary of the article |
+| `id` | `String` | No | Unique identifier for the article |
+| `imageUrl` | `String` | No | URL to the article's featured image |
+| `publishedAt` | `String` | No | Publication date and time |
+| `source` | `String` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | No | Article headline |
+| `url` | `String` | No | URL to the full article |
 
 ### Operations
 
@@ -165,15 +165,15 @@ cnn = client.Cnn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | No |  |
-| `content` | `String` | No |  |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `imageUrl` | `String` | No |  |
-| `publishedAt` | `String` | No |  |
-| `source` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `author` | `String` | No | Article author name |
+| `content` | `String` | No | Article content excerpt |
+| `description` | `String` | No | Brief summary of the article |
+| `id` | `String` | No | Unique identifier for the article |
+| `imageUrl` | `String` | No | URL to the article's featured image |
+| `publishedAt` | `String` | No | Publication date and time |
+| `source` | `String` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | No | Article headline |
+| `url` | `String` | No | URL to the full article |
 
 ### Operations
 
@@ -225,15 +225,15 @@ new = client.New
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | No |  |
-| `content` | `String` | No |  |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `imageUrl` | `String` | No |  |
-| `publishedAt` | `String` | No |  |
-| `source` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `author` | `String` | No | Article author name |
+| `content` | `String` | No | Article content excerpt |
+| `description` | `String` | No | Brief summary of the article |
+| `id` | `String` | No | Unique identifier for the article |
+| `imageUrl` | `String` | No | URL to the article's featured image |
+| `publishedAt` | `String` | No | Publication date and time |
+| `source` | `String` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | No | Article headline |
+| `url` | `String` | No | URL to the full article |
 
 ### Operations
 
@@ -285,15 +285,15 @@ techcrunch = client.Techcrunch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | No |  |
-| `content` | `String` | No |  |
-| `description` | `String` | No |  |
-| `id` | `String` | No |  |
-| `imageUrl` | `String` | No |  |
-| `publishedAt` | `String` | No |  |
-| `source` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `author` | `String` | No | Article author name |
+| `content` | `String` | No | Article content excerpt |
+| `description` | `String` | No | Brief summary of the article |
+| `id` | `String` | No | Unique identifier for the article |
+| `imageUrl` | `String` | No | URL to the article's featured image |
+| `publishedAt` | `String` | No | Publication date and time |
+| `source` | `String` | No | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | No | Article headline |
+| `url` | `String` | No | URL to the full article |
 
 ### Operations
 

@@ -240,15 +240,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -258,15 +258,15 @@ API path: `/api/news/bbc`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -276,15 +276,15 @@ API path: `/api/news/cnn`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -294,15 +294,15 @@ API path: `/api/news`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `content` |  |
-| `description` |  |
-| `id` |  |
-| `imageUrl` |  |
-| `publishedAt` |  |
-| `source` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Article author name |
+| `content` | Article content excerpt |
+| `description` | Brief summary of the article |
+| `id` | Unique identifier for the article |
+| `imageUrl` | URL to the article's featured image |
+| `publishedAt` | Publication date and time |
+| `source` | News source (BBC, TechCrunch, CNN) |
+| `title` | Article headline |
+| `url` | URL to the full article |
 
 Operations: List.
 
@@ -327,15 +327,15 @@ Create an instance: `bbc = client.Bbc`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `content` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `imageUrl` | `String` |  |
-| `publishedAt` | `String` |  |
-| `source` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `author` | `String` | Article author name |
+| `content` | `String` | Article content excerpt |
+| `description` | `String` | Brief summary of the article |
+| `id` | `String` | Unique identifier for the article |
+| `imageUrl` | `String` | URL to the article's featured image |
+| `publishedAt` | `String` | Publication date and time |
+| `source` | `String` | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | Article headline |
+| `url` | `String` | URL to the full article |
 
 #### Example: List
 
@@ -359,15 +359,15 @@ Create an instance: `cnn = client.Cnn`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `content` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `imageUrl` | `String` |  |
-| `publishedAt` | `String` |  |
-| `source` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `author` | `String` | Article author name |
+| `content` | `String` | Article content excerpt |
+| `description` | `String` | Brief summary of the article |
+| `id` | `String` | Unique identifier for the article |
+| `imageUrl` | `String` | URL to the article's featured image |
+| `publishedAt` | `String` | Publication date and time |
+| `source` | `String` | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | Article headline |
+| `url` | `String` | URL to the full article |
 
 #### Example: List
 
@@ -391,15 +391,15 @@ Create an instance: `new = client.New`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `content` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `imageUrl` | `String` |  |
-| `publishedAt` | `String` |  |
-| `source` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `author` | `String` | Article author name |
+| `content` | `String` | Article content excerpt |
+| `description` | `String` | Brief summary of the article |
+| `id` | `String` | Unique identifier for the article |
+| `imageUrl` | `String` | URL to the article's featured image |
+| `publishedAt` | `String` | Publication date and time |
+| `source` | `String` | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | Article headline |
+| `url` | `String` | URL to the full article |
 
 #### Example: List
 
@@ -423,15 +423,15 @@ Create an instance: `techcrunch = client.Techcrunch`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `content` | `String` |  |
-| `description` | `String` |  |
-| `id` | `String` |  |
-| `imageUrl` | `String` |  |
-| `publishedAt` | `String` |  |
-| `source` | `String` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `author` | `String` | Article author name |
+| `content` | `String` | Article content excerpt |
+| `description` | `String` | Brief summary of the article |
+| `id` | `String` | Unique identifier for the article |
+| `imageUrl` | `String` | URL to the article's featured image |
+| `publishedAt` | `String` | Publication date and time |
+| `source` | `String` | News source (BBC, TechCrunch, CNN) |
+| `title` | `String` | Article headline |
+| `url` | `String` | URL to the full article |
 
 #### Example: List
 

@@ -6,7 +6,7 @@ The Golang SDK for the Api2newsEndpoint API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Bbc(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -263,15 +263,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"content"` |  |
-| `"description"` |  |
-| `"id"` |  |
-| `"imageUrl"` |  |
-| `"publishedAt"` |  |
-| `"source"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"author"` | Article author name |
+| `"content"` | Article content excerpt |
+| `"description"` | Brief summary of the article |
+| `"id"` | Unique identifier for the article |
+| `"imageUrl"` | URL to the article's featured image |
+| `"publishedAt"` | Publication date and time |
+| `"source"` | News source (BBC, TechCrunch, CNN) |
+| `"title"` | Article headline |
+| `"url"` | URL to the full article |
 
 Operations: List.
 
@@ -281,15 +281,15 @@ API path: `/api/news/bbc`
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"content"` |  |
-| `"description"` |  |
-| `"id"` |  |
-| `"imageUrl"` |  |
-| `"publishedAt"` |  |
-| `"source"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"author"` | Article author name |
+| `"content"` | Article content excerpt |
+| `"description"` | Brief summary of the article |
+| `"id"` | Unique identifier for the article |
+| `"imageUrl"` | URL to the article's featured image |
+| `"publishedAt"` | Publication date and time |
+| `"source"` | News source (BBC, TechCrunch, CNN) |
+| `"title"` | Article headline |
+| `"url"` | URL to the full article |
 
 Operations: List.
 
@@ -299,15 +299,15 @@ API path: `/api/news/cnn`
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"content"` |  |
-| `"description"` |  |
-| `"id"` |  |
-| `"imageUrl"` |  |
-| `"publishedAt"` |  |
-| `"source"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"author"` | Article author name |
+| `"content"` | Article content excerpt |
+| `"description"` | Brief summary of the article |
+| `"id"` | Unique identifier for the article |
+| `"imageUrl"` | URL to the article's featured image |
+| `"publishedAt"` | Publication date and time |
+| `"source"` | News source (BBC, TechCrunch, CNN) |
+| `"title"` | Article headline |
+| `"url"` | URL to the full article |
 
 Operations: List.
 
@@ -317,15 +317,15 @@ API path: `/api/news`
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"content"` |  |
-| `"description"` |  |
-| `"id"` |  |
-| `"imageUrl"` |  |
-| `"publishedAt"` |  |
-| `"source"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"author"` | Article author name |
+| `"content"` | Article content excerpt |
+| `"description"` | Brief summary of the article |
+| `"id"` | Unique identifier for the article |
+| `"imageUrl"` | URL to the article's featured image |
+| `"publishedAt"` | Publication date and time |
+| `"source"` | News source (BBC, TechCrunch, CNN) |
+| `"title"` | Article headline |
+| `"url"` | URL to the full article |
 
 Operations: List.
 
@@ -350,15 +350,15 @@ Create an instance: `bbc := client.Bbc(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -385,15 +385,15 @@ Create an instance: `cnn := client.Cnn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -420,15 +420,15 @@ Create an instance: `new := client.New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
@@ -455,15 +455,15 @@ Create an instance: `techcrunch := client.Techcrunch(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `content` | `string` |  |
-| `description` | `string` |  |
-| `id` | `string` |  |
-| `imageUrl` | `string` |  |
-| `publishedAt` | `string` |  |
-| `source` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Article author name |
+| `content` | `string` | Article content excerpt |
+| `description` | `string` | Brief summary of the article |
+| `id` | `string` | Unique identifier for the article |
+| `imageUrl` | `string` | URL to the article's featured image |
+| `publishedAt` | `string` | Publication date and time |
+| `source` | `string` | News source (BBC, TechCrunch, CNN) |
+| `title` | `string` | Article headline |
+| `url` | `string` | URL to the full article |
 
 #### Example: List
 
