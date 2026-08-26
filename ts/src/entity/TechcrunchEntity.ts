@@ -44,7 +44,8 @@ class TechcrunchEntity extends Api2newsEndpointEntityBase<Techcrunch> {
     const {
       makeContext,
       done,
-      error,
+      // The registry name is `makeError`; `error` is the local alias.
+      makeError: error,
       featureHook,
       makePoint,
       makeRequest,

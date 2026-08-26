@@ -28,6 +28,7 @@ module Api2newsEndpointConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
