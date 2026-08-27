@@ -29,15 +29,8 @@ class Bbc(TypedDict, total=False):
 
 
 class BbcListMatch(TypedDict, total=False):
-    author: str
-    content: str
-    description: str
-    id: str
-    imageUrl: str
-    publishedAt: str
-    source: str
-    title: str
-    url: str
+    limit: int
+    query: str
 
 
 class Cnn(TypedDict, total=False):
@@ -53,15 +46,8 @@ class Cnn(TypedDict, total=False):
 
 
 class CnnListMatch(TypedDict, total=False):
-    author: str
-    content: str
-    description: str
-    id: str
-    imageUrl: str
-    publishedAt: str
-    source: str
-    title: str
-    url: str
+    limit: int
+    query: str
 
 
 class New(TypedDict, total=False):
@@ -77,15 +63,9 @@ class New(TypedDict, total=False):
 
 
 class NewListMatch(TypedDict, total=False):
-    author: str
-    content: str
-    description: str
-    id: str
-    imageUrl: str
-    publishedAt: str
+    limit: int
+    query: str
     source: str
-    title: str
-    url: str
 
 
 class Techcrunch(TypedDict, total=False):
@@ -101,12 +81,5 @@ class Techcrunch(TypedDict, total=False):
 
 
 class TechcrunchListMatch(TypedDict, total=False):
-    author: str
-    content: str
-    description: str
-    id: str
-    imageUrl: str
-    publishedAt: str
-    source: str
-    title: str
-    url: str
+    limit: int
+    query: str

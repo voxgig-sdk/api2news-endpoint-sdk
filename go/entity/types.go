@@ -27,15 +27,8 @@ type Bbc struct {
 
 // BbcListMatch is the typed request payload for Bbc.ListTyped.
 type BbcListMatch struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Query *string `json:"query,omitempty"`
 }
 
 // Cnn is the typed data model for the cnn entity.
@@ -53,15 +46,8 @@ type Cnn struct {
 
 // CnnListMatch is the typed request payload for Cnn.ListTyped.
 type CnnListMatch struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Query *string `json:"query,omitempty"`
 }
 
 // New is the typed data model for the new entity.
@@ -79,15 +65,9 @@ type New struct {
 
 // NewListMatch is the typed request payload for New.ListTyped.
 type NewListMatch struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Query *string `json:"query,omitempty"`
 	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // Techcrunch is the typed data model for the techcrunch entity.
@@ -105,15 +85,8 @@ type Techcrunch struct {
 
 // TechcrunchListMatch is the typed request payload for Techcrunch.ListTyped.
 type TechcrunchListMatch struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Query *string `json:"query,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

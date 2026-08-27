@@ -29,15 +29,8 @@ class Bbc
 /** Request payload for Bbc#list. */
 class BbcListMatch
 {
-    public ?string $author = null;
-    public ?string $content = null;
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $imageUrl = null;
-    public ?string $publishedAt = null;
-    public ?string $source = null;
-    public ?string $title = null;
-    public ?string $url = null;
+    public ?int $limit = null;
+    public ?string $query = null;
 }
 
 /** Cnn entity data model. */
@@ -57,15 +50,8 @@ class Cnn
 /** Request payload for Cnn#list. */
 class CnnListMatch
 {
-    public ?string $author = null;
-    public ?string $content = null;
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $imageUrl = null;
-    public ?string $publishedAt = null;
-    public ?string $source = null;
-    public ?string $title = null;
-    public ?string $url = null;
+    public ?int $limit = null;
+    public ?string $query = null;
 }
 
 /** New entity data model. */
@@ -85,15 +71,9 @@ class NewType
 /** Request payload for New#list. */
 class NewListMatch
 {
-    public ?string $author = null;
-    public ?string $content = null;
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $imageUrl = null;
-    public ?string $publishedAt = null;
+    public ?int $limit = null;
+    public ?string $query = null;
     public ?string $source = null;
-    public ?string $title = null;
-    public ?string $url = null;
 }
 
 /** Techcrunch entity data model. */
@@ -113,14 +93,7 @@ class Techcrunch
 /** Request payload for Techcrunch#list. */
 class TechcrunchListMatch
 {
-    public ?string $author = null;
-    public ?string $content = null;
-    public ?string $description = null;
-    public ?string $id = null;
-    public ?string $imageUrl = null;
-    public ?string $publishedAt = null;
-    public ?string $source = null;
-    public ?string $title = null;
-    public ?string $url = null;
+    public ?int $limit = null;
+    public ?string $query = null;
 }
 

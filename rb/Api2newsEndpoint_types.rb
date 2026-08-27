@@ -51,42 +51,14 @@ Bbc = Struct.new(
 
 # Request payload for Bbc#list.
 #
-# @!attribute [rw] author
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] content
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] imageUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] publishedAt
-#   @return [String, nil]
-#
-# @!attribute [rw] source
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] query
 #   @return [String, nil]
 BbcListMatch = Struct.new(
-  :author,
-  :content,
-  :description,
-  :id,
-  :imageUrl,
-  :publishedAt,
-  :source,
-  :title,
-  :url,
+  :limit,
+  :query,
   keyword_init: true
 )
 
@@ -133,42 +105,14 @@ Cnn = Struct.new(
 
 # Request payload for Cnn#list.
 #
-# @!attribute [rw] author
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] content
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] imageUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] publishedAt
-#   @return [String, nil]
-#
-# @!attribute [rw] source
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] query
 #   @return [String, nil]
 CnnListMatch = Struct.new(
-  :author,
-  :content,
-  :description,
-  :id,
-  :imageUrl,
-  :publishedAt,
-  :source,
-  :title,
-  :url,
+  :limit,
+  :query,
   keyword_init: true
 )
 
@@ -215,42 +159,18 @@ New = Struct.new(
 
 # Request payload for New#list.
 #
-# @!attribute [rw] author
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] content
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] imageUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] publishedAt
+# @!attribute [rw] query
 #   @return [String, nil]
 #
 # @!attribute [rw] source
 #   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
 NewListMatch = Struct.new(
-  :author,
-  :content,
-  :description,
-  :id,
-  :imageUrl,
-  :publishedAt,
+  :limit,
+  :query,
   :source,
-  :title,
-  :url,
   keyword_init: true
 )
 
@@ -297,42 +217,14 @@ Techcrunch = Struct.new(
 
 # Request payload for Techcrunch#list.
 #
-# @!attribute [rw] author
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] content
-#   @return [String, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] imageUrl
-#   @return [String, nil]
-#
-# @!attribute [rw] publishedAt
-#   @return [String, nil]
-#
-# @!attribute [rw] source
-#   @return [String, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] query
 #   @return [String, nil]
 TechcrunchListMatch = Struct.new(
-  :author,
-  :content,
-  :description,
-  :id,
-  :imageUrl,
-  :publishedAt,
-  :source,
-  :title,
-  :url,
+  :limit,
+  :query,
   keyword_init: true
 )
 

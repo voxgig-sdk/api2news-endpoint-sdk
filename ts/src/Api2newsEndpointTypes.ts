@@ -18,15 +18,8 @@ export interface Bbc {
 }
 
 export interface BbcListMatch {
-  author?: string
-  content?: string
-  description?: string
-  id?: string
-  imageUrl?: string
-  publishedAt?: string
-  source?: string
-  title?: string
-  url?: string
+  limit?: number
+  query?: string
 }
 
 export interface Cnn {
@@ -42,15 +35,8 @@ export interface Cnn {
 }
 
 export interface CnnListMatch {
-  author?: string
-  content?: string
-  description?: string
-  id?: string
-  imageUrl?: string
-  publishedAt?: string
-  source?: string
-  title?: string
-  url?: string
+  limit?: number
+  query?: string
 }
 
 export interface New {
@@ -66,15 +52,9 @@ export interface New {
 }
 
 export interface NewListMatch {
-  author?: string
-  content?: string
-  description?: string
-  id?: string
-  imageUrl?: string
-  publishedAt?: string
+  limit?: number
+  query?: string
   source?: string
-  title?: string
-  url?: string
 }
 
 export interface Techcrunch {
@@ -90,14 +70,7 @@ export interface Techcrunch {
 }
 
 export interface TechcrunchListMatch {
-  author?: string
-  content?: string
-  description?: string
-  id?: string
-  imageUrl?: string
-  publishedAt?: string
-  source?: string
-  title?: string
-  url?: string
+  limit?: number
+  query?: string
 }
 
