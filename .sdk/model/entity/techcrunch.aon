@@ -30,12 +30,14 @@ main: kit: entity: techcrunch: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "imageUrl"
       req: false
       short: "URL to the article's featured image"
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "publishedAt"
       req: false
       short: "Publication date and time"
@@ -54,6 +56,7 @@ main: kit: entity: techcrunch: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to the full article"
@@ -93,10 +96,16 @@ main: kit: entity: techcrunch: {
           }
           method: "GET"
           orig: "/api/news/techcrunch"
-          parts: [
-            "api"
-            "news"
-            "techcrunch"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "news"
+            }
+            {
+              lit: "techcrunch"
+            }
           ]
           select: {
             exist: [

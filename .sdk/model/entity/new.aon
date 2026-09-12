@@ -30,12 +30,14 @@ main: kit: entity: new: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "imageUrl"
       req: false
       short: "URL to the article's featured image"
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "publishedAt"
       req: false
       short: "Publication date and time"
@@ -54,6 +56,7 @@ main: kit: entity: new: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to the full article"
@@ -100,9 +103,13 @@ main: kit: entity: new: {
           }
           method: "GET"
           orig: "/api/news"
-          parts: [
-            "api"
-            "news"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "news"
+            }
           ]
           select: {
             exist: [

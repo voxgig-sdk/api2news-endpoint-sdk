@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -96,11 +107,13 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "imageUrl",
           "short": "URL to the article's featured image",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "publishedAt",
           "short": "Publication date and time",
           "type": "`$STRING`"
@@ -116,11 +129,16 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the full article",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "bbc",
       "op": {
         "list": {
@@ -148,10 +166,16 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/news/bbc",
-              "parts": [
-                "api",
-                "news",
-                "bbc"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "news"
+                },
+                {
+                  "lit": "bbc"
+                }
               ],
               "select": {
                 "exist": [
@@ -162,7 +186,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.articles`"
-              }
+              },
+              "parts": [
+                "api",
+                "news",
+                "bbc"
+              ]
             }
           ]
         }
@@ -194,11 +223,13 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "imageUrl",
           "short": "URL to the article's featured image",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "publishedAt",
           "short": "Publication date and time",
           "type": "`$STRING`"
@@ -214,11 +245,16 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the full article",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "cnn",
       "op": {
         "list": {
@@ -246,10 +282,16 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/news/cnn",
-              "parts": [
-                "api",
-                "news",
-                "cnn"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "news"
+                },
+                {
+                  "lit": "cnn"
+                }
               ],
               "select": {
                 "exist": [
@@ -260,7 +302,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.articles`"
-              }
+              },
+              "parts": [
+                "api",
+                "news",
+                "cnn"
+              ]
             }
           ]
         }
@@ -292,11 +339,13 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "imageUrl",
           "short": "URL to the article's featured image",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "publishedAt",
           "short": "Publication date and time",
           "type": "`$STRING`"
@@ -312,11 +361,16 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the full article",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "new",
       "op": {
         "list": {
@@ -350,9 +404,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/news",
-              "parts": [
-                "api",
-                "news"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "news"
+                }
               ],
               "select": {
                 "exist": [
@@ -364,7 +422,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.articles`"
-              }
+              },
+              "parts": [
+                "api",
+                "news"
+              ]
             }
           ]
         }
@@ -396,11 +458,13 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "imageUrl",
           "short": "URL to the article's featured image",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "publishedAt",
           "short": "Publication date and time",
           "type": "`$STRING`"
@@ -416,11 +480,16 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the full article",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "techcrunch",
       "op": {
         "list": {
@@ -448,10 +517,16 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/news/techcrunch",
-              "parts": [
-                "api",
-                "news",
-                "techcrunch"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "news"
+                },
+                {
+                  "lit": "techcrunch"
+                }
               ],
               "select": {
                 "exist": [
@@ -462,7 +537,12 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.articles`"
-              }
+              },
+              "parts": [
+                "api",
+                "news",
+                "techcrunch"
+              ]
             }
           ]
         }
@@ -478,6 +558,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

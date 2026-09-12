@@ -1,6 +1,14 @@
 # Api2newsEndpoint SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -76,11 +84,13 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "imageUrl",
             "short": "URL to the article's featured image",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "publishedAt",
             "short": "Publication date and time",
             "type": "`$STRING`",
@@ -96,11 +106,16 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "url",
             "short": "URL to the full article",
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "bbc",
         "op": {
           "list": {
@@ -128,10 +143,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/bbc",
-                "parts": [
-                  "api",
-                  "news",
-                  "bbc",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "news",
+                  },
+                  {
+                    "lit": "bbc",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -143,6 +164,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.articles`",
                 },
+                "parts": [
+                  "api",
+                  "news",
+                  "bbc",
+                ],
               },
             ],
           },
@@ -174,11 +200,13 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "imageUrl",
             "short": "URL to the article's featured image",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "publishedAt",
             "short": "Publication date and time",
             "type": "`$STRING`",
@@ -194,11 +222,16 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "url",
             "short": "URL to the full article",
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "cnn",
         "op": {
           "list": {
@@ -226,10 +259,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/cnn",
-                "parts": [
-                  "api",
-                  "news",
-                  "cnn",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "news",
+                  },
+                  {
+                    "lit": "cnn",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -241,6 +280,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.articles`",
                 },
+                "parts": [
+                  "api",
+                  "news",
+                  "cnn",
+                ],
               },
             ],
           },
@@ -272,11 +316,13 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "imageUrl",
             "short": "URL to the article's featured image",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "publishedAt",
             "short": "Publication date and time",
             "type": "`$STRING`",
@@ -292,11 +338,16 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "url",
             "short": "URL to the full article",
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "new",
         "op": {
           "list": {
@@ -330,9 +381,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news",
-                "parts": [
-                  "api",
-                  "news",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "news",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -345,6 +400,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.articles`",
                 },
+                "parts": [
+                  "api",
+                  "news",
+                ],
               },
             ],
           },
@@ -376,11 +435,13 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "imageUrl",
             "short": "URL to the article's featured image",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "publishedAt",
             "short": "Publication date and time",
             "type": "`$STRING`",
@@ -396,11 +457,16 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "url",
             "short": "URL to the full article",
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "techcrunch",
         "op": {
           "list": {
@@ -428,10 +494,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/techcrunch",
-                "parts": [
-                  "api",
-                  "news",
-                  "techcrunch",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "news",
+                  },
+                  {
+                    "lit": "techcrunch",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -443,6 +515,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.articles`",
                 },
+                "parts": [
+                  "api",
+                  "news",
+                  "techcrunch",
+                ],
               },
             ],
           },

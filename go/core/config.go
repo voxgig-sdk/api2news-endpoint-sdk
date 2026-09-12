@@ -59,11 +59,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "imageUrl",
 						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "publishedAt",
 						"short": "Publication date and time",
 						"type": "`$STRING`",
@@ -79,10 +81,15 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "bbc",
 				"op": map[string]any{
@@ -111,10 +118,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/bbc",
-								"parts": []any{
-									"api",
-									"news",
-									"bbc",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "news",
+									},
+									map[string]any{
+										"lit": "bbc",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -125,6 +138,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.articles`",
+								},
+								"parts": []any{
+									"api",
+									"news",
+									"bbc",
 								},
 							},
 						},
@@ -157,11 +175,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "imageUrl",
 						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "publishedAt",
 						"short": "Publication date and time",
 						"type": "`$STRING`",
@@ -177,10 +197,15 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "cnn",
 				"op": map[string]any{
@@ -209,10 +234,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/cnn",
-								"parts": []any{
-									"api",
-									"news",
-									"cnn",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "news",
+									},
+									map[string]any{
+										"lit": "cnn",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -223,6 +254,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.articles`",
+								},
+								"parts": []any{
+									"api",
+									"news",
+									"cnn",
 								},
 							},
 						},
@@ -255,11 +291,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "imageUrl",
 						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "publishedAt",
 						"short": "Publication date and time",
 						"type": "`$STRING`",
@@ -275,10 +313,15 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "new",
 				"op": map[string]any{
@@ -313,9 +356,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news",
-								"parts": []any{
-									"api",
-									"news",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "news",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -327,6 +374,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.articles`",
+								},
+								"parts": []any{
+									"api",
+									"news",
 								},
 							},
 						},
@@ -359,11 +410,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "imageUrl",
 						"short": "URL to the article's featured image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "publishedAt",
 						"short": "Publication date and time",
 						"type": "`$STRING`",
@@ -379,10 +432,15 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "url",
 						"short": "URL to the full article",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "techcrunch",
 				"op": map[string]any{
@@ -411,10 +469,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/techcrunch",
-								"parts": []any{
-									"api",
-									"news",
-									"techcrunch",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "news",
+									},
+									map[string]any{
+										"lit": "techcrunch",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -426,6 +490,11 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body.articles`",
 								},
+								"parts": []any{
+									"api",
+									"news",
+									"techcrunch",
+								},
 							},
 						},
 					},
@@ -436,6 +505,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

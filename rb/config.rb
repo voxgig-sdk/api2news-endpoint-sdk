@@ -67,11 +67,13 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "imageUrl",
               "short" => "URL to the article's featured image",
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "publishedAt",
               "short" => "Publication date and time",
               "type" => "`$STRING`",
@@ -87,11 +89,16 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to the full article",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "bbc",
           "op" => {
             "list" => {
@@ -119,10 +126,16 @@ module Api2newsEndpointConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/bbc",
-                  "parts" => [
-                    "api",
-                    "news",
-                    "bbc",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "news",
+                    },
+                    {
+                      "lit" => "bbc",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -134,6 +147,11 @@ module Api2newsEndpointConfig
                     "req" => "`reqdata`",
                     "res" => "`body.articles`",
                   },
+                  "parts" => [
+                    "api",
+                    "news",
+                    "bbc",
+                  ],
                 },
               ],
             },
@@ -165,11 +183,13 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "imageUrl",
               "short" => "URL to the article's featured image",
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "publishedAt",
               "short" => "Publication date and time",
               "type" => "`$STRING`",
@@ -185,11 +205,16 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to the full article",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "cnn",
           "op" => {
             "list" => {
@@ -217,10 +242,16 @@ module Api2newsEndpointConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/cnn",
-                  "parts" => [
-                    "api",
-                    "news",
-                    "cnn",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "news",
+                    },
+                    {
+                      "lit" => "cnn",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -232,6 +263,11 @@ module Api2newsEndpointConfig
                     "req" => "`reqdata`",
                     "res" => "`body.articles`",
                   },
+                  "parts" => [
+                    "api",
+                    "news",
+                    "cnn",
+                  ],
                 },
               ],
             },
@@ -263,11 +299,13 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "imageUrl",
               "short" => "URL to the article's featured image",
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "publishedAt",
               "short" => "Publication date and time",
               "type" => "`$STRING`",
@@ -283,11 +321,16 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to the full article",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "new",
           "op" => {
             "list" => {
@@ -321,9 +364,13 @@ module Api2newsEndpointConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news",
-                  "parts" => [
-                    "api",
-                    "news",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "news",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -336,6 +383,10 @@ module Api2newsEndpointConfig
                     "req" => "`reqdata`",
                     "res" => "`body.articles`",
                   },
+                  "parts" => [
+                    "api",
+                    "news",
+                  ],
                 },
               ],
             },
@@ -367,11 +418,13 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "imageUrl",
               "short" => "URL to the article's featured image",
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "publishedAt",
               "short" => "Publication date and time",
               "type" => "`$STRING`",
@@ -387,11 +440,16 @@ module Api2newsEndpointConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "URL to the full article",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "techcrunch",
           "op" => {
             "list" => {
@@ -419,10 +477,16 @@ module Api2newsEndpointConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/news/techcrunch",
-                  "parts" => [
-                    "api",
-                    "news",
-                    "techcrunch",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "news",
+                    },
+                    {
+                      "lit" => "techcrunch",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -434,6 +498,11 @@ module Api2newsEndpointConfig
                     "req" => "`reqdata`",
                     "res" => "`body.articles`",
                   },
+                  "parts" => [
+                    "api",
+                    "news",
+                    "techcrunch",
+                  ],
                 },
               ],
             },
