@@ -105,7 +105,7 @@ local results, err = client:Bbc():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
+| TypeScript | `@voxgig-sdk/api2news-endpoint-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
 | Python | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
 | PHP | `voxgig-sdk/api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/api2news-endpoint-sdk/go` | `go get github.com/voxgig-sdk/api2news-endpoint-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Bbc():list()
 ### TypeScript
 
 ```ts
-import { Api2newsEndpointSDK } from '@voxgig-sdk/api2news-endpoint'
+import { Api2newsEndpointSDK } from '@voxgig-sdk/api2news-endpoint-sdk'
 
 const client = new Api2newsEndpointSDK()
 
