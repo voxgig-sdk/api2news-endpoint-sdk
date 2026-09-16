@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Api2newsEndpoint SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class Api2newsEndpointFeatures
@@ -14,8 +17,14 @@ class Api2newsEndpointFeatures
         switch ($name) {
             case "base":
                 return new Api2newsEndpointBaseFeature();
+            case "ratelimit":
+                return new Api2newsEndpointRatelimitFeature();
+            case "retry":
+                return new Api2newsEndpointRetryFeature();
             case "test":
                 return new Api2newsEndpointTestFeature();
+            case "timeout":
+                return new Api2newsEndpointTimeoutFeature();
             default:
                 return new Api2newsEndpointBaseFeature();
         }
@@ -31,7 +40,10 @@ class Api2newsEndpointFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

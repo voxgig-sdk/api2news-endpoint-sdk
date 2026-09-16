@@ -49,5 +49,136 @@
         "url": "s170"
       }
     }
+  },
+  "requests": {
+    "GET /api/news/bbc": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getBBCNews",
+        "parameters": [
+          {
+            "description": "Search query to filter BBC articles",
+            "in": "query",
+            "name": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Number of articles to return",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 10,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "articles": {
+                      "items": {
+                        "properties": {
+                          "author": {
+                            "description": "Article author name",
+                            "type": "string"
+                          },
+                          "content": {
+                            "description": "Article content excerpt",
+                            "type": "string"
+                          },
+                          "description": {
+                            "description": "Brief summary of the article",
+                            "type": "string"
+                          },
+                          "id": {
+                            "description": "Unique identifier for the article",
+                            "type": "string"
+                          },
+                          "imageUrl": {
+                            "description": "URL to the article's featured image",
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "publishedAt": {
+                            "description": "Publication date and time",
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "source": {
+                            "description": "News source (BBC, TechCrunch, CNN)",
+                            "example": "bbc",
+                            "type": "string"
+                          },
+                          "title": {
+                            "description": "Article headline",
+                            "example": "Breaking News: Major Technology Breakthrough",
+                            "type": "string"
+                          },
+                          "url": {
+                            "description": "URL to the full article",
+                            "format": "uri",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "source": {
+                      "example": "bbc",
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "success",
+                      "type": "string"
+                    },
+                    "totalResults": {
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with BBC news articles"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "Error code",
+                      "type": "integer"
+                    },
+                    "message": {
+                      "description": "Error message describing what went wrong",
+                      "type": "string"
+                    },
+                    "status": {
+                      "example": "error",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

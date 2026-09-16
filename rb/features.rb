@@ -1,7 +1,10 @@
 # Api2newsEndpoint SDK feature factory
 
 require_relative 'feature/base_feature'
+require_relative 'feature/ratelimit_feature'
+require_relative 'feature/retry_feature'
 require_relative 'feature/test_feature'
+require_relative 'feature/timeout_feature'
 
 
 module Api2newsEndpointFeatures
@@ -9,8 +12,14 @@ module Api2newsEndpointFeatures
     case name
     when "base"
       Api2newsEndpointBaseFeature.new
+    when "ratelimit"
+      Api2newsEndpointRatelimitFeature.new
+    when "retry"
+      Api2newsEndpointRetryFeature.new
     when "test"
       Api2newsEndpointTestFeature.new
+    when "timeout"
+      Api2newsEndpointTimeoutFeature.new
     else
       Api2newsEndpointBaseFeature.new
     end
