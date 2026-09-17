@@ -127,18 +127,18 @@ class Config {
 
     entity: {
       
-      bbc: {
-      },
-
-      cnn: {
-      },
-
-      new: {
-      },
-
-      techcrunch: {
-      },
-
+        bbc: {
+        },
+  
+        cnn: {
+        },
+  
+        new: {
+        },
+  
+        techcrunch: {
+        },
+  
     }
   }
 

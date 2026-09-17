@@ -105,12 +105,12 @@ local results, err = client:Bbc():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/api2news-endpoint-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
-| Python | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
-| PHP | `voxgig-sdk/api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
+| TypeScript | `@voxgig-sdk/api2news-endpoint-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/tags) |
+| Python | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/tags) |
+| PHP | `voxgig-sdk/api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/api2news-endpoint-sdk/go` | `go get github.com/voxgig-sdk/api2news-endpoint-sdk/go@latest` |
-| Ruby | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
-| Lua | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/releases) |
+| Ruby | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/tags) |
+| Lua | `voxgig-sdk-api2news-endpoint` | publish pending — [install from git tag](https://github.com/voxgig-sdk/api2news-endpoint-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/api2news-endpoint-sdk/go-cli` | `go install github.com/voxgig-sdk/api2news-endpoint-sdk/go-cli/cmd/api2news-endpoint@latest` |
 | Go MCP server | `github.com/voxgig-sdk/api2news-endpoint-sdk/go-mcp` | `go get github.com/voxgig-sdk/api2news-endpoint-sdk/go-mcp@latest` |
 
