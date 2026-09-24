@@ -119,51 +119,60 @@ def make_config():
         "fields": [
           {
             "name": "author",
-            "short": "Article author name",
+            "title": "Author",
             "type": "`$STRING`",
+            "short": "Article author name",
           },
           {
             "name": "content",
-            "short": "Article content excerpt",
+            "title": "Content",
             "type": "`$STRING`",
+            "short": "Article content excerpt",
           },
           {
             "name": "description",
-            "short": "Brief summary of the article",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Brief summary of the article",
           },
           {
             "name": "id",
+            "title": "Id",
+            "type": "`$STRING`",
             "short": "Unique identifier for the article",
-            "type": "`$STRING`",
           },
           {
-            "format": "uri",
             "name": "imageUrl",
-            "short": "URL to the article's featured image",
+            "title": "Image Url",
             "type": "`$STRING`",
+            "short": "URL to the article's featured image",
+            "format": "uri",
           },
           {
-            "format": "date-time",
             "name": "publishedAt",
-            "short": "Publication date and time",
+            "title": "Published At",
             "type": "`$STRING`",
+            "short": "Publication date and time",
+            "format": "date-time",
           },
           {
             "name": "source",
-            "short": "News source (BBC, TechCrunch, CNN)",
+            "title": "Source",
             "type": "`$STRING`",
+            "short": "News source (BBC, TechCrunch, CNN)",
           },
           {
             "name": "title",
-            "short": "Article headline",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Article headline",
           },
           {
-            "format": "uri",
             "name": "url",
-            "short": "URL to the full article",
+            "title": "Url",
             "type": "`$STRING`",
+            "short": "URL to the full article",
+            "format": "uri",
           },
         ],
         "id": {
@@ -177,23 +186,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 10,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "query",
-                      "orig": "query",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/bbc",
@@ -208,21 +200,39 @@ def make_config():
                     "lit": "bbc",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "news",
+                  "bbc",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.articles`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 10,
+                    },
+                    {
+                      "name": "query",
+                      "orig": "query",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
                     "query",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.articles`",
-                },
-                "parts": [
-                  "api",
-                  "news",
-                  "bbc",
-                ],
               },
             ],
           },
@@ -235,51 +245,60 @@ def make_config():
         "fields": [
           {
             "name": "author",
-            "short": "Article author name",
+            "title": "Author",
             "type": "`$STRING`",
+            "short": "Article author name",
           },
           {
             "name": "content",
-            "short": "Article content excerpt",
+            "title": "Content",
             "type": "`$STRING`",
+            "short": "Article content excerpt",
           },
           {
             "name": "description",
-            "short": "Brief summary of the article",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Brief summary of the article",
           },
           {
             "name": "id",
+            "title": "Id",
+            "type": "`$STRING`",
             "short": "Unique identifier for the article",
-            "type": "`$STRING`",
           },
           {
-            "format": "uri",
             "name": "imageUrl",
-            "short": "URL to the article's featured image",
+            "title": "Image Url",
             "type": "`$STRING`",
+            "short": "URL to the article's featured image",
+            "format": "uri",
           },
           {
-            "format": "date-time",
             "name": "publishedAt",
-            "short": "Publication date and time",
+            "title": "Published At",
             "type": "`$STRING`",
+            "short": "Publication date and time",
+            "format": "date-time",
           },
           {
             "name": "source",
-            "short": "News source (BBC, TechCrunch, CNN)",
+            "title": "Source",
             "type": "`$STRING`",
+            "short": "News source (BBC, TechCrunch, CNN)",
           },
           {
             "name": "title",
-            "short": "Article headline",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Article headline",
           },
           {
-            "format": "uri",
             "name": "url",
-            "short": "URL to the full article",
+            "title": "Url",
             "type": "`$STRING`",
+            "short": "URL to the full article",
+            "format": "uri",
           },
         ],
         "id": {
@@ -293,23 +312,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 10,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "query",
-                      "orig": "query",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/cnn",
@@ -324,21 +326,39 @@ def make_config():
                     "lit": "cnn",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "news",
+                  "cnn",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.articles`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 10,
+                    },
+                    {
+                      "name": "query",
+                      "orig": "query",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
                     "query",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.articles`",
-                },
-                "parts": [
-                  "api",
-                  "news",
-                  "cnn",
-                ],
               },
             ],
           },
@@ -351,51 +371,60 @@ def make_config():
         "fields": [
           {
             "name": "author",
-            "short": "Article author name",
+            "title": "Author",
             "type": "`$STRING`",
+            "short": "Article author name",
           },
           {
             "name": "content",
-            "short": "Article content excerpt",
+            "title": "Content",
             "type": "`$STRING`",
+            "short": "Article content excerpt",
           },
           {
             "name": "description",
-            "short": "Brief summary of the article",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Brief summary of the article",
           },
           {
             "name": "id",
+            "title": "Id",
+            "type": "`$STRING`",
             "short": "Unique identifier for the article",
-            "type": "`$STRING`",
           },
           {
-            "format": "uri",
             "name": "imageUrl",
-            "short": "URL to the article's featured image",
+            "title": "Image Url",
             "type": "`$STRING`",
+            "short": "URL to the article's featured image",
+            "format": "uri",
           },
           {
-            "format": "date-time",
             "name": "publishedAt",
-            "short": "Publication date and time",
+            "title": "Published At",
             "type": "`$STRING`",
+            "short": "Publication date and time",
+            "format": "date-time",
           },
           {
             "name": "source",
-            "short": "News source (BBC, TechCrunch, CNN)",
+            "title": "Source",
             "type": "`$STRING`",
+            "short": "News source (BBC, TechCrunch, CNN)",
           },
           {
             "name": "title",
-            "short": "Article headline",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Article headline",
           },
           {
-            "format": "uri",
             "name": "url",
-            "short": "URL to the full article",
+            "title": "Url",
             "type": "`$STRING`",
+            "short": "URL to the full article",
+            "format": "uri",
           },
         ],
         "id": {
@@ -409,29 +438,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 10,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "query",
-                      "orig": "query",
-                      "type": "`$STRING`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "source",
-                      "orig": "source",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news",
@@ -443,6 +449,38 @@ def make_config():
                     "lit": "news",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "news",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.articles`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 10,
+                    },
+                    {
+                      "name": "query",
+                      "orig": "query",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                    {
+                      "name": "source",
+                      "orig": "source",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
@@ -450,14 +488,6 @@ def make_config():
                     "source",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.articles`",
-                },
-                "parts": [
-                  "api",
-                  "news",
-                ],
               },
             ],
           },
@@ -470,51 +500,60 @@ def make_config():
         "fields": [
           {
             "name": "author",
-            "short": "Article author name",
+            "title": "Author",
             "type": "`$STRING`",
+            "short": "Article author name",
           },
           {
             "name": "content",
-            "short": "Article content excerpt",
+            "title": "Content",
             "type": "`$STRING`",
+            "short": "Article content excerpt",
           },
           {
             "name": "description",
-            "short": "Brief summary of the article",
+            "title": "Description",
             "type": "`$STRING`",
+            "short": "Brief summary of the article",
           },
           {
             "name": "id",
+            "title": "Id",
+            "type": "`$STRING`",
             "short": "Unique identifier for the article",
-            "type": "`$STRING`",
           },
           {
-            "format": "uri",
             "name": "imageUrl",
-            "short": "URL to the article's featured image",
+            "title": "Image Url",
             "type": "`$STRING`",
+            "short": "URL to the article's featured image",
+            "format": "uri",
           },
           {
-            "format": "date-time",
             "name": "publishedAt",
-            "short": "Publication date and time",
+            "title": "Published At",
             "type": "`$STRING`",
+            "short": "Publication date and time",
+            "format": "date-time",
           },
           {
             "name": "source",
-            "short": "News source (BBC, TechCrunch, CNN)",
+            "title": "Source",
             "type": "`$STRING`",
+            "short": "News source (BBC, TechCrunch, CNN)",
           },
           {
             "name": "title",
-            "short": "Article headline",
+            "title": "Title",
             "type": "`$STRING`",
+            "short": "Article headline",
           },
           {
-            "format": "uri",
             "name": "url",
-            "short": "URL to the full article",
+            "title": "Url",
             "type": "`$STRING`",
+            "short": "URL to the full article",
+            "format": "uri",
           },
         ],
         "id": {
@@ -528,23 +567,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 10,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "kind": "query",
-                      "name": "query",
-                      "orig": "query",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/news/techcrunch",
@@ -559,21 +581,39 @@ def make_config():
                     "lit": "techcrunch",
                   },
                 ],
+                "parts": [
+                  "api",
+                  "news",
+                  "techcrunch",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body.articles`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 10,
+                    },
+                    {
+                      "name": "query",
+                      "orig": "query",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
                     "query",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body.articles`",
-                },
-                "parts": [
-                  "api",
-                  "news",
-                  "techcrunch",
-                ],
               },
             ],
           },

@@ -1,7 +1,7 @@
 // Typed models for the Api2newsEndpoint SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,15 +14,6 @@ import (
 
 // Bbc is the typed data model for the bbc entity.
 type Bbc struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // BbcListMatch is the typed request payload for Bbc.ListTyped.
@@ -33,15 +24,6 @@ type BbcListMatch struct {
 
 // Cnn is the typed data model for the cnn entity.
 type Cnn struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // CnnListMatch is the typed request payload for Cnn.ListTyped.
@@ -52,15 +34,6 @@ type CnnListMatch struct {
 
 // New is the typed data model for the new entity.
 type New struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // NewListMatch is the typed request payload for New.ListTyped.
@@ -72,15 +45,6 @@ type NewListMatch struct {
 
 // Techcrunch is the typed data model for the techcrunch entity.
 type Techcrunch struct {
-	Author *string `json:"author,omitempty"`
-	Content *string `json:"content,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"imageUrl,omitempty"`
-	PublishedAt *string `json:"publishedAt,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // TechcrunchListMatch is the typed request payload for Techcrunch.ListTyped.

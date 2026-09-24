@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -117,51 +110,60 @@ class Config {
             "fields": [
                 {
                     "name": "author",
-                    "short": "Article author name",
-                    "type": "`$STRING`"
+                    "title": "Author",
+                    "type": "`$STRING`",
+                    "short": "Article author name"
                 },
                 {
                     "name": "content",
-                    "short": "Article content excerpt",
-                    "type": "`$STRING`"
+                    "title": "Content",
+                    "type": "`$STRING`",
+                    "short": "Article content excerpt"
                 },
                 {
                     "name": "description",
-                    "short": "Brief summary of the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Brief summary of the article"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the article",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the article"
                 },
                 {
-                    "format": "uri",
                     "name": "imageUrl",
+                    "title": "Image Url",
+                    "type": "`$STRING`",
                     "short": "URL to the article's featured image",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "Publication date and time",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "source",
-                    "short": "News source (BBC, TechCrunch, CNN)",
-                    "type": "`$STRING`"
+                    "title": "Source",
+                    "type": "`$STRING`",
+                    "short": "News source (BBC, TechCrunch, CNN)"
                 },
                 {
                     "name": "title",
-                    "short": "Article headline",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Article headline"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "URL to the full article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "id": {
@@ -175,23 +177,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": 10,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "query",
-                                        "orig": "query",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/news/bbc",
@@ -206,21 +191,39 @@ class Config {
                                     "lit": "bbc"
                                 }
                             ],
+                            "parts": [
+                                "api",
+                                "news",
+                                "bbc"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.articles`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 10
+                                    },
+                                    {
+                                        "name": "query",
+                                        "orig": "query",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "limit",
                                     "query"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.articles`"
-                            },
-                            "parts": [
-                                "api",
-                                "news",
-                                "bbc"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -233,51 +236,60 @@ class Config {
             "fields": [
                 {
                     "name": "author",
-                    "short": "Article author name",
-                    "type": "`$STRING`"
+                    "title": "Author",
+                    "type": "`$STRING`",
+                    "short": "Article author name"
                 },
                 {
                     "name": "content",
-                    "short": "Article content excerpt",
-                    "type": "`$STRING`"
+                    "title": "Content",
+                    "type": "`$STRING`",
+                    "short": "Article content excerpt"
                 },
                 {
                     "name": "description",
-                    "short": "Brief summary of the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Brief summary of the article"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the article",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the article"
                 },
                 {
-                    "format": "uri",
                     "name": "imageUrl",
+                    "title": "Image Url",
+                    "type": "`$STRING`",
                     "short": "URL to the article's featured image",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "Publication date and time",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "source",
-                    "short": "News source (BBC, TechCrunch, CNN)",
-                    "type": "`$STRING`"
+                    "title": "Source",
+                    "type": "`$STRING`",
+                    "short": "News source (BBC, TechCrunch, CNN)"
                 },
                 {
                     "name": "title",
-                    "short": "Article headline",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Article headline"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "URL to the full article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "id": {
@@ -291,23 +303,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": 10,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "query",
-                                        "orig": "query",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/news/cnn",
@@ -322,21 +317,39 @@ class Config {
                                     "lit": "cnn"
                                 }
                             ],
+                            "parts": [
+                                "api",
+                                "news",
+                                "cnn"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.articles`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 10
+                                    },
+                                    {
+                                        "name": "query",
+                                        "orig": "query",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "limit",
                                     "query"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.articles`"
-                            },
-                            "parts": [
-                                "api",
-                                "news",
-                                "cnn"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -349,51 +362,60 @@ class Config {
             "fields": [
                 {
                     "name": "author",
-                    "short": "Article author name",
-                    "type": "`$STRING`"
+                    "title": "Author",
+                    "type": "`$STRING`",
+                    "short": "Article author name"
                 },
                 {
                     "name": "content",
-                    "short": "Article content excerpt",
-                    "type": "`$STRING`"
+                    "title": "Content",
+                    "type": "`$STRING`",
+                    "short": "Article content excerpt"
                 },
                 {
                     "name": "description",
-                    "short": "Brief summary of the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Brief summary of the article"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the article",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the article"
                 },
                 {
-                    "format": "uri",
                     "name": "imageUrl",
+                    "title": "Image Url",
+                    "type": "`$STRING`",
                     "short": "URL to the article's featured image",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "Publication date and time",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "source",
-                    "short": "News source (BBC, TechCrunch, CNN)",
-                    "type": "`$STRING`"
+                    "title": "Source",
+                    "type": "`$STRING`",
+                    "short": "News source (BBC, TechCrunch, CNN)"
                 },
                 {
                     "name": "title",
-                    "short": "Article headline",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Article headline"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "URL to the full article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "id": {
@@ -407,29 +429,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": 10,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "query",
-                                        "orig": "query",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "source",
-                                        "orig": "source",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/news",
@@ -441,21 +440,45 @@ class Config {
                                     "lit": "news"
                                 }
                             ],
+                            "parts": [
+                                "api",
+                                "news"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.articles`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 10
+                                    },
+                                    {
+                                        "name": "query",
+                                        "orig": "query",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "source",
+                                        "orig": "source",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "limit",
                                     "query",
                                     "source"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.articles`"
-                            },
-                            "parts": [
-                                "api",
-                                "news"
-                            ]
+                            }
                         }
                     ]
                 }
@@ -468,51 +491,60 @@ class Config {
             "fields": [
                 {
                     "name": "author",
-                    "short": "Article author name",
-                    "type": "`$STRING`"
+                    "title": "Author",
+                    "type": "`$STRING`",
+                    "short": "Article author name"
                 },
                 {
                     "name": "content",
-                    "short": "Article content excerpt",
-                    "type": "`$STRING`"
+                    "title": "Content",
+                    "type": "`$STRING`",
+                    "short": "Article content excerpt"
                 },
                 {
                     "name": "description",
-                    "short": "Brief summary of the article",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Brief summary of the article"
                 },
                 {
                     "name": "id",
-                    "short": "Unique identifier for the article",
-                    "type": "`$STRING`"
+                    "title": "Id",
+                    "type": "`$STRING`",
+                    "short": "Unique identifier for the article"
                 },
                 {
-                    "format": "uri",
                     "name": "imageUrl",
+                    "title": "Image Url",
+                    "type": "`$STRING`",
                     "short": "URL to the article's featured image",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "date-time",
                     "name": "publishedAt",
+                    "title": "Published At",
+                    "type": "`$STRING`",
                     "short": "Publication date and time",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "source",
-                    "short": "News source (BBC, TechCrunch, CNN)",
-                    "type": "`$STRING`"
+                    "title": "Source",
+                    "type": "`$STRING`",
+                    "short": "News source (BBC, TechCrunch, CNN)"
                 },
                 {
                     "name": "title",
-                    "short": "Article headline",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Article headline"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "URL to the full article",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "id": {
@@ -526,23 +558,6 @@ class Config {
                     "name": "list",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": 10,
-                                        "kind": "query",
-                                        "name": "limit",
-                                        "orig": "limit",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "query",
-                                        "orig": "query",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/api/news/techcrunch",
@@ -557,21 +572,39 @@ class Config {
                                     "lit": "techcrunch"
                                 }
                             ],
+                            "parts": [
+                                "api",
+                                "news",
+                                "techcrunch"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.articles`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "limit",
+                                        "orig": "limit",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query",
+                                        "example": 10
+                                    },
+                                    {
+                                        "name": "query",
+                                        "orig": "query",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "limit",
                                     "query"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.articles`"
-                            },
-                            "parts": [
-                                "api",
-                                "news",
-                                "techcrunch"
-                            ]
+                            }
                         }
                     ]
                 }

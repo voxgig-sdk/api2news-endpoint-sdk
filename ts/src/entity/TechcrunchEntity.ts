@@ -19,7 +19,6 @@ import type {
   TechcrunchListMatch,
 } from '../Api2newsEndpointTypes'
 
-// TODO: needs Entity superclass
 class TechcrunchEntity extends Api2newsEndpointEntityBase<Techcrunch> {
 
   constructor(client: Api2newsEndpointSDK, entopts: any) {

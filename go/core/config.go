@@ -94,51 +94,60 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
-						"short": "Article author name",
+						"title": "Author",
 						"type": "`$STRING`",
+						"short": "Article author name",
 					},
 					map[string]any{
 						"name": "content",
-						"short": "Article content excerpt",
+						"title": "Content",
 						"type": "`$STRING`",
+						"short": "Article content excerpt",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Brief summary of the article",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief summary of the article",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the article",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "imageUrl",
-						"short": "URL to the article's featured image",
+						"title": "Image Url",
 						"type": "`$STRING`",
+						"short": "URL to the article's featured image",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "publishedAt",
-						"short": "Publication date and time",
+						"title": "Published At",
 						"type": "`$STRING`",
+						"short": "Publication date and time",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "source",
-						"short": "News source (BBC, TechCrunch, CNN)",
+						"title": "Source",
 						"type": "`$STRING`",
+						"short": "News source (BBC, TechCrunch, CNN)",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Article headline",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Article headline",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the full article",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the full article",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -152,23 +161,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "query",
-											"orig": "query",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/bbc",
@@ -183,20 +175,38 @@ func MakeConfig() map[string]any {
 										"lit": "bbc",
 									},
 								},
+								"parts": []any{
+									"api",
+									"news",
+									"bbc",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.articles`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+										map[string]any{
+											"name": "query",
+											"orig": "query",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"query",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.articles`",
-								},
-								"parts": []any{
-									"api",
-									"news",
-									"bbc",
 								},
 							},
 						},
@@ -210,51 +220,60 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
-						"short": "Article author name",
+						"title": "Author",
 						"type": "`$STRING`",
+						"short": "Article author name",
 					},
 					map[string]any{
 						"name": "content",
-						"short": "Article content excerpt",
+						"title": "Content",
 						"type": "`$STRING`",
+						"short": "Article content excerpt",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Brief summary of the article",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief summary of the article",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the article",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "imageUrl",
-						"short": "URL to the article's featured image",
+						"title": "Image Url",
 						"type": "`$STRING`",
+						"short": "URL to the article's featured image",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "publishedAt",
-						"short": "Publication date and time",
+						"title": "Published At",
 						"type": "`$STRING`",
+						"short": "Publication date and time",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "source",
-						"short": "News source (BBC, TechCrunch, CNN)",
+						"title": "Source",
 						"type": "`$STRING`",
+						"short": "News source (BBC, TechCrunch, CNN)",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Article headline",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Article headline",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the full article",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the full article",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -268,23 +287,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "query",
-											"orig": "query",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/cnn",
@@ -299,20 +301,38 @@ func MakeConfig() map[string]any {
 										"lit": "cnn",
 									},
 								},
+								"parts": []any{
+									"api",
+									"news",
+									"cnn",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.articles`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+										map[string]any{
+											"name": "query",
+											"orig": "query",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"query",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.articles`",
-								},
-								"parts": []any{
-									"api",
-									"news",
-									"cnn",
 								},
 							},
 						},
@@ -326,51 +346,60 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
-						"short": "Article author name",
+						"title": "Author",
 						"type": "`$STRING`",
+						"short": "Article author name",
 					},
 					map[string]any{
 						"name": "content",
-						"short": "Article content excerpt",
+						"title": "Content",
 						"type": "`$STRING`",
+						"short": "Article content excerpt",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Brief summary of the article",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief summary of the article",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the article",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "imageUrl",
-						"short": "URL to the article's featured image",
+						"title": "Image Url",
 						"type": "`$STRING`",
+						"short": "URL to the article's featured image",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "publishedAt",
-						"short": "Publication date and time",
+						"title": "Published At",
 						"type": "`$STRING`",
+						"short": "Publication date and time",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "source",
-						"short": "News source (BBC, TechCrunch, CNN)",
+						"title": "Source",
 						"type": "`$STRING`",
+						"short": "News source (BBC, TechCrunch, CNN)",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Article headline",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Article headline",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the full article",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the full article",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -384,29 +413,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "query",
-											"orig": "query",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "source",
-											"orig": "source",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news",
@@ -418,20 +424,44 @@ func MakeConfig() map[string]any {
 										"lit": "news",
 									},
 								},
+								"parts": []any{
+									"api",
+									"news",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.articles`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+										map[string]any{
+											"name": "query",
+											"orig": "query",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "source",
+											"orig": "source",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"query",
 										"source",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.articles`",
-								},
-								"parts": []any{
-									"api",
-									"news",
 								},
 							},
 						},
@@ -445,51 +475,60 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
-						"short": "Article author name",
+						"title": "Author",
 						"type": "`$STRING`",
+						"short": "Article author name",
 					},
 					map[string]any{
 						"name": "content",
-						"short": "Article content excerpt",
+						"title": "Content",
 						"type": "`$STRING`",
+						"short": "Article content excerpt",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Brief summary of the article",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief summary of the article",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the article",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "imageUrl",
-						"short": "URL to the article's featured image",
+						"title": "Image Url",
 						"type": "`$STRING`",
+						"short": "URL to the article's featured image",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "publishedAt",
-						"short": "Publication date and time",
+						"title": "Published At",
 						"type": "`$STRING`",
+						"short": "Publication date and time",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "source",
-						"short": "News source (BBC, TechCrunch, CNN)",
+						"title": "Source",
 						"type": "`$STRING`",
+						"short": "News source (BBC, TechCrunch, CNN)",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Article headline",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Article headline",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the full article",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the full article",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -503,23 +542,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "query",
-											"orig": "query",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/news/techcrunch",
@@ -534,20 +556,38 @@ func MakeConfig() map[string]any {
 										"lit": "techcrunch",
 									},
 								},
+								"parts": []any{
+									"api",
+									"news",
+									"techcrunch",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.articles`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+										map[string]any{
+											"name": "query",
+											"orig": "query",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"query",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.articles`",
-								},
-								"parts": []any{
-									"api",
-									"news",
-									"techcrunch",
 								},
 							},
 						},

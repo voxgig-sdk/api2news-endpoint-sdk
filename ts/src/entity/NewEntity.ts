@@ -19,7 +19,6 @@ import type {
   NewListMatch,
 } from '../Api2newsEndpointTypes'
 
-// TODO: needs Entity superclass
 class NewEntity extends Api2newsEndpointEntityBase<New> {
 
   constructor(client: Api2newsEndpointSDK, entopts: any) {

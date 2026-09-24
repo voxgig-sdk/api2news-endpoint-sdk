@@ -1,0 +1,141 @@
+# Entity: cnn
+
+main: kit: entity: cnn: {
+
+  alias: field: {}
+
+  fields: {
+    author: {
+      h: "Author"
+      n: "author"
+      r: false
+      sh: "Article author name"
+      t: "`$STRING`"
+    }
+    content: {
+      h: "Content"
+      n: "content"
+      r: false
+      sh: "Article content excerpt"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Brief summary of the article"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the article"
+      t: "`$STRING`"
+    }
+    imageUrl: {
+      fo: "uri"
+      h: "Image Url"
+      n: "imageUrl"
+      r: false
+      sh: "URL to the article's featured image"
+      t: "`$STRING`"
+    }
+    publishedAt: {
+      fo: "date-time"
+      h: "Published At"
+      n: "publishedAt"
+      r: false
+      sh: "Publication date and time"
+      t: "`$STRING`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: false
+      sh: "News source (BBC, TechCrunch, CNN)"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Article headline"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "URL to the full article"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "cnn"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /api/news/cnn"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 10
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "query"
+                or: "query"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/api/news/cnn"
+          q: {
+            exist: [
+              "limit"
+              "query"
+            ]
+          }
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "news"
+            }
+            {
+              lit: "cnn"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.articles`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

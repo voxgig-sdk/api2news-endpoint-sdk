@@ -43,7 +43,7 @@ local bbcs, err = client:Bbc():list()
 if err then error(err) end
 
 for _, item in ipairs(bbcs) do
-  print(item["id"], item["author"])
+  print(item["id"])
 end
 ```
 

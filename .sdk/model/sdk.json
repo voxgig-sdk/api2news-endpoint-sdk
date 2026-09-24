@@ -24,80 +24,155 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "bbc": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "author",
-              "req": false,
-              "short": "Article author name",
-              "type": "`$STRING`"
+          "fields": {
+            "author": {
+              "a": true,
+              "h": "Author",
+              "n": "author",
+              "r": false,
+              "sh": "Article author name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "content",
-              "req": false,
-              "short": "Article content excerpt",
-              "type": "`$STRING`"
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Article content excerpt",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Brief summary of the article",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Brief summary of the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the article",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "imageUrl",
-              "req": false,
-              "short": "URL to the article's featured image",
-              "type": "`$STRING`"
+            "imageUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "imageUrl",
+              "r": false,
+              "sh": "URL to the article's featured image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "publishedAt",
-              "req": false,
-              "short": "Publication date and time",
-              "type": "`$STRING`"
+            "publishedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "publishedAt",
+              "r": false,
+              "sh": "Publication date and time",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "News source (BBC, TechCrunch, CNN)",
-              "type": "`$STRING`"
+            "source": {
+              "a": true,
+              "h": "Source",
+              "n": "source",
+              "r": false,
+              "sh": "News source (BBC, TechCrunch, CNN)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Article headline",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article headline",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "URL to the full article",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "URL to the full article",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -109,38 +184,44 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/news/bbc",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 10,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "query",
-                        "orig": "query",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "query",
+                        "or": "query",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/news/bbc",
-                    "json": "{\"operationId\":\"getBBCNews\",\"parameters\":[{\"description\":\"Search query to filter BBC articles\",\"in\":\"query\",\"name\":\"query\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Number of articles to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"articles\":{\"items\":{\"properties\":{\"author\":{\"description\":\"Article author name\",\"type\":\"string\"},\"content\":{\"description\":\"Article content excerpt\",\"type\":\"string\"},\"description\":{\"description\":\"Brief summary of the article\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the article\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the article's featured image\",\"format\":\"uri\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"Publication date and time\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"News source (BBC, TechCrunch, CNN)\",\"example\":\"bbc\",\"type\":\"string\"},\"title\":{\"description\":\"Article headline\",\"example\":\"Breaking News: Major Technology Breakthrough\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the full article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"source\":{\"example\":\"bbc\",\"type\":\"string\"},\"status\":{\"example\":\"success\",\"type\":\"string\"},\"totalResults\":{\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with BBC news articles\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"status\":{\"example\":\"error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/news/bbc",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "query"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/news/bbc",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -151,13 +232,7 @@
                       "lit": "bbc"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "query"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.articles`"
                   }
@@ -174,74 +249,83 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "author",
-              "req": false,
-              "short": "Article author name",
-              "type": "`$STRING`"
+          "fields": {
+            "author": {
+              "a": true,
+              "h": "Author",
+              "n": "author",
+              "r": false,
+              "sh": "Article author name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "content",
-              "req": false,
-              "short": "Article content excerpt",
-              "type": "`$STRING`"
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Article content excerpt",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Brief summary of the article",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Brief summary of the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the article",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "imageUrl",
-              "req": false,
-              "short": "URL to the article's featured image",
-              "type": "`$STRING`"
+            "imageUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "imageUrl",
+              "r": false,
+              "sh": "URL to the article's featured image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "publishedAt",
-              "req": false,
-              "short": "Publication date and time",
-              "type": "`$STRING`"
+            "publishedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "publishedAt",
+              "r": false,
+              "sh": "Publication date and time",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "News source (BBC, TechCrunch, CNN)",
-              "type": "`$STRING`"
+            "source": {
+              "a": true,
+              "h": "Source",
+              "n": "source",
+              "r": false,
+              "sh": "News source (BBC, TechCrunch, CNN)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Article headline",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article headline",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "URL to the full article",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "URL to the full article",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -253,38 +337,44 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/news/cnn",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 10,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "query",
-                        "orig": "query",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "query",
+                        "or": "query",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/news/cnn",
-                    "json": "{\"operationId\":\"getCNNNews\",\"parameters\":[{\"description\":\"Search query to filter CNN articles\",\"in\":\"query\",\"name\":\"query\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Number of articles to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"articles\":{\"items\":{\"properties\":{\"author\":{\"description\":\"Article author name\",\"type\":\"string\"},\"content\":{\"description\":\"Article content excerpt\",\"type\":\"string\"},\"description\":{\"description\":\"Brief summary of the article\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the article\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the article's featured image\",\"format\":\"uri\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"Publication date and time\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"News source (BBC, TechCrunch, CNN)\",\"example\":\"bbc\",\"type\":\"string\"},\"title\":{\"description\":\"Article headline\",\"example\":\"Breaking News: Major Technology Breakthrough\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the full article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"source\":{\"example\":\"cnn\",\"type\":\"string\"},\"status\":{\"example\":\"success\",\"type\":\"string\"},\"totalResults\":{\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with CNN news articles\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"status\":{\"example\":\"error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/news/cnn",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "query"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/news/cnn",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -295,13 +385,7 @@
                       "lit": "cnn"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "query"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.articles`"
                   }
@@ -318,74 +402,83 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "author",
-              "req": false,
-              "short": "Article author name",
-              "type": "`$STRING`"
+          "fields": {
+            "author": {
+              "a": true,
+              "h": "Author",
+              "n": "author",
+              "r": false,
+              "sh": "Article author name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "content",
-              "req": false,
-              "short": "Article content excerpt",
-              "type": "`$STRING`"
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Article content excerpt",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Brief summary of the article",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Brief summary of the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the article",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "imageUrl",
-              "req": false,
-              "short": "URL to the article's featured image",
-              "type": "`$STRING`"
+            "imageUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "imageUrl",
+              "r": false,
+              "sh": "URL to the article's featured image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "publishedAt",
-              "req": false,
-              "short": "Publication date and time",
-              "type": "`$STRING`"
+            "publishedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "publishedAt",
+              "r": false,
+              "sh": "Publication date and time",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "News source (BBC, TechCrunch, CNN)",
-              "type": "`$STRING`"
+            "source": {
+              "a": true,
+              "h": "Source",
+              "n": "source",
+              "r": false,
+              "sh": "News source (BBC, TechCrunch, CNN)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Article headline",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article headline",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "URL to the full article",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "URL to the full article",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -397,46 +490,53 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/news",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 10,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "query",
-                        "orig": "query",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "query",
+                        "or": "query",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "source",
-                        "orig": "source",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "source",
+                        "or": "source",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/news",
-                    "json": "{\"operationId\":\"getNews\",\"parameters\":[{\"description\":\"Filter news by source (e.g., bbc, techcrunch, cnn)\",\"in\":\"query\",\"name\":\"source\",\"required\":false,\"schema\":{\"enum\":[\"bbc\",\"techcrunch\",\"cnn\"],\"type\":\"string\"}},{\"description\":\"Search query to filter articles by keywords\",\"in\":\"query\",\"name\":\"query\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Number of articles to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"articles\":{\"items\":{\"properties\":{\"author\":{\"description\":\"Article author name\",\"type\":\"string\"},\"content\":{\"description\":\"Article content excerpt\",\"type\":\"string\"},\"description\":{\"description\":\"Brief summary of the article\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the article\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the article's featured image\",\"format\":\"uri\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"Publication date and time\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"News source (BBC, TechCrunch, CNN)\",\"example\":\"bbc\",\"type\":\"string\"},\"title\":{\"description\":\"Article headline\",\"example\":\"Breaking News: Major Technology Breakthrough\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the full article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"status\":{\"example\":\"success\",\"type\":\"string\"},\"totalResults\":{\"example\":50,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with news articles\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"status\":{\"example\":\"error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"status\":{\"example\":\"error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/news",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "query",
+                      "source"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/news",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -444,14 +544,7 @@
                       "lit": "news"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "query",
-                      "source"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.articles`"
                   }
@@ -468,74 +561,83 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "author",
-              "req": false,
-              "short": "Article author name",
-              "type": "`$STRING`"
+          "fields": {
+            "author": {
+              "a": true,
+              "h": "Author",
+              "n": "author",
+              "r": false,
+              "sh": "Article author name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "content",
-              "req": false,
-              "short": "Article content excerpt",
-              "type": "`$STRING`"
+            "content": {
+              "a": true,
+              "h": "Content",
+              "n": "content",
+              "r": false,
+              "sh": "Article content excerpt",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Brief summary of the article",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Brief summary of the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "short": "Unique identifier for the article",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "sh": "Unique identifier for the article",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "imageUrl",
-              "req": false,
-              "short": "URL to the article's featured image",
-              "type": "`$STRING`"
+            "imageUrl": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image Url",
+              "n": "imageUrl",
+              "r": false,
+              "sh": "URL to the article's featured image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "date-time",
-              "name": "publishedAt",
-              "req": false,
-              "short": "Publication date and time",
-              "type": "`$STRING`"
+            "publishedAt": {
+              "a": true,
+              "fo": "date-time",
+              "h": "Published At",
+              "n": "publishedAt",
+              "r": false,
+              "sh": "Publication date and time",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "News source (BBC, TechCrunch, CNN)",
-              "type": "`$STRING`"
+            "source": {
+              "a": true,
+              "h": "Source",
+              "n": "source",
+              "r": false,
+              "sh": "News source (BBC, TechCrunch, CNN)",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "title",
-              "req": false,
-              "short": "Article headline",
-              "type": "`$STRING`"
+            "title": {
+              "a": true,
+              "h": "Title",
+              "n": "title",
+              "r": false,
+              "sh": "Article headline",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "url",
-              "req": false,
-              "short": "URL to the full article",
-              "type": "`$STRING`"
+            "url": {
+              "a": true,
+              "fo": "uri",
+              "h": "Url",
+              "n": "url",
+              "r": false,
+              "sh": "URL to the full article",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -547,38 +649,44 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /api/news/techcrunch",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 10,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "query",
-                        "orig": "query",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "query",
+                        "or": "query",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /api/news/techcrunch",
-                    "json": "{\"operationId\":\"getTechCrunchNews\",\"parameters\":[{\"description\":\"Search query to filter TechCrunch articles\",\"in\":\"query\",\"name\":\"query\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Number of articles to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"articles\":{\"items\":{\"properties\":{\"author\":{\"description\":\"Article author name\",\"type\":\"string\"},\"content\":{\"description\":\"Article content excerpt\",\"type\":\"string\"},\"description\":{\"description\":\"Brief summary of the article\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the article\",\"type\":\"string\"},\"imageUrl\":{\"description\":\"URL to the article's featured image\",\"format\":\"uri\",\"type\":\"string\"},\"publishedAt\":{\"description\":\"Publication date and time\",\"format\":\"date-time\",\"type\":\"string\"},\"source\":{\"description\":\"News source (BBC, TechCrunch, CNN)\",\"example\":\"bbc\",\"type\":\"string\"},\"title\":{\"description\":\"Article headline\",\"example\":\"Breaking News: Major Technology Breakthrough\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the full article\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"source\":{\"example\":\"techcrunch\",\"type\":\"string\"},\"status\":{\"example\":\"success\",\"type\":\"string\"},\"totalResults\":{\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with TechCrunch news articles\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"integer\"},\"message\":{\"description\":\"Error message describing what went wrong\",\"type\":\"string\"},\"status\":{\"example\":\"error\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/api/news/techcrunch",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "query"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/api/news/techcrunch",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "api"
                     },
@@ -589,13 +697,7 @@
                       "lit": "techcrunch"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "query"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.articles`"
                   }
@@ -1024,13 +1126,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1050,13 +1152,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1076,13 +1178,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1102,13 +1204,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

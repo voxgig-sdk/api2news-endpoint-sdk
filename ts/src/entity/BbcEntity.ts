@@ -19,7 +19,6 @@ import type {
   BbcListMatch,
 } from '../Api2newsEndpointTypes'
 
-// TODO: needs Entity superclass
 class BbcEntity extends Api2newsEndpointEntityBase<Bbc> {
 
   constructor(client: Api2newsEndpointSDK, entopts: any) {

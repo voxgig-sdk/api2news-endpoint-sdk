@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewEntity = void 0;
 const Api2newsEndpointEntityBase_1 = require("../Api2newsEndpointEntityBase");
-// TODO: needs Entity superclass
 class NewEntity extends Api2newsEndpointEntityBase_1.Api2newsEndpointEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

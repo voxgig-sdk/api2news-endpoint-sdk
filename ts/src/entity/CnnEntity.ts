@@ -19,7 +19,6 @@ import type {
   CnnListMatch,
 } from '../Api2newsEndpointTypes'
 
-// TODO: needs Entity superclass
 class CnnEntity extends Api2newsEndpointEntityBase<Cnn> {
 
   constructor(client: Api2newsEndpointSDK, entopts: any) {
