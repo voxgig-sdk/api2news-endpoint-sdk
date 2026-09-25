@@ -1,5 +1,5 @@
 {
-  "name": "voxgig-sdk/api2news-endpoint",
+  "name": "voxgig-sdk/api2news-endpoint-sdk",
   "description": "Unofficial generated PHP SDK for the API2NEWS Endpoint public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
   "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "api2news-endpoint"],
