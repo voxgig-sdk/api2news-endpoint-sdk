@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 Api2newsEndpointUtility.registrar = ->(u) {
   u.clean = Api2newsEndpointUtilities::Clean
+  u.clean_add = Api2newsEndpointUtilities::CleanAdd
+  u.clean_explain = Api2newsEndpointUtilities::CleanExplain
   u.done = Api2newsEndpointUtilities::Done
   u.make_error = Api2newsEndpointUtilities::MakeError
   u.feature_add = Api2newsEndpointUtilities::FeatureAdd

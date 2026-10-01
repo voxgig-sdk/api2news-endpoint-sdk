@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 Api2newsEndpointUtility::setRegistrar(function (Api2newsEndpointUtility $u): void {
     $u->clean = [Api2newsEndpointClean::class, 'call'];
+    $u->clean_add = [Api2newsEndpointClean::class, 'add'];
+    $u->clean_explain = [Api2newsEndpointDone::class, 'clean_explain'];
     $u->done = [Api2newsEndpointDone::class, 'call'];
     $u->make_error = [Api2newsEndpointMakeError::class, 'call'];
     $u->feature_add = [Api2newsEndpointFeatureAdd::class, 'call'];
