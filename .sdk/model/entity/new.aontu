@@ -117,12 +117,9 @@ main: kit: entity: new: {
           }
           m: "GET"
           o: "/api/news"
-          q: {
-            exist: [
-              "limit"
-              "query"
-              "source"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

@@ -1,6 +1,7 @@
 # Api2newsEndpoint SDK utility: transform_request
 require_relative 'struct/voxgig_struct'
 require_relative '../core/helpers'
+require_relative 'param'
 module Api2newsEndpointUtilities
   # `$action` selects the point (see MakePoint); it is never an API field, so
   # the body is a copy without it. The caller's hash is left untouched.
@@ -8,12 +9,21 @@ module Api2newsEndpointUtilities
     omit_keys(reqdata, ["$action"])
   end
 
-  # A header argument travels as a header, which PrepareHeaders sends, so the
-  # body is built from the request data without it.
-  def self.header_arg_names(point)
-    hl = point ? VoxgigStruct.getpath(point, "args.header") : nil
-    return [] unless hl.is_a?(Array)
-    hl.map { |hd| VoxgigStruct.getprop(hd, "name") }.select { |n| n.is_a?(String) && !n.empty? }
+  # A header, cookie or query argument travels where PrepareHeaders or
+  # PrepareQuery sends it, so the body is built from the request data without
+  # it, unless the point marks it as a field the body keeps.
+  def self.routed_arg_names(ctx)
+    (call_args(ctx, "header") + call_args(ctx, "cookie") + call_args(ctx, "query")).map(&:first)
+      .reject { |name| field_arg?(ctx, name) }
+  end
+
+  def self.field_arg?(ctx, name)
+    ["header", "cookie", "query"].any? do |kind|
+      defs = ctx.point ? VoxgigStruct.getpath(ctx.point, "args.#{kind}") : nil
+      defs.is_a?(Array) && defs.any? do |ad|
+        VoxgigStruct.getprop(ad, "name") == name && true == VoxgigStruct.getprop(ad, "field")
+      end
+    end
   end
 
   def self.omit_keys(reqdata, names)
@@ -25,7 +35,7 @@ module Api2newsEndpointUtilities
     spec = ctx.spec
     point = ctx.point
     spec.step = "reqform" if spec
-    data = Api2newsEndpointUtilities.omit_keys(ctx.reqdata, Api2newsEndpointUtilities.header_arg_names(point))
+    data = Api2newsEndpointUtilities.omit_keys(ctx.reqdata, Api2newsEndpointUtilities.routed_arg_names(ctx))
     transform = Api2newsEndpointHelpers.to_map(VoxgigStruct.getprop(point, "transform"))
     return Api2newsEndpointUtilities.strip_action(data) unless transform
     reqform = VoxgigStruct.getprop(transform, "req")

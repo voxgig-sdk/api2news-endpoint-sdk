@@ -102,6 +102,7 @@ class Config {
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -249,11 +250,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "limit",
-                  "query"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -375,11 +375,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "limit",
-                  "query"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -499,16 +498,15 @@ class Config {
                     "name": "source",
                     "orig": "source",
                     "type": "`$STRING`",
-                    "kind": "query"
+                    "kind": "query",
+                    "field": true
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "limit",
-                  "query",
-                  "source"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]
@@ -630,11 +628,10 @@ class Config {
                   }
                 ]
               },
-              "select": {
-                "exist": [
-                  "limit",
-                  "query"
-                ]
+              "select": {},
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]

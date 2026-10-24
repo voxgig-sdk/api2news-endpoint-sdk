@@ -110,11 +110,9 @@ main: kit: entity: bbc: {
           }
           m: "GET"
           o: "/api/news/bbc"
-          q: {
-            exist: [
-              "limit"
-              "query"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

@@ -110,11 +110,9 @@ main: kit: entity: techcrunch: {
           }
           m: "GET"
           o: "/api/news/techcrunch"
-          q: {
-            exist: [
-              "limit"
-              "query"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

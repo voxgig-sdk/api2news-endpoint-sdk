@@ -16,13 +16,27 @@ const PLAN: any[] = [
     "path": "/api/news/bbc",
     "args": [],
     "select": {
-      "limit": "v1",
+      "limit": 10,
       "query": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "query",
       "limit"
+    ],
+    "queryArgs": [
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "query",
+        "wire": "query"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -32,15 +46,15 @@ const PLAN: any[] = [
       "totalResults": 1,
       "articles": [
         {
-          "author": "x",
-          "content": "x",
-          "description": "x",
           "id": "x",
-          "imageUrl": "x",
-          "publishedAt": "2026-01-01T00:00:00Z",
           "source": "bbc",
           "title": "Breaking News: Major Technology Breakthrough",
-          "url": "x"
+          "description": "x",
+          "url": "x",
+          "imageUrl": "x",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "author": "x",
+          "content": "x"
         }
       ]
     },
@@ -54,13 +68,27 @@ const PLAN: any[] = [
     "path": "/api/news/cnn",
     "args": [],
     "select": {
-      "limit": "v1",
+      "limit": 10,
       "query": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "query",
       "limit"
+    ],
+    "queryArgs": [
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "query",
+        "wire": "query"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -70,15 +98,15 @@ const PLAN: any[] = [
       "totalResults": 1,
       "articles": [
         {
-          "author": "x",
-          "content": "x",
-          "description": "x",
           "id": "x",
-          "imageUrl": "x",
-          "publishedAt": "2026-01-01T00:00:00Z",
           "source": "bbc",
           "title": "Breaking News: Major Technology Breakthrough",
-          "url": "x"
+          "description": "x",
+          "url": "x",
+          "imageUrl": "x",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "author": "x",
+          "content": "x"
         }
       ]
     },
@@ -92,15 +120,33 @@ const PLAN: any[] = [
     "path": "/api/news",
     "args": [],
     "select": {
-      "limit": "v1",
+      "limit": 10,
       "query": "v1",
       "source": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "source",
       "query",
       "limit"
+    ],
+    "queryArgs": [
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "query",
+        "wire": "query"
+      },
+      {
+        "name": "source",
+        "wire": "source"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -109,15 +155,15 @@ const PLAN: any[] = [
       "totalResults": 50,
       "articles": [
         {
-          "author": "x",
-          "content": "x",
-          "description": "x",
           "id": "x",
-          "imageUrl": "x",
-          "publishedAt": "2026-01-01T00:00:00Z",
           "source": "bbc",
           "title": "Breaking News: Major Technology Breakthrough",
-          "url": "x"
+          "description": "x",
+          "url": "x",
+          "imageUrl": "x",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "author": "x",
+          "content": "x"
         }
       ]
     },
@@ -131,13 +177,27 @@ const PLAN: any[] = [
     "path": "/api/news/techcrunch",
     "args": [],
     "select": {
-      "limit": "v1",
+      "limit": 10,
       "query": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "query",
       "limit"
+    ],
+    "queryArgs": [
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "query",
+        "wire": "query"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -147,15 +207,15 @@ const PLAN: any[] = [
       "totalResults": 1,
       "articles": [
         {
-          "author": "x",
-          "content": "x",
-          "description": "x",
           "id": "x",
-          "imageUrl": "x",
-          "publishedAt": "2026-01-01T00:00:00Z",
           "source": "bbc",
           "title": "Breaking News: Major Technology Breakthrough",
-          "url": "x"
+          "description": "x",
+          "url": "x",
+          "imageUrl": "x",
+          "publishedAt": "2026-01-01T00:00:00Z",
+          "author": "x",
+          "content": "x"
         }
       ]
     },

@@ -3,5 +3,20 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Article author name",
+      "Article content excerpt",
+      "Brief summary of the article",
+      "Production server",
+      "Successful response with BBC news articles",
+      "Successful response with CNN news articles",
+      "Successful response with TechCrunch news articles",
+      "Successful response with news articles",
+      "The API2NEWS Endpoint provides access to the latest news stories from various sources, including BBC, TechCrunch, and CNN. Users can retrieve articles by making GET requests to specific endpoints for each publication, including filtering by query parameters for specific articles.",
+      "URL to the article&#39;s featured image",
+      "Unique identifier for the article"
+    ]
+  }
 }
